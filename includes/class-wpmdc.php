@@ -6,7 +6,7 @@ class WPMDC {
 
 	}
 
-	public static function init() {
+	public function init() {
 
 		add_action( 'after_setup_theme', array( $this, 'manage_globals' ), 0 );
 		add_action( 'after_setup_theme', array( $this, 'manage_theme_support' ), 10 );
@@ -18,7 +18,7 @@ class WPMDC {
 
 	}
 
-	public static function manage_globals() {
+	public function manage_globals() {
 
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 		$GLOBALS['content_width'] = apply_filters( 'wpmdc_content_width', 768 );
@@ -31,7 +31,7 @@ class WPMDC {
 	 * @since   0.0.1
 	 * @return  void
 	 */
-	public static function manage_theme_support() {
+	public function manage_theme_support() {
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
@@ -63,7 +63,7 @@ class WPMDC {
 		
 	}
 
-	public static function manage_nav_menus() {
+	public function manage_nav_menus() {
 
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'wpmdc' ),
@@ -71,7 +71,7 @@ class WPMDC {
 		
 	}
 
-	public static function manage_widget_areas() {
+	public function manage_widget_areas() {
 
 		register_sidebar( array(
 			'name'          => esc_html__( 'Drawer', 'wpmdc' ),
@@ -85,7 +85,7 @@ class WPMDC {
 
 	}
 
-	public static function manage_site_scripts() {
+	public function manage_site_scripts() {
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -93,7 +93,7 @@ class WPMDC {
 
 	}
 
-	public static function manage_body_classes( $classes ) {
+	public function manage_body_classes( $classes ) {
 
 		if ( ! is_singular() ) {
 			$classes[] = 'hfeed';
@@ -102,7 +102,7 @@ class WPMDC {
 		return $classes;
 	}
 
-	public static function manage_head() { ?>
+	public function manage_head() { ?>
 
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
