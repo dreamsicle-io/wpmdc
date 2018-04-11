@@ -17,9 +17,9 @@ get_header();
 
 	<main><?php
 		
-		if ( have_posts() ) :
+		if ( have_posts() ) {
 
-			if ( is_home() && ! is_front_page() ) :
+			if ( is_home() && ! is_front_page() ) {
 				?>
 				<header>
 
@@ -31,10 +31,10 @@ get_header();
 
 				</header>
 				<?php
-			endif;
+			}
 
 			/* Start the Loop */
-			while ( have_posts() ) :
+			while ( have_posts() ) {
 				the_post();
 
 				/*
@@ -44,15 +44,15 @@ get_header();
 				 */
 				get_template_part( 'template-parts/content', get_post_type() );
 
-			endwhile;
+			}
 
 			the_posts_pagination();
 
-		else :
+		} else {
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif;
+		}
 		
 	?></main>
 

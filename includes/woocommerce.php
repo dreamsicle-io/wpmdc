@@ -223,8 +223,7 @@ if ( ! function_exists( 'wpmdc_woocommerce_cart_link' ) ) {
 	 *
 	 * @return void
 	 */
-	function wpmdc_woocommerce_cart_link() {
-		?>
+	function wpmdc_woocommerce_cart_link() { ?>
 		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'wpmdc' ); ?>">
 			<?php
 			$item_count_text = sprintf(
@@ -235,8 +234,7 @@ if ( ! function_exists( 'wpmdc_woocommerce_cart_link' ) ) {
 			?>
 			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo esc_html( $item_count_text ); ?></span>
 		</a>
-		<?php
-	}
+	<?php }
 }
 
 if ( ! function_exists( 'wpmdc_woocommerce_header_cart' ) ) {
@@ -250,8 +248,7 @@ if ( ! function_exists( 'wpmdc_woocommerce_header_cart' ) ) {
 			$class = 'current-menu-item';
 		} else {
 			$class = '';
-		}
-		?>
+		} ?>
 		<ul id="site-header-cart" class="site-header-cart">
 			<li class="<?php echo esc_attr( $class ); ?>">
 				<?php wpmdc_woocommerce_cart_link(); ?>

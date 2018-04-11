@@ -6,12 +6,14 @@
  *
  * @package wpmdc
  */
-
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
 ?>
 
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+<aside id="secondary" class="widget-area"><?php 
+
+	if ( is_active_sidebar( 'drawer' ) ) {
+		
+		dynamic_sidebar( 'drawer' );
+	
+	} 
+
+?></aside>

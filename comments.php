@@ -24,7 +24,7 @@ if ( post_password_required() ) {
 
 	<?php
 	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
+	if ( have_comments() ) {
 		?>
 		<h2 class="comments-title">
 			<?php
@@ -61,7 +61,7 @@ if ( post_password_required() ) {
 		the_comments_navigation();
 
 		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
+		if ( ! comments_open() ) {
 			?>
 			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'wpmdc' ); ?></p>
 			<?php
