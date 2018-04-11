@@ -18,8 +18,4 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/includes/woocommerce.php';
 }
 
-function wpmdc_init() {
-	new WPMDC()->init();
-}
-
-add_action( 'after_setup_theme', 'wpmdc_init', 10 );
+add_action( 'after_setup_theme', array( new WPMDC, 'init' ), 10 );
