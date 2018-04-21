@@ -7,15 +7,14 @@
  * @package wpmdc
  */
 
+/**
+ * Require all files.
+ */
 require get_template_directory() . '/includes/class-wpmdc.php';
-require get_template_directory() . '/includes/customizer.php';
+require get_template_directory() . '/includes/class-wpmdc-customizer.php';
 
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/includes/jetpack.php';
-}
-
-if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/includes/woocommerce.php';
-}
-
+/**
+ * Init all classes.
+ */
 add_action( 'after_setup_theme', array( new WPMDC, 'init' ), 10 );
+add_action( 'after_setup_theme', array( new WPMDC_Customizer, 'init' ), 10 );

@@ -12,7 +12,7 @@
 
 			</div><!-- #content -->
 
-			<?php get_template_part( 'partials/colophon' ); ?>
+			<?php get_template_part( 'template-parts/colophon' ); ?>
 
 		</div><!-- #site -->
 
