@@ -1,11 +1,34 @@
 <?php 
+/**
+ * WPMDC Theme Setup Class.
+ *
+ * @package wpmdc
+ * @subpackage includes
+ */
 
+/**
+ * WPMDC.
+ *
+ * @since  0.0.1 
+ */
 class WPMDC {
 
+	/**
+	 * Construct.
+	 *
+	 * @since   0.0.1
+	 * @return  void
+	 */
 	function __construct() {
 
 	}
 
+	/**
+	 * Initialize.
+	 *
+	 * @since   0.0.1
+	 * @return  void
+	 */
 	public function init() {
 
 		add_action( 'after_setup_theme', array( $this, 'manage_globals' ), 0 );
@@ -18,7 +41,15 @@ class WPMDC {
 
 	}
 
+	/**
+	 * Manage Globals.
+	 *
+	 * @since   0.0.1
+	 * @return  void
+	 */
 	public function manage_globals() {
+
+		$GLOBALS['wpmdc'] = wp_get_theme();
 
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 		$GLOBALS['content_width'] = apply_filters( 'wpmdc_content_width', 768 );
@@ -26,7 +57,7 @@ class WPMDC {
 	}
 
 	/**
-	 * Manage Theme Support
+	 * Manage Theme Support.
 	 *
 	 * @since   0.0.1
 	 * @return  void
@@ -63,6 +94,12 @@ class WPMDC {
 		
 	}
 
+	/**
+	 * Manage Nav Menus.
+	 *
+	 * @since   0.0.1
+	 * @return  void
+	 */
 	public function manage_nav_menus() {
 
 		register_nav_menus( array(
@@ -71,6 +108,12 @@ class WPMDC {
 		
 	}
 
+	/**
+	 * Manage Widget Areas.
+	 *
+	 * @since   0.0.1
+	 * @return  void
+	 */
 	public function manage_widget_areas() {
 
 		register_sidebar( array(
@@ -85,6 +128,12 @@ class WPMDC {
 
 	}
 
+	/**
+	 * Manage Site Scripts.
+	 *
+	 * @since   0.0.1
+	 * @return  void
+	 */
 	public function manage_site_scripts() {
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -93,7 +142,18 @@ class WPMDC {
 
 	}
 
+	/**
+	 * Manage Body Classes.
+	 *
+	 * @since   0.0.1
+	 * @param   array  $classes  The incoming array of classes to filter.
+	 * @return  array            The filtered array of classes.
+	 */
 	public function manage_body_classes( $classes ) {
+
+		global $wpmdc;
+
+		$classes[] = $wpmdc->get('TextDomain');
 
 		if ( ! is_singular() ) {
 			$classes[] = 'hfeed';
@@ -102,6 +162,12 @@ class WPMDC {
 		return $classes;
 	}
 
+	/**
+	 * Manage Head.
+	 *
+	 * @since   0.0.1
+	 * @return  void
+	 */
 	public function manage_head() { ?>
 
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
