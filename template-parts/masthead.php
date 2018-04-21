@@ -10,6 +10,7 @@
 ?>
 
 <header id="masthead" class="site-header">
+	
 	<div class="site-branding">
 		<?php
 		the_custom_logo();
@@ -27,15 +28,15 @@
 			?>
 			<p class="site-description"><?php echo $wpmdc_description; /* WPCS: xss ok. */ ?></p>
 		<?php } ?>
-	</div><!-- .site-branding -->
+	</div>
 
-	<nav id="site-navigation" class="main-navigation">
-		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'wpmdc' ); ?></button>
-		<?php
+	<nav id="site-navigation" class="main-navigation"><?php
+		
 		wp_nav_menu( array(
 			'theme_location' => 'menu-1',
 			'menu_id'        => 'primary-menu',
 		) );
-		?>
-	</nav><!-- #site-navigation -->
-</header><!-- #masthead -->
+	
+	?></nav>
+
+</header>
