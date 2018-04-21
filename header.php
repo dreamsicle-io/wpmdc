@@ -18,8 +18,8 @@
 	<div id="site">
 		
 		<?php
-		get_template_part( 'partials/skip-link' ); 
-		get_template_part( 'partials/masthead' ); 
+		get_template_part( 'template-parts/skip-link' ); 
+		get_template_part( 'template-parts/masthead' ); 
 		?>
 
 		<div id="content">
