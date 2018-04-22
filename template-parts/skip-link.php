@@ -2,10 +2,10 @@
 /**
  * The "Skip to Content" Link.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-template-parts
  *
- * @package wpmdc
- * @subpackage partials
+ * @package     wpmdc
+ * @subpackage  template-parts
  */
 ?>
 
