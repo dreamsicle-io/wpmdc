@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-template-parts
  *
  * @package wpmdc
  */
@@ -12,7 +12,11 @@
 
 			</div><!-- #content -->
 
-			<?php get_template_part( 'template-parts/colophon' ); ?>
+			<?php 
+			/**
+			 * Hook: WPMDC Footer.
+			 */
+			do_action( 'wpmdc_footer' ); ?>
 
 		</div><!-- #site -->
 
