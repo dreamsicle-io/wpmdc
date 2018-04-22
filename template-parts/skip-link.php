@@ -2,7 +2,7 @@
 /**
  * The "Skip to Content" Link.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-template-parts
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package     wpmdc
  * @subpackage  template-parts

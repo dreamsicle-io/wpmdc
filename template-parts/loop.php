@@ -2,7 +2,7 @@
 /**
  * The loop template file.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package     wpmdc
  * @subpackage  template-parts
