@@ -49,8 +49,6 @@ class WPMDC {
 	 */
 	public function manage_globals() {
 
-		$GLOBALS['wpmdc'] = wp_get_theme();
-
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 		$GLOBALS['content_width'] = apply_filters( 'wpmdc_content_width', 768 );
 
@@ -151,9 +149,7 @@ class WPMDC {
 	 */
 	public function manage_body_classes( $classes ) {
 
-		global $wpmdc;
-
-		$classes[] = $wpmdc->get('TextDomain');
+		$classes[] = 'wpmdc';
 
 		if ( ! is_singular() ) {
 			$classes[] = 'hfeed';
