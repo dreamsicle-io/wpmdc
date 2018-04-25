@@ -8,7 +8,7 @@
  */
 ?>
 
-<aside class="widget-area"><?php 
+<aside id="drawer" class="widget-area"><?php 
 
 	if ( is_active_sidebar( 'drawer' ) ) {
 		

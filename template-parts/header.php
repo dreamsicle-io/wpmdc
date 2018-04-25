@@ -17,9 +17,12 @@
 
 	<div id="site">
 
-		<?php 
-		get_template_part( 'template-parts/skip-link' );
-		
-		get_template_part( 'template-parts/masthead' ); ?>
+		<a class="screen-reader-text" href="#content"><?php 
+
+			esc_html_e( 'Skip to Content', 'wpmdc' ); 
+			
+		?></a>
+
+		<?php get_template_part( 'template-parts/masthead' ); ?>
 
 		<div id="content">
