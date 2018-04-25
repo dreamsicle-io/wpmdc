@@ -16,11 +16,10 @@
 <body <?php body_class(); ?>>
 
 	<div id="site">
+
+		<?php 
+		get_template_part( 'template-parts/skip-link' );
 		
-		<?php
-		/**
-		 * Hook: WPMDC Header
-		 */
-		do_action( 'wpmdc_header' ); ?>
+		get_template_part( 'template-parts/masthead' ); ?>
 
 		<div id="content">
