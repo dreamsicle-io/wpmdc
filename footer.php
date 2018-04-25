@@ -12,11 +12,7 @@
 
 			</div><!-- #content -->
 
-			<?php 
-			/**
-			 * Hook: WPMDC Footer.
-			 */
-			do_action( 'wpmdc_footer' ); ?>
+			<?php get_template_part( 'template-parts/colophon' ); ?>
 
 		</div><!-- #site -->
 
