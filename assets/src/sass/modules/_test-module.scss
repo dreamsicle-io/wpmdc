@@ -1,0 +1,13 @@
+.wpgulp-test-module {
+	@include test-mixin;
+	@include test-mixin-autoprefixer;
+	z-index: $test-variable;
+
+	&__element {
+		@include test-mixin(5);
+
+		&--modifier {
+			@include test-mixin(10);
+		}
+	}
+}

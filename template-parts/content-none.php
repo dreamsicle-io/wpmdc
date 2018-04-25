@@ -1,18 +1,21 @@
 <?php 
 /**
- * The Colophon.
+ * Not Found.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package     wpmdc
  * @subpackage  template-parts
  */
+
 ?>
 
-<footer id="colophon"><?php 
+<section id="not_found">
 
-	get_template_part( 'template-parts/copyright' );
+	<h2><?php 
 	
-	get_template_part( 'template-parts/designer' ); 
+		echo esc_html_x( 'Nothing Found.', 'not found template title', 'wpmdc' );
 
-?></footer>
+	?></h2>
+
+</section>

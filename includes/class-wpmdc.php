@@ -31,13 +31,18 @@ class WPMDC {
 	 */
 	public function init() {
 
+		// Hooks
 		add_action( 'after_setup_theme', array( $this, 'manage_globals' ), 0 );
 		add_action( 'after_setup_theme', array( $this, 'manage_theme_support' ), 10 );
 		add_action( 'after_setup_theme', array( $this, 'manage_nav_menus' ), 10 );
 		add_action( 'widgets_init', array( $this, 'manage_widget_areas' ), 10 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'manage_site_scripts' ), 10 );
-		add_action( 'body_class', array( $this, 'manage_body_classes' ), 10 );
 		add_action( 'wp_head', array( $this, 'manage_head' ), 10 );
+
+		// Filters
+		add_filter( 'body_class', array( $this, 'manage_body_classes' ), 10 );
+		add_filter( 'the_content', array( $this, 'manage_entry_content' ), 10 );
+		add_filter( 'the_excerpt', array( $this, 'manage_entry_excerpt' ), 10 );
 
 	}
 
@@ -48,8 +53,6 @@ class WPMDC {
 	 * @return  void
 	 */
 	public function manage_globals() {
-
-		$GLOBALS['wpmdc'] = wp_get_theme();
 
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 		$GLOBALS['content_width'] = apply_filters( 'wpmdc_content_width', 768 );
@@ -151,9 +154,7 @@ class WPMDC {
 	 */
 	public function manage_body_classes( $classes ) {
 
-		global $wpmdc;
-
-		$classes[] = $wpmdc->get('TextDomain');
+		$classes[] = 'wpmdc';
 
 		if ( ! is_singular() ) {
 			$classes[] = 'hfeed';
@@ -177,6 +178,38 @@ class WPMDC {
 		<?php if ( is_singular() && pings_open() ) { ?>
 			<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>" />
 		<?php }
+
+	}
+
+	/**
+	 * Manage Entry Content.
+	 *
+	 * @since   0.0.1
+	 * @return  void
+	 */
+	public function manage_entry_content( $content ) { 
+
+		if ( ! empty( $content ) ) {
+			$content = '<div class="entry-content">' . $content . '</div>';
+		}
+
+		return $content;
+
+	}
+
+	/**
+	 * Manage Entry Excerpt.
+	 *
+	 * @since   0.0.1
+	 * @return  void
+	 */
+	public function manage_entry_excerpt( $excerpt ) { 
+
+		if ( ! empty( $excerpt ) ) {
+			$excerpt = '<div class="entry-excerpt">' . $excerpt . '</div>';
+		}
+
+		return $excerpt;
 
 	}
 
