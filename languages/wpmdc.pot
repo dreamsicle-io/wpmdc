@@ -13,21 +13,6 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: comments.php:35
-msgid "One thought on &ldquo;%1$s&rdquo;"
-msgstr ""
-
-#: comments.php:41
-msgctxt "comments title"
-msgid "%1$s thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
-
-#: comments.php:66
-msgid "Comments are closed."
-msgstr ""
-
 #: includes/class-wpmdc.php:109
 msgid "Primary"
 msgstr ""
@@ -40,8 +25,34 @@ msgstr ""
 msgid "Widgets added here will appear in the drawer."
 msgstr ""
 
-#: template-parts/content-card.php:39, template-parts/content-singular.php:40
-msgctxt "post byline"
+#: template-parts/colophon.php:21
+msgctxt "site copyright"
+msgid "&copy; %1$d %2$s"
+msgstr ""
+
+#: template-parts/colophon.php:32
+msgctxt "site designer"
+msgid "Designed by %1$s"
+msgstr ""
+
+#: template-parts/comments.php:36
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: template-parts/comments.php:44
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: template-parts/comments.php:70
+msgid "Comments are closed."
+msgstr ""
+
+#. translators: 1: post author, 2: post publish date, 3: post publish time.
+#: template-parts/content-card.php:39
+msgctxt "post card byline"
 msgid "Posted by %1$s on %2$s at %3$s"
 msgstr ""
 
@@ -50,21 +61,17 @@ msgctxt "not found template title"
 msgid "Nothing Found."
 msgstr ""
 
+#. translators: 1: post author, 2: post publish date, 3: post publish time.
+#: template-parts/content-singular.php:40
+msgctxt "singular post byline"
+msgid "Posted by %1$s on %2$s at %3$s"
+msgstr ""
+
 #: template-parts/content-singular.php:48
 msgctxt "post content read more link"
 msgid "Read More"
 msgstr ""
 
-#: template-parts/copyright.php:16
-msgctxt "copyright"
-msgid "&copy; %1$d %2$s"
-msgstr ""
-
-#: template-parts/designer.php:19
-msgctxt "copyright"
-msgid "Designed by %1$s"
-msgstr ""
-
-#: template-parts/skip-link.php:16
+#: template-parts/header.php:22
 msgid "Skip to Content"
 msgstr ""
