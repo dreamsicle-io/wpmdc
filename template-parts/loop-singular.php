@@ -7,13 +7,24 @@
  * @package     wpmdc
  * @subpackage  template-parts
  */
+
 ?>
 
 <section><?php 
 	
 	while ( have_posts() ) { the_post();
 
-		get_template_part( 'template-parts/content-singular', get_post_type() );
+		global $post;
+
+		get_template_part( 'template-parts/content-singular', $post->post_type );
+		
+		comments_template( '/template-parts/comments.php' );
+
+		if ( $post->post_type !== 'page' ) {
+
+			the_post_navigation();
+
+		}
 
 	}
 

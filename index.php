@@ -12,7 +12,7 @@
  * @package wpmdc
  */
 
-get_header(); ?>
+get_template_part( 'template-parts/header' ); ?>
 
 	<main id="main"><?php 
 
@@ -21,5 +21,5 @@ get_header(); ?>
 	?></main>
 
 <?php
-get_sidebar();
-get_footer();
+get_template_part( 'template-parts/drawer' );
+get_template_part( 'template-parts/footer' );
