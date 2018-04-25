@@ -12,16 +12,12 @@
  * @package wpmdc
  */
 
-get_header();
-?>
+get_header(); ?>
 
-	<main><?php
-		
-		/**
-		 * Hook: WPMDC Index.
-		 */
-		do_action( 'wpmdc_index' );
-		
+	<main id="main"><?php 
+
+		get_template_part( 'template-parts/loop', is_singular() ? 'singular' : 'cards' );
+
 	?></main>
 
 <?php
