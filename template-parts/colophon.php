@@ -9,25 +9,10 @@
  */
 ?>
 
-<footer id="colophon">
+<footer id="colophon"><?php 
 
-	<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wpmdc' ) ); ?>"><?php
-		/* translators: %s: CMS name, i.e. WordPress. */
-		printf( 
-			esc_html__( 'Proudly powered by %s', 'wpmdc' ), 
-			'WordPress' 
-		);
-	?></a>
+	get_template_part( 'template-parts/copyright' );
+	
+	get_template_part( 'template-parts/designer' ); 
 
-	<span> | </span>
-
-	<span><?php
-		/* translators: 1: Theme name, 2: Theme author. */
-		printf( 
-			esc_html__( 'Theme: %1$s by %2$s.', 'wpmdc' ), 
-			'wpmdc', 
-			'<a href="http://www.dreamsicle.io">Dreamsicle</a>' 
-		); 
-	?></span>
-
-</footer><!-- #colophon -->
+?></footer>
