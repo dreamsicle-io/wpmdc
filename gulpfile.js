@@ -1,6 +1,5 @@
 'use-strict';
 
-const pkg = require('./package.json');
 const fs = require('fs');
 const del = require('del');
 const browserify = require('browserify');
@@ -227,6 +226,7 @@ gulp.task('build:js', gulp.series('build:js:site', 'build:js:admin', 'build:js:l
  *	 - Local command: `node ./node_modules/gulp/bin/gulp build:pot`.
  */
 gulp.task('build:pot', function potBuilder() {
+	const pkg = JSON.parse(fs.readFileSync('./package.json'));
 	return gulp.src(['./**/*.php'])
 		.pipe(wpPot({ domain: pkg.name })
 			.on('error', function(err) { console.error(err); this.emit('end'); }))
@@ -278,6 +278,7 @@ gulp.task('build:images', function imageBuilder() {
  *	 - Local command: `node ./node_modules/gulp/bin/gulp build:package:style`.
  */
 gulp.task('build:package:style', function packageStyleBuilder(done) {
+	const pkg = JSON.parse(fs.readFileSync('./package.json'));
 	const data = {
 		'Theme Name': pkg.name || '', 
 		'Theme URI': pkg.homepage || '', 
@@ -319,6 +320,7 @@ gulp.task('build:package:style', function packageStyleBuilder(done) {
  *	 - Local command: `node ./node_modules/gulp/bin/gulp build:package:readme`.
  */
 gulp.task('build:package:readme', function packageReadmeBuilder(done) {
+	const pkg = JSON.parse(fs.readFileSync('./package.json'));
 	var contributorNames = pkg.author.name ? [pkg.author.name] : [];
 	if (pkg.contributors && pkg.contributors.length > 0) {
 		pkg.contributors.map(function(contributor, i) {
