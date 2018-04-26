@@ -8,6 +8,11 @@
  * @subpackage  template-parts
  */
 
+// Security: Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; 
+}
+
 ?>
 
 <section><?php 
@@ -18,7 +23,7 @@
 
 		get_template_part( 'template-parts/content-singular', $post->post_type );
 		
-		comments_template( '/template-parts/comments.php' );
+		comments_template( 'template-parts/comments' );
 
 		if ( $post->post_type !== 'page' ) {
 

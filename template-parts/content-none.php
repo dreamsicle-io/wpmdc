@@ -8,6 +8,11 @@
  * @subpackage  template-parts
  */
 
+// Security: Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; 
+}
+
 ?>
 
 <section id="not_found">

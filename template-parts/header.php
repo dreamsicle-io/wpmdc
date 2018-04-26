@@ -8,6 +8,12 @@
  *
  * @package wpmdc
  */
+
+// Security: Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; 
+}
+
 ?>
 
 <!doctype html>

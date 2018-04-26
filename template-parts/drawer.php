@@ -6,6 +6,12 @@
  *
  * @package wpmdc
  */
+
+// Security: Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; 
+}
+
 ?>
 
 <aside id="drawer" class="widget-area"><?php 

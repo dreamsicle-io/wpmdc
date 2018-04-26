@@ -8,6 +8,11 @@
  * @subpackage  template-parts
  */
 
+// Security: Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; 
+}
+
 $theme = wp_get_theme();
 
 ?>
@@ -35,4 +40,4 @@ $theme = wp_get_theme();
 
 	?></p>
 
-?></footer>
+</footer>

@@ -1,5 +1,10 @@
 <?php 
 
+// Security: Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; 
+}
+
 class WPMDC_Assets {
 
 	public $theme_textdomain;

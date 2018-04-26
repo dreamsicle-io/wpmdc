@@ -8,6 +8,11 @@
  * @subpackage  template-parts
  */
 
+// Security: Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; 
+}
+
 $permalink = get_permalink();
 $title_attr = the_title_attribute( array( 'echo' => false ) );
 

@@ -12,6 +12,11 @@
  * @package wpmdc
  */
 
+// Security: Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; 
+}
+
 get_template_part( 'template-parts/header' ); ?>
 
 	<main id="main"><?php 

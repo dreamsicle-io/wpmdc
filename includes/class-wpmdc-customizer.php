@@ -6,6 +6,11 @@
  * @subpackage includes
  */
 
+// Security: Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; 
+}
+
 /**
  * WPMDC Customizer.
  *
