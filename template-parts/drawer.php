@@ -1,10 +1,11 @@
 <?php
 /**
- * The sidebar containing the main widget area
+ * The drawer.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wpmdc
+ * @package     wpmdc
+ * @subpackage  template-parts
  */
 
 // Security: Exit if accessed directly.
