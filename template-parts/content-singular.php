@@ -1,6 +1,6 @@
 <?php 
 /**
- * The Singular Content.
+ * The singular content.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *

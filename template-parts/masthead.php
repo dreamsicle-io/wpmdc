@@ -1,6 +1,6 @@
 <?php 
 /**
- * The Masthead.
+ * The masthead.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *

@@ -1,12 +1,13 @@
 <?php
 /**
- * The template for displaying the footer
+ * The theme footer.
  *
  * Contains the closing of the #content div and all content after.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wpmdc
+ * @package     wpmdc
+ * @subpackage  template-parts
  */
 
 // Security: Exit if accessed directly.

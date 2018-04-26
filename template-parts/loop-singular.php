@@ -1,6 +1,6 @@
 <?php 
 /**
- * The loop template file.
+ * The singular loop template file.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *

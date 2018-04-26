@@ -1,6 +1,6 @@
 <?php 
 /**
- * The Card Content.
+ * The card content.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -41,7 +41,7 @@ $title_attr = the_title_attribute( array( 'echo' => false ) );
 
 		/* translators: 1: post author, 2: post publish date, 3: post publish time. */
 		printf( 
-			_x( 'Posted by %1$s on %2$s at %3$s', 'post card byline', 'wpmdc' ), 
+			esc_html_x( 'Posted by %1$s on %2$s at %3$s', 'post card byline', 'wpmdc' ), 
 			get_the_author_posts_link(), 
 			get_the_date(), 
 			get_the_time() 

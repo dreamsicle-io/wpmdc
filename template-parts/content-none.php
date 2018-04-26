@@ -1,6 +1,6 @@
 <?php 
 /**
- * Not Found.
+ * The template for when nothing is found.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
