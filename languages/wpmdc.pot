@@ -72,6 +72,6 @@ msgctxt "post content read more link"
 msgid "Read More"
 msgstr ""
 
-#: template-parts/header.php:28
+#: template-parts/header.php:29
 msgid "Skip to Content"
 msgstr ""
