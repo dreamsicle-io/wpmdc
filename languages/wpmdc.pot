@@ -13,65 +13,65 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: includes/class-wpmdc.php:109
+#: includes/class-wpmdc.php:114
 msgid "Primary"
 msgstr ""
 
-#: includes/class-wpmdc.php:123
+#: includes/class-wpmdc.php:128
 msgid "Drawer"
 msgstr ""
 
-#: includes/class-wpmdc.php:125
+#: includes/class-wpmdc.php:130
 msgid "Widgets added here will appear in the drawer."
 msgstr ""
 
-#: template-parts/colophon.php:21
+#: template-parts/colophon.php:26
 msgctxt "site copyright"
 msgid "&copy; %1$d %2$s"
 msgstr ""
 
-#: template-parts/colophon.php:32
+#: template-parts/colophon.php:37
 msgctxt "site designer"
 msgid "Designed by %1$s"
 msgstr ""
 
-#: template-parts/comments.php:36
+#: template-parts/comments.php:46
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
-#: template-parts/comments.php:44
+#: template-parts/comments.php:54
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: template-parts/comments.php:70
+#: template-parts/comments.php:81
 msgid "Comments are closed."
 msgstr ""
 
 #. translators: 1: post author, 2: post publish date, 3: post publish time.
-#: template-parts/content-card.php:39
+#: template-parts/content-card.php:44
 msgctxt "post card byline"
 msgid "Posted by %1$s on %2$s at %3$s"
 msgstr ""
 
-#: template-parts/content-none.php:17
+#: template-parts/content-none.php:22
 msgctxt "not found template title"
 msgid "Nothing Found."
 msgstr ""
 
 #. translators: 1: post author, 2: post publish date, 3: post publish time.
-#: template-parts/content-singular.php:40
+#: template-parts/content-singular.php:45
 msgctxt "singular post byline"
 msgid "Posted by %1$s on %2$s at %3$s"
 msgstr ""
 
-#: template-parts/content-singular.php:48
+#: template-parts/content-singular.php:53
 msgctxt "post content read more link"
 msgid "Read More"
 msgstr ""
 
-#: template-parts/header.php:22
+#: template-parts/header.php:28
 msgid "Skip to Content"
 msgstr ""

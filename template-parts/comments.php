@@ -10,6 +10,11 @@
  * @package wpmdc
  */
 
+// Security: Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; 
+}
+
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
@@ -19,22 +24,27 @@ if ( post_password_required() ) {
 	return;
 }
 
-if ( comments_open() || ( get_comments_number() > 0 ) ) { ?>
+$comments_open = comments_open();
 
-	<div id="comments" class="comments-area">
+if ( $comments_open || ( get_comments_number() > 0 ) ) { ?>
 
-		<?php if ( have_comments() ) { ?>
+	<section id="comments" class="comments-area">
 
-			<h2 class="comments-title"><?php
+		<?php 
+		if ( have_comments() ) { 
 
-				$wpmdc_comment_count = get_comments_number();
+			$post_title = get_the_title(); ?>
 
-				if ( '1' === $wpmdc_comment_count ) {
+			<h2><?php
+
+				$wpmdc_comment_count = intval( get_comments_number() );
+
+				if ( 1 === $wpmdc_comment_count ) {
 
 					printf(
 						/* translators: 1: title. */
 						esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'wpmdc' ),
-						'<span>' . get_the_title() . '</span>'
+						'<span>' . esc_html( $post_title ) . '</span>'
 					);
 
 				} else {
@@ -43,7 +53,7 @@ if ( comments_open() || ( get_comments_number() > 0 ) ) { ?>
 						/* translators: 1: comment count number, 2: title. */
 						esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $wpmdc_comment_count, 'comments title', 'wpmdc' ) ),
 						number_format_i18n( $wpmdc_comment_count ),
-						'<span>' . get_the_title() . '</span>'
+						'<span>' . esc_html( $post_title ) . '</span>'
 					);
 
 				}
@@ -52,22 +62,25 @@ if ( comments_open() || ( get_comments_number() > 0 ) ) { ?>
 
 			<?php the_comments_navigation(); ?>
 
-			<ol class="comment-list"><?php
+			<ol><?php
 
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'short_ping' => true,
 				) );
 				
-			?></ol><!-- .comment-list -->
+			?></ol>
 
 			<?php
 			the_comments_navigation();
 
-			// If comments are closed and there are comments, let's leave a little note, shall we?
-			if ( ! comments_open() ) { ?>
+			if ( ! $comments_open ) { ?>
 				
-				<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'wpmdc' ); ?></p>
+				<p><?php 
+
+					esc_html_e( 'Comments are closed.', 'wpmdc' ); 
+
+				?></p>
 			
 			<?php }
 
@@ -75,6 +88,6 @@ if ( comments_open() || ( get_comments_number() > 0 ) ) { ?>
 
 		comment_form(); ?>
 
-	</div><!-- #comments -->
+	</section>
 
 <?php } 

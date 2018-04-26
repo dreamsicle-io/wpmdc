@@ -8,6 +8,11 @@
  * @subpackage  template-parts
  */
 
+// Security: Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; 
+}
+
 global $post;
 
 $title_attr = the_title_attribute( array( 'echo' => false ) );
