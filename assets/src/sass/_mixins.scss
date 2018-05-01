@@ -1,0 +1,49 @@
+@mixin clear {
+	&::before,
+	&::after {
+		clear: both;
+		content: '';
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+	}
+}
+
+@mixin center {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin float($direction: left, $clear: true) {
+	@if ($clear) {
+		clear: $direction;
+	}
+	display: inline-block;
+	float: $direction;
+	@if ($direction == left) {
+		margin-right: 24px;
+	} @else {
+		margin-left: 24px;
+	}
+}
+
+@mixin overlay {
+	height: 100%;
+	left: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+@mixin background-cover {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@mixin ramp($from: rgba(0, 0, 0, 0.12), $to: rgba(0, 0, 0, 0.48), $direction: bottom) {
+	background: linear-gradient(to $direction, $from 0%, $to 100%);
+}

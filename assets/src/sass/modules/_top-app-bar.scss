@@ -1,0 +1,19 @@
+.wpmdc-top-app-bar {
+	top: 0;
+}
+
+.admin-bar {
+
+	.wpmdc-top-app-bar {
+		margin-top: 46px;
+	}
+}
+
+@media screen and (min-width: 783px) {
+	.admin-bar {
+
+		.wpmdc-top-app-bar {
+			margin-top: 32px;
+		}
+	}
+}
