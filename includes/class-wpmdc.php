@@ -39,8 +39,8 @@ class WPMDC {
 		// Hooks
 		add_action( 'after_setup_theme', array( $this, 'manage_globals' ), 0 );
 		add_action( 'after_setup_theme', array( $this, 'manage_theme_support' ), 10 );
-		add_action( 'after_setup_theme', array( $this, 'manage_nav_menus' ), 10 );
 		add_action( 'widgets_init', array( $this, 'manage_widget_areas' ), 10 );
+		add_action( 'widgets_init', array( $this, 'manage_widgets' ), 10 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'manage_site_scripts' ), 10 );
 		add_action( 'wp_head', array( $this, 'manage_head' ), 10 );
 
@@ -71,6 +71,7 @@ class WPMDC {
 	 * @return  void
 	 */
 	public function manage_theme_support() {
+
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
@@ -90,8 +91,8 @@ class WPMDC {
 			'default-text-color' => '',
 			'width'              => 1920,
 			'height'             => 1080,
-			'flex-width'  => true,
-			'flex-height' => true,
+			'flex-width'         => true,
+			'flex-height'        => true,
 		) ) );
 		add_theme_support( 'custom-logo', apply_filters( 'wpmdc_custom_logo_args', array(
 			'height'      => 512,
@@ -99,20 +100,6 @@ class WPMDC {
 			'flex-width'  => true,
 			'flex-height' => true,
 		) ) );
-		
-	}
-
-	/**
-	 * Manage Nav Menus.
-	 *
-	 * @since   0.0.1
-	 * @return  void
-	 */
-	public function manage_nav_menus() {
-
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'wpmdc' ),
-		) );
 		
 	}
 
@@ -128,11 +115,27 @@ class WPMDC {
 			'name'          => esc_html__( 'Drawer', 'wpmdc' ),
 			'id'            => 'drawer',
 			'description'   => esc_html__( 'Widgets added here will appear in the drawer.', 'wpmdc' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'before_widget' => '<div id="%1$s" class="widget mdc-list-group %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_title'  => '<h3 class="widget-title mdc-list-group__subheader">',
+			'after_title'   => '</h3>',
 		) );
+
+	}
+
+	/**
+	 * Manage Widgets.
+	 *
+	 * @since   0.0.1
+	 * @return  void
+	 */
+	public function manage_widgets() {
+
+		unregister_widget( 'WP_Nav_Menu_Widget' );
+		unregister_widget( 'WP_Widget_Archives' );
+
+		register_widget( 'WPMDC_Widget_Nav_Menu' );
+		register_widget( 'WPMDC_Widget_Archives' );
 
 	}
 
@@ -159,7 +162,12 @@ class WPMDC {
 	 */
 	public function manage_body_classes( $classes ) {
 
-		$classes[] = 'wpmdc';
+		$classes = array_merge( $classes, array( 
+			'wpmdc', 
+			'mdc-typography', 
+			'mdc-typography--body1', 
+			'mdc-theme--background', 
+		) );
 
 		if ( ! is_singular() ) {
 			$classes[] = 'hfeed';
@@ -178,7 +186,10 @@ class WPMDC {
 
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+		<meta name="theme-color" content="#000000">
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
 		<?php if ( is_singular() && pings_open() ) { ?>
 			<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>" />
