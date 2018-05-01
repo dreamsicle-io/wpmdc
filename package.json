@@ -30,6 +30,10 @@
     "versionRequired": "4.9.4",
     "versionTested": "4.9.4"
   },
+  "dependencies": {
+    "material-components-web": "^0.35.0",
+    "normalize.css": "^8.0.0"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
@@ -46,7 +50,7 @@
     "gulp-sass-lint": "^1.3.4",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
-    "gulp-wp-pot": "^2.2.0",
+    "gulp-wp-pot": "^2.3.0-2",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },
