@@ -1,0 +1,32 @@
+img,
+textarea,
+input,
+select,
+pre,
+iframe,
+embed,
+object {
+	max-width: 100%;
+}
+
+img {
+	display: block;
+	height: auto;
+}
+
+pre {
+	overflow-x: auto;
+}
+
+input,
+textarea {
+	box-sizing: border-box;
+}
+
+table {
+	table-layout: fixed;
+}
+
+a {
+	text-decoration: none;
+}
