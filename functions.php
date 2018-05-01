@@ -7,12 +7,17 @@
  * @package wpmdc
  */
 
+$template_directory = get_template_directory();
+
 /**
  * Require all files.
  */
-require get_template_directory() . '/includes/class-wpmdc.php';
-require get_template_directory() . '/includes/class-wpmdc-assets.php';
-require get_template_directory() . '/includes/class-wpmdc-customizer.php';
+require $template_directory . '/includes/class-wpmdc.php';
+require $template_directory . '/includes/class-wpmdc-assets.php';
+require $template_directory . '/includes/class-wpmdc-navigation.php';
+require $template_directory . '/includes/class-wpmdc-customizer.php';
+require $template_directory . '/includes/class-wpmdc-widget-nav-menu.php';
+require $template_directory . '/includes/class-wpmdc-widget-archives.php';
 
 /**
  * Initialize all classes.
@@ -23,4 +28,5 @@ require get_template_directory() . '/includes/class-wpmdc-customizer.php';
  */
 add_action( 'after_setup_theme', array( new WPMDC, 'init' ), 0 );
 add_action( 'after_setup_theme', array( new WPMDC_Assets, 'init' ), 0 );
+add_action( 'after_setup_theme', array( new WPMDC_Navigation, 'init' ), 0 );
 add_action( 'after_setup_theme', array( new WPMDC_Customizer, 'init' ), 0 );
