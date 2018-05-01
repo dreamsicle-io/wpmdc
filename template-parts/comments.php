@@ -25,8 +25,11 @@ if ( post_password_required() ) {
 }
 
 $comments_open = comments_open();
+$comments_number = intval( get_comments_number() );
 
-if ( $comments_open || ( get_comments_number() > 0 ) ) { ?>
+var_dump( 'assassa ' . $comments_number );
+
+if ( $comments_open || ( $comments_number > 0 ) ) { ?>
 
 	<section id="comments" class="comments-area">
 
@@ -37,9 +40,7 @@ if ( $comments_open || ( get_comments_number() > 0 ) ) { ?>
 
 			<h2><?php
 
-				$wpmdc_comment_count = intval( get_comments_number() );
-
-				if ( 1 === $wpmdc_comment_count ) {
+				if ( 1 === $comments_number ) {
 
 					printf(
 						/* translators: 1: title. */
@@ -51,8 +52,8 @@ if ( $comments_open || ( get_comments_number() > 0 ) ) { ?>
 
 					printf( // WPCS: XSS OK.
 						/* translators: 1: comment count number, 2: title. */
-						esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $wpmdc_comment_count, 'comments title', 'wpmdc' ) ),
-						number_format_i18n( $wpmdc_comment_count ),
+						esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comments_number, 'comments title', 'wpmdc' ) ),
+						number_format_i18n( $comments_number ),
 						'<span>' . esc_html( $post_title ) . '</span>'
 					);
 
