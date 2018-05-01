@@ -13,45 +13,78 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: includes/class-wpmdc.php:114
-msgid "Primary"
+#: includes/class-wpmdc-widget-archives.php:45
+msgid "Archives"
 msgstr ""
 
-#: includes/class-wpmdc.php:128
+#: includes/class-wpmdc-widget-archives.php:77
+msgid "Select Year"
+msgstr ""
+
+#: includes/class-wpmdc-widget-archives.php:80
+msgid "Select Month"
+msgstr ""
+
+#: includes/class-wpmdc-widget-archives.php:83
+msgid "Select Day"
+msgstr ""
+
+#: includes/class-wpmdc-widget-archives.php:86
+msgid "Select Week"
+msgstr ""
+
+#: includes/class-wpmdc-widget-archives.php:89
+msgid "Select Post"
+msgstr ""
+
+#. undefined
+#: includes/class-wpmdc-widget-archives.php:211, includes/class-wpmdc-widget-nav-menu.php:97
+msgid "Display graphics"
+msgstr ""
+
+#: includes/class-wpmdc-widget-nav-menu.php:82
+msgid "Display descriptions"
+msgstr ""
+
+#: includes/class-wpmdc.php:115
 msgid "Drawer"
 msgstr ""
 
-#: includes/class-wpmdc.php:130
+#: includes/class-wpmdc.php:117
 msgid "Widgets added here will appear in the drawer."
 msgstr ""
 
+#. translators: 1: current year, 2: site title link.
 #: template-parts/colophon.php:26
 msgctxt "site copyright"
 msgid "&copy; %1$d %2$s"
 msgstr ""
 
+#. translators: 1: theme author link.
 #: template-parts/colophon.php:37
 msgctxt "site designer"
 msgid "Designed by %1$s"
 msgstr ""
 
-#: template-parts/comments.php:46
+#. translators: 1: title.
+#: template-parts/comments.php:47
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
-#: template-parts/comments.php:54
+#. translators: 1: comment count number, 2: title.
+#: template-parts/comments.php:55
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: template-parts/comments.php:81
+#: template-parts/comments.php:82
 msgid "Comments are closed."
 msgstr ""
 
 #. translators: 1: post author, 2: post publish date, 3: post publish time.
-#: template-parts/content-card.php:44
+#: template-parts/content-card.php:46
 msgctxt "post card byline"
 msgid "Posted by %1$s on %2$s at %3$s"
 msgstr ""
@@ -73,5 +106,16 @@ msgid "Read More"
 msgstr ""
 
 #: template-parts/header.php:29
+msgctxt "skip link"
 msgid "Skip to Content"
+msgstr ""
+
+#: template-parts/top-app-bar.php:16
+msgctxt "top app bar drawer toggle label"
+msgid "Toggle Drawer"
+msgstr ""
+
+#: template-parts/top-app-bar.php:17
+msgctxt "top app bar actions toggle label"
+msgid "Toggle Actions"
 msgstr ""
