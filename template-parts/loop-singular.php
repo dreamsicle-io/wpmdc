@@ -23,7 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		get_template_part( 'template-parts/content-singular', $post->post_type );
 		
-		comments_template( 'template-parts/comments' );
+		// Note the opening slash and `.php` suffix.
+		comments_template( '/template-parts/comments.php' );
 
 		if ( $post->post_type !== 'page' ) {
 
