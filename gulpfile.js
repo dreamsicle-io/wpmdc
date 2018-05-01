@@ -204,7 +204,7 @@ gulp.task('build:js:customizer-controls', function customizerControlsJsBuilder()
  *	 1. Runs the `build:js:site` task. 
  *	 2. Runs the `build:js:admin` task. 
  *	 3. Runs the `build:js:customizer-preview` task. 
- *	 3. Runs the `build:js:customizer-controls` task. 
+ *	 4. Runs the `build:js:customizer-controls` task. 
  *
  * Run:
  *	 - Global command: `gulp build:js`.
@@ -239,8 +239,8 @@ gulp.task('build:pot', function potBuilder() {
  *
  * Process:
  *	 1. Process and optimize all images. 
- *	 3. Writes optimized images to the build directory.
- *	 4. Logs created files to the console.
+ *	 2. Writes optimized images to the build directory.
+ *	 3. Logs created files to the console.
  *
  * Run:
  *	 - Global command: `gulp build:images`.
