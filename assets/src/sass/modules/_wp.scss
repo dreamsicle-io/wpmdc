@@ -1,0 +1,104 @@
+// Screen reader text 
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+
+	&:focus {
+		border-radius: 3px;
+		clip: auto;
+		clip-path: none;
+		display: block;
+		font-weight: bold;
+		height: auto;
+		left: 8px;
+		line-height: normal;
+		padding: 16px 24px;
+		text-decoration: none;
+		top: 8px;
+		width: auto;
+		z-index: 100000;
+	}
+}
+
+.entry-content {
+	@include clear;
+}
+
+// Smileys
+.wp-smiley {
+	border: 0;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+// Custom logo link
+.custom-logo-link {
+	display: inline-block;
+}
+
+// Captions
+.wp-caption {
+	margin: 0 0 16px;
+	max-width: 100%;
+
+	img {
+		&[class*='wp-image-'] {
+			@include center;
+		}
+	}
+}
+
+.wp-caption-text {
+	font-size: smaller;
+	padding: 8px 16px;
+	text-align: center;
+}
+
+// Alignments
+.alignleft {
+	@include float(left);
+}
+
+.alignright {
+	@include float(right);
+}
+
+.aligncenter {
+	@include center;
+}
+
+.wp-caption,
+img {
+
+	&.alignnone {
+		@include center;
+	}
+}
+
+// Do not show the outline on the skip link target
+#content { // sass-lint:disable-line no-ids
+	&[tabindex='-1'] {
+		&:focus {
+			outline: 0;
+		}
+	}
+}
+
+// Widgets
+.widget {
+	@include clear;
+}
+
+// Avatars
+.avatar {
+	border-radius: 50%;
+}

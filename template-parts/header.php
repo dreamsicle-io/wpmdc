@@ -26,10 +26,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<a class="screen-reader-text" href="#content"><?php 
 
-			esc_html_e( 'Skip to Content', 'wpmdc' ); 
+			echo esc_html_x( 'Skip to Content', 'skip link', 'wpmdc' ); 
 			
 		?></a>
 
-		<?php get_template_part( 'template-parts/masthead' ); ?>
+		<?php get_template_part( 'template-parts/top-app-bar' ); ?>
 
-		<div id="content">
+		<div id="content" class="mdc-top-app-bar--fixed-adjust">

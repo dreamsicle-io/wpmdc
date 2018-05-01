@@ -19,7 +19,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			</div><!-- #content -->
 
-			<?php get_template_part( 'template-parts/colophon' ); ?>
+			<?php 
+			get_template_part( 'template-parts/colophon' );
+
+			get_template_part( 'template-parts/drawer' ); ?>
 
 		</div><!-- #site -->
 

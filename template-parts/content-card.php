@@ -13,6 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; 
 }
 
+global $post;
+
 $permalink = get_permalink();
 $title_attr = the_title_attribute( array( 'echo' => false ) );
 
@@ -39,8 +41,8 @@ $title_attr = the_title_attribute( array( 'echo' => false ) );
 
 	if ( $post->post_type !== 'page' ) {
 
-		/* translators: 1: post author, 2: post publish date, 3: post publish time. */
 		printf( 
+			/* translators: 1: post author, 2: post publish date, 3: post publish time. */
 			esc_html_x( 'Posted by %1$s on %2$s at %3$s', 'post card byline', 'wpmdc' ), 
 			get_the_author_posts_link(), 
 			get_the_date(), 

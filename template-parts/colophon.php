@@ -21,8 +21,8 @@ $theme = wp_get_theme();
 
 	<p><?php 
 	
-		/* translators: 1: current year, 2: site title link. */
 		printf( 
+			/* translators: 1: current year, 2: site title link. */
 			esc_html_x( '&copy; %1$d %2$s', 'site copyright', 'wpmdc' ), 
 			date( 'Y' ), 
 			'<a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>'
@@ -32,8 +32,8 @@ $theme = wp_get_theme();
 
 	<p><?php 
 		
-		/* translators: 1: theme author link. */
-		printf( 
+		printf(
+			/* translators: 1: theme author link. */ 
 			esc_html_x( 'Designed by %1$s', 'site designer', 'wpmdc' ),  
 			'<a href="' . esc_url( $theme->get( 'AuthorURI' ) ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $theme->get( 'Author' ) ) . '</a>'
 		);
