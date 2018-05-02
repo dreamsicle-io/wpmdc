@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * 
  * Core class used to implement the Archives widget.
  *
- * @since  WP 0.0.1
+ * @since  0.0.1
  * @since  WP 2.8.0
  * @since  WP 4.4.0            Parent class changed.
  * @see    WP_Widget_Archives
@@ -27,7 +27,7 @@ class WPMDC_Widget_Archives extends WP_Widget_Archives {
 	/**
 	 * Outputs the content for the current Archives widget instance.
 	 *
-	 * @since   WP 0.0.1
+	 * @since   0.0.1
 	 * @since   WP 2.8.0
 	 * @param   array     $args      Widget display arguments.
 	 * @param   array     $instance  Settings for the current widget instance.
@@ -62,8 +62,9 @@ class WPMDC_Widget_Archives extends WP_Widget_Archives {
 			/**
 			 * Filters the arguments for the Archives widget drop-down.
 			 *
-			 * @since 2.8.0
-			 * @since 4.9.0 Added the `$instance` parameter.
+			 * @since 0.0.1
+			 * @since WP 2.8.0
+			 * @since WP 4.9.0 Added the `$instance` parameter.
 			 *
 			 * @see wp_get_archives()
 			 *
@@ -135,6 +136,7 @@ class WPMDC_Widget_Archives extends WP_Widget_Archives {
 			/**
 			 * Filters the arguments for the Archives widget.
 			 *
+			 * @since  0.0.1
 			 * @since  WP 2.8.0
 			 * @since  WP 4.9.0             Added the `$instance` parameter.
 			 * @param  array     $args      An array of Archives option arguments.
@@ -161,6 +163,7 @@ class WPMDC_Widget_Archives extends WP_Widget_Archives {
 	/**
 	 * Handles updating settings for the current Archives widget instance.
 	 *
+	 * @since   0.0.1
 	 * @since   WP 2.8.0
 	 * @param   array     $new_instance  New settings for this instance as input by the user via WP_Widget_Archives::form().
 	 * @param   array     $old_instance  Old settings for this instance.
@@ -171,7 +174,7 @@ class WPMDC_Widget_Archives extends WP_Widget_Archives {
 		$instance = parent::update( $new_instance, $old_instance );
 
 		$new_instance = wp_parse_args( $new_instance, array(
-			'wpmdc_widget_graphics'     => false, 
+			'wpmdc_widget_graphics' => false, 
 		) );
 
 		$instance['wpmdc_widget_graphics'] = boolval( $new_instance['wpmdc_widget_graphics'] );
@@ -183,6 +186,7 @@ class WPMDC_Widget_Archives extends WP_Widget_Archives {
 	/**
 	 * Outputs the settings form for the Archives widget.
 	 *
+	 * @since   0.0.1
 	 * @since   WP 2.8.0
 	 * @param   array     $instance  Current settings.
 	 * @return  void
