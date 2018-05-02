@@ -39,8 +39,6 @@ class WPMDC {
 		// Hooks
 		add_action( 'after_setup_theme', array( $this, 'manage_globals' ), 0 );
 		add_action( 'after_setup_theme', array( $this, 'manage_theme_support' ), 10 );
-		add_action( 'widgets_init', array( $this, 'manage_widget_areas' ), 10 );
-		add_action( 'widgets_init', array( $this, 'manage_widgets' ), 10 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'manage_site_scripts' ), 10 );
 		add_action( 'wp_head', array( $this, 'manage_head' ), 10 );
 
@@ -101,42 +99,6 @@ class WPMDC {
 			'flex-height' => true,
 		) ) );
 		
-	}
-
-	/**
-	 * Manage Widget Areas.
-	 *
-	 * @since   0.0.1
-	 * @return  void
-	 */
-	public function manage_widget_areas() {
-
-		register_sidebar( array(
-			'name'          => esc_html__( 'Drawer', 'wpmdc' ),
-			'id'            => 'drawer',
-			'description'   => esc_html__( 'Widgets added here will appear in the drawer.', 'wpmdc' ),
-			'before_widget' => '<div id="%1$s" class="widget mdc-list-group %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="widget-title mdc-list-group__subheader">',
-			'after_title'   => '</h3>',
-		) );
-
-	}
-
-	/**
-	 * Manage Widgets.
-	 *
-	 * @since   0.0.1
-	 * @return  void
-	 */
-	public function manage_widgets() {
-
-		unregister_widget( 'WP_Nav_Menu_Widget' );
-		unregister_widget( 'WP_Widget_Archives' );
-
-		register_widget( 'WPMDC_Widget_Nav_Menu' );
-		register_widget( 'WPMDC_Widget_Archives' );
-
 	}
 
 	/**
