@@ -41,10 +41,8 @@
 .admin-bar {
 
 	.wpmdc-drawer {
-
-		.mdc-drawer__header {
-			margin-top: $admin-bar-height-mobile;
-		}
+		height: calc(100% - #{$admin-bar-height-mobile});
+		top: $admin-bar-height-mobile;
 	}
 }
 
@@ -52,10 +50,8 @@
 	.admin-bar {
 
 		.wpmdc-drawer {
-
-			.mdc-drawer__header {
-				margin-top: $admin-bar-height-desktop;
-			}
+			height: calc(100% - #{$admin-bar-height-desktop});
+			top: $admin-bar-height-desktop;
 		}
 	}
 }
