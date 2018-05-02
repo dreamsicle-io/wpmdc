@@ -13,9 +13,8 @@ export function wpmdcDrawerHeaderImagesInterval(element) {
 				if (slider) {
 					const slides = slider.querySelectorAll('.wpmdc-drawer__header-slide');
 					if (slides && (slides.length > 0)) {
-						// start the interval on slide 2 (index 1), 
-						// slide 1 (index 0) is already active on initialization.
 						intervalInst = setInterval(() => {
+							// when the slider hits the end of the slides, start over.
 							if (i >= slides.length) {
 								i = 0;
 							}
@@ -44,19 +43,16 @@ export function wpmdcDrawerHeaderImages(element) {
 			const images = JSON.parse(imagesAttr);
 			const slider = document.createElement('DIV');
 			slider.classList.add('wpmdc-drawer__header-slider');
-			let isFirstSlide = true;
-			for (var imageId in images) {
-				const image = images[imageId];
+			images.forEach((image, i) => {
 				let slide = document.createElement('DIV');
 				slide.classList.add('wpmdc-drawer__header-slide');
 				slide.style.backgroundImage = `url("${image.url}")`;
 				// activate the first slide on init.
-				if (isFirstSlide) {
+				if (i === 0) {
 					slide.classList.add('wpmdc-drawer__header-slide--active');
-					isFirstSlide = false;
 				}
 				slider.appendChild(slide);
-			}
+			});
 			element.appendChild(slider);
 		}
 	}
