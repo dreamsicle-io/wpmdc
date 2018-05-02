@@ -29,6 +29,10 @@ import { wpmdcRipples } from './modules/ripple';
 			if (widgetIdParts.idBase === 'nav_menu') {
 				wpmdcRipples(widget);
 			}
+			// Update Categories Widget
+			if (widgetIdParts.idBase === 'categories') {
+				wpmdcRipples(widget);
+			}
 		});
 
 	});
