@@ -25,7 +25,7 @@ $current_user = wp_get_current_user();
 		class="mdc-drawer__header mdc-theme--primary-bg mdc-theme--on-primary"
 		data-wpmdc-header-images='<?php echo json_encode( get_uploaded_header_images() ); ?>'>
 
-			<?php if ( $current_user ) { ?>
+			<?php if ( $current_user->ID > 0 ) { ?>
 
 				<a 
 				href="<?php echo esc_url( get_dashboard_url( $current_user->ID ) ); ?>" 
