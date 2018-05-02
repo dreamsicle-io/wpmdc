@@ -15,6 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $current_user = wp_get_current_user();
 
+$header_images = array_values( get_uploaded_header_images() );
+shuffle( $header_images );
+
 ?> 
 
 <aside id="drawer" class="wpmdc-drawer mdc-drawer mdc-drawer--temporary">
@@ -23,7 +26,7 @@ $current_user = wp_get_current_user();
 
 		<header 
 		class="mdc-drawer__header mdc-theme--primary-bg mdc-theme--on-primary"
-		data-wpmdc-header-images='<?php echo json_encode( get_uploaded_header_images() ); ?>'>
+		data-wpmdc-header-images='<?php echo json_encode( $header_images ); ?>'>
 
 			<?php if ( $current_user->ID > 0 ) { ?>
 
