@@ -17,40 +17,42 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: includes/class-wpmdc-widget-archives.php:77
+#: includes/class-wpmdc-widget-archives.php:78
 msgid "Select Year"
 msgstr ""
 
-#: includes/class-wpmdc-widget-archives.php:80
+#: includes/class-wpmdc-widget-archives.php:81
 msgid "Select Month"
 msgstr ""
 
-#: includes/class-wpmdc-widget-archives.php:83
+#: includes/class-wpmdc-widget-archives.php:84
 msgid "Select Day"
 msgstr ""
 
-#: includes/class-wpmdc-widget-archives.php:86
+#: includes/class-wpmdc-widget-archives.php:87
 msgid "Select Week"
 msgstr ""
 
-#: includes/class-wpmdc-widget-archives.php:89
+#: includes/class-wpmdc-widget-archives.php:90
 msgid "Select Post"
 msgstr ""
 
 #. undefined
-#: includes/class-wpmdc-widget-archives.php:211, includes/class-wpmdc-widget-nav-menu.php:97
+#. undefined
+#: includes/class-wpmdc-widget-archives.php:215, includes/class-wpmdc-widget-categories.php:204, includes/class-wpmdc-widget-nav-menu.php:97
 msgid "Display graphics"
 msgstr ""
 
-#: includes/class-wpmdc-widget-nav-menu.php:82
+#. undefined
+#: includes/class-wpmdc-widget-categories.php:189, includes/class-wpmdc-widget-nav-menu.php:82
 msgid "Display descriptions"
 msgstr ""
 
-#: includes/class-wpmdc.php:115
+#: includes/class-wpmdc-widgets.php:54
 msgid "Drawer"
 msgstr ""
 
-#: includes/class-wpmdc.php:117
+#: includes/class-wpmdc-widgets.php:56
 msgid "Widgets added here will appear in the drawer."
 msgstr ""
 
