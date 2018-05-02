@@ -19,7 +19,6 @@ export function wpmdcDrawerHeaderImagesInterval(element) {
 							if (i >= slides.length) {
 								i = 0;
 							}
-							console.log('yo');
 							slides.forEach((oldSlide) => {
 								if (oldSlide.classList.contains('wpmdc-drawer__header-slide--active')) {
 									oldSlide.classList.remove('wpmdc-drawer__header-slide--active');
@@ -27,7 +26,7 @@ export function wpmdcDrawerHeaderImagesInterval(element) {
 							});
 							slides[i].classList.add('wpmdc-drawer__header-slide--active');
 							i++;
-						}, 7000);
+						}, 5000);
 					}
 				}
 			}
@@ -78,12 +77,12 @@ export function wpmdcTemporaryDrawer(element) {
 		}
 		if (header) {
 			wpmdcDrawerHeaderImages(header);
-			const { start, stop } = wpmdcDrawerHeaderImagesInterval(header);
+			const intervalInst = wpmdcDrawerHeaderImagesInterval(header);
 			MDCTemporaryDrawerInst.listen('MDCTemporaryDrawer:open', (e) => {
-				start();
+				intervalInst.start();
 			});
 			MDCTemporaryDrawerInst.listen('MDCTemporaryDrawer:close', (e) => {
-				stop();
+				intervalInst.stop();
 			});
 		}
 	}
