@@ -184,8 +184,7 @@ class WPMDC_Walker_Page extends Walker {
 		 */
 		$css_classes = implode( ' ', apply_filters( 'page_css_class', $css_class, $page, $depth, $args, $current_page ) );
 
-		if ( '' === $page->post_title ) {
-			
+		if ( empty( $page->post_title ) ) {
 			$page->post_title = sprintf( 
 				/* translators: %d: ID of a post */
 				__( '#%d (no title)' ), 
@@ -193,11 +192,15 @@ class WPMDC_Walker_Page extends Walker {
 			);
 		}
 
-		$excerpt = get_the_excerpt( $page->ID );
-		// Fix the excerpt on customizer change. When the widget is 
-		// updated in the customizer, the excerpt only shows when 
-		// there is one explicitly set.
-		$excerpt = ! empty( $excerpt ) ? $excerpt : apply_filters( 'the_excerpt', wp_trim_words( strip_tags( $page->post_content ) ) );
+		if ( ! post_password_required( $page->ID ) ) {
+			$excerpt = get_the_excerpt( $page->ID );
+			// Fix the excerpt on customizer change. When the widget is 
+			// updated in the customizer, the excerpt only shows when 
+			// there is one explicitly set.
+			$excerpt = ! empty( $excerpt ) ? $excerpt : apply_filters( 'the_excerpt', wp_trim_words( strip_tags( $page->post_content ) ) );
+		} else {
+			$excerpt = '';
+		}
 
 		$args['link_before'] = empty( $args['link_before'] ) ? '' : $args['link_before'];
 		$args['link_after']  = empty( $args['link_after'] ) ? '' : $args['link_after'];
