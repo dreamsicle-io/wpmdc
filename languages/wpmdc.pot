@@ -39,13 +39,118 @@ msgstr ""
 
 #. undefined
 #. undefined
-#: includes/class-wpmdc-widget-archives.php:215, includes/class-wpmdc-widget-categories.php:204, includes/class-wpmdc-widget-nav-menu.php:97
+#. undefined
+#. undefined
+#. undefined
+#: includes/class-wpmdc-widget-archives.php:215, includes/class-wpmdc-widget-categories.php:235, includes/class-wpmdc-widget-comments.php:313, includes/class-wpmdc-widget-nav-menu.php:97, includes/class-wpmdc-widget-pages.php:289, includes/class-wpmdc-widget-posts.php:435
 msgid "Display graphics"
 msgstr ""
 
 #. undefined
-#: includes/class-wpmdc-widget-categories.php:189, includes/class-wpmdc-widget-nav-menu.php:82
+#: includes/class-wpmdc-widget-categories.php:220, includes/class-wpmdc-widget-nav-menu.php:82
 msgid "Display descriptions"
+msgstr ""
+
+#. undefined
+#: includes/class-wpmdc-widget-comments.php:32, includes/class-wpmdc-widget-comments.php:77
+msgid "Comments"
+msgstr ""
+
+#. translators: 1: comment author, 2: post title.
+#: includes/class-wpmdc-widget-comments.php:169
+msgctxt "comments widget link"
+msgid "%1$s on %2$s"
+msgstr ""
+
+#. undefined
+#. undefined
+#: includes/class-wpmdc-widget-comments.php:248, includes/class-wpmdc-widget-pages.php:205, includes/class-wpmdc-widget-posts.php:286
+msgid "Title:"
+msgstr ""
+
+#. undefined
+#: includes/class-wpmdc-widget-comments.php:265, includes/class-wpmdc-widget-posts.php:340
+msgid "Number:"
+msgstr ""
+
+#: includes/class-wpmdc-widget-comments.php:281
+msgid "The maximum number of comments to show."
+msgstr ""
+
+#. undefined
+#. undefined
+#: includes/class-wpmdc-widget-comments.php:298, includes/class-wpmdc-widget-pages.php:274, includes/class-wpmdc-widget-posts.php:420
+msgid "Display excerpts"
+msgstr ""
+
+#: includes/class-wpmdc-widget-pages.php:30
+msgid "A list of your site's Pages."
+msgstr ""
+
+#. undefined
+#: includes/class-wpmdc-widget-pages.php:34, includes/class-wpmdc-widget-pages.php:82
+msgid "Pages"
+msgstr ""
+
+#. undefined
+#: includes/class-wpmdc-widget-pages.php:222, includes/class-wpmdc-widget-posts.php:366
+msgid "Sort by:"
+msgstr ""
+
+#. undefined
+#: includes/class-wpmdc-widget-pages.php:230, includes/class-wpmdc-widget-posts.php:374
+msgid "Menu order"
+msgstr ""
+
+#. undefined
+#: includes/class-wpmdc-widget-pages.php:231, includes/class-wpmdc-widget-posts.php:375
+msgid "Title"
+msgstr ""
+
+#. undefined
+#: includes/class-wpmdc-widget-pages.php:232, includes/class-wpmdc-widget-posts.php:376
+msgid "Publish date"
+msgstr ""
+
+#. undefined
+#: includes/class-wpmdc-widget-pages.php:233, includes/class-wpmdc-widget-posts.php:377
+msgid "Modified date"
+msgstr ""
+
+#. undefined
+#: includes/class-wpmdc-widget-pages.php:234, includes/class-wpmdc-widget-posts.php:379
+msgid "ID"
+msgstr ""
+
+#. undefined
+#: includes/class-wpmdc-widget-pages.php:243, includes/class-wpmdc-widget-posts.php:388
+msgid "Exclude:"
+msgstr ""
+
+#. undefined
+#: includes/class-wpmdc-widget-pages.php:258, includes/class-wpmdc-widget-posts.php:403
+msgid "Page IDs, separated by commas."
+msgstr ""
+
+#: includes/class-wpmdc-widget-posts.php:31
+msgid "A list of your site's Posts."
+msgstr ""
+
+#. undefined
+#: includes/class-wpmdc-widget-posts.php:35, includes/class-wpmdc-widget-posts.php:102
+msgid "Posts"
+msgstr ""
+
+#: includes/class-wpmdc-widget-posts.php:305
+msgid "Post type:"
+msgstr ""
+
+#: includes/class-wpmdc-widget-posts.php:356
+msgid "The maximum number of posts to show."
+msgstr ""
+
+#: includes/class-wpmdc-widget-posts.php:378
+msgid "Comment count"
 msgstr ""
 
 #: includes/class-wpmdc-widgets.php:54
@@ -69,19 +174,19 @@ msgid "Designed by %1$s"
 msgstr ""
 
 #. translators: 1: title.
-#: template-parts/comments.php:47
+#: template-parts/comments.php:45
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
 #. translators: 1: comment count number, 2: title.
-#: template-parts/comments.php:55
+#: template-parts/comments.php:53
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: template-parts/comments.php:82
+#: template-parts/comments.php:80
 msgid "Comments are closed."
 msgstr ""
 
