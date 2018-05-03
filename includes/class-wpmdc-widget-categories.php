@@ -19,15 +19,12 @@ class WPMDC_Widget_Categories extends WP_Widget_Categories {
 	 * Outputs the content for the current Categories widget instance.
 	 *
 	 * @since      WP 2.8.0
-	 * @staticvar  bool      $first_dropdown
 	 * @param      array     $args            Display arguments.
 	 * @param      array     $instance        Settings for the current Categories widget instance.
 	 * @param      void
 	 */
 	public function widget( $args, $instance ) {
 		
-		static $first_dropdown = true;
-
 		$instance = wp_parse_args( $instance, array(
 			'title'                     => '', 
 			'count'                     => false, 
@@ -52,8 +49,7 @@ class WPMDC_Widget_Categories extends WP_Widget_Categories {
 
 		if ( $instance['dropdown'] ) {
 			
-			$form_id = ( $first_dropdown ) ? 'cat' : "{$this->id_base}-dropdown-{$this->number}";
-			$first_dropdown = false;
+			$form_id = "{$this->id_base}-dropdown-{$this->number}";
 
 			$dropdown_args = array_merge( $cat_args, array(
 				'class'             => 'mdc-select__native-control', 
