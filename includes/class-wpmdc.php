@@ -39,6 +39,7 @@ class WPMDC {
 		// Hooks
 		add_action( 'after_setup_theme', array( $this, 'manage_globals' ), 0 );
 		add_action( 'after_setup_theme', array( $this, 'manage_theme_support' ), 10 );
+		add_action( 'init', array( $this, 'manage_post_type_support' ), 20 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'manage_site_scripts' ), 10 );
 		add_action( 'wp_head', array( $this, 'manage_head' ), 10 );
 
@@ -99,6 +100,12 @@ class WPMDC {
 			'flex-height' => true,
 		) ) );
 		
+	}
+
+	public function manage_post_type_support() {
+
+		add_post_type_support( 'page', 'excerpt' );
+
 	}
 
 	/**
