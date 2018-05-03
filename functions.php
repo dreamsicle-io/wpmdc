@@ -18,8 +18,11 @@ require $template_directory . '/includes/class-wpmdc-navigation.php';
 require $template_directory . '/includes/class-wpmdc-assets.php';
 require $template_directory . '/includes/class-wpmdc-customizer.php';
 require $template_directory . '/includes/class-wpmdc-widget-nav-menu.php';
+require $template_directory . '/includes/class-wpmdc-widget-pages.php';
+require $template_directory . '/includes/class-wpmdc-widget-posts.php';
 require $template_directory . '/includes/class-wpmdc-widget-archives.php';
 require $template_directory . '/includes/class-wpmdc-widget-categories.php';
+require $template_directory . '/includes/class-wpmdc-walker-page.php';
 require $template_directory . '/includes/class-wpmdc-walker-category.php';
 
 /**
