@@ -1,47 +1,55 @@
 <?php
 /**
- * Widget API: WP_Widget_Pages class
+ * The WP Widget Pages class.
  *
  * @package    wpmdc
  * @subpackage includes
  */
 
 /**
+ * WPMDC Widget Pages.
+ * 
  * Core class used to implement a Pages widget.
  *
- * @since WP 2.8.0
- *
- * @see WP_Widget
+ * @since 0.0.1
+ * @see   WP_Widget
  */
 class WPMDC_Widget_Pages extends WP_Widget {
 
 	/**
+	 * Construct.
+	 * 
 	 * Sets up a new Pages widget instance.
 	 *
-	 * @since WP 2.8.0
+	 * @since 0.0.1
 	 */
 	public function __construct() {
 
 		$widget_ops = array(
-			'classname'                   => 'wpmdc_widget_pages',
+			'classname'                   => 'wpmdc-widget--pages',
 			'description'                 => __( 'A list of your site\'s Pages.', 'wpmdc' ),
 			'customize_selective_refresh' => true,
 		);
 
 		parent::__construct( 'wpmdc_widget_pages', __( 'Pages', 'wpmdc' ), $widget_ops );
-
+		$this->alt_option_name = 'wpmdc_widget_pages';
 	}
 
 	/**
+	 * Widget.
+	 * 
 	 * Outputs the content for the current Pages widget instance.
 	 *
-	 * @since 2.8.0
-	 *
-	 * @param array $args     Display arguments including 'before_title', 'after_title',
-	 *                        'before_widget', and 'after_widget'.
-	 * @param array $instance Settings for the current Pages widget instance.
+	 * @since   0.0.1
+	 * @param   array  $args      Display arguments including.
+	 * @param   array  $instance  Settings for the current Pages widget instance.
+	 * @return  void
 	 */
 	public function widget( $args, $instance ) {
+
+		if ( ! isset( $args['widget_id'] ) ) {
+			$args['widget_id'] = $this->id;
+		}
 
 		$instance = wp_parse_args( $instance, array(
 			'title'    => '', 
@@ -76,11 +84,11 @@ class WPMDC_Widget_Pages extends WP_Widget {
 		/**
 		 * Filters the widget title.
 		 *
-		 * @since 2.6.0
-		 *
-		 * @param string $title    The widget title. Default 'Pages'.
-		 * @param array  $instance Array of settings for the current widget.
-		 * @param mixed  $id_base  The widget ID.
+		 * @since   0.0.1
+		 * @param   string  $title     The widget title. Default 'Pages'.
+		 * @param   array   $instance  Array of settings for the current widget.
+		 * @param   mixed   $id_base   The widget ID.
+		 * @return  void 
 		 */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
@@ -99,13 +107,10 @@ class WPMDC_Widget_Pages extends WP_Widget {
 		/**
 		 * Filters the arguments for the Pages widget.
 		 *
-		 * @since 2.8.0
-		 * @since 4.9.0 Added the `$instance` parameter.
-		 *
-		 * @see wp_list_pages()
-		 *
-		 * @param array $args     An array of arguments to retrieve the pages list.
-		 * @param array $instance Array of settings for the current widget.
+		 * @since   0.0.1
+		 * @param   array  $args      An array of arguments to retrieve the pages list.
+		 * @param   array  $instance  Array of settings for the current widget.
+		 * @return  void 
 		 */
 		$list_args = apply_filters( 'wpmdc_widget_pages_list_args', $list_args, $instance );
 
@@ -144,14 +149,14 @@ class WPMDC_Widget_Pages extends WP_Widget {
 	}
 
 	/**
+	 * Update.
+	 * 
 	 * Handles updating settings for the current Pages widget instance.
 	 *
-	 * @since 2.8.0
-	 *
-	 * @param array $new_instance New settings for this instance as input by the user via
-	 *                            WP_Widget::form().
-	 * @param array $old_instance Old settings for this instance.
-	 * @return array Updated settings to save.
+	 * @since   0.0.1
+	 * @param   array  $new_instance  New settings for this instance as input by the user.
+	 * @param   array  $old_instance  Old settings for this instance.
+	 * @return  array                 Updated settings to save.
 	 */
 	public function update( $new_instance, $old_instance ) {
 		
@@ -175,11 +180,13 @@ class WPMDC_Widget_Pages extends WP_Widget {
 	}
 
 	/**
+	 * Form.
+	 * 
 	 * Outputs the settings form for the Pages widget.
 	 *
-	 * @since 2.8.0
-	 *
-	 * @param array $instance Current settings.
+	 * @since   0.0.1
+	 * @param   array  $instance  Current settings.
+	 * @return  void
 	 */
 	public function form( $instance ) {
 

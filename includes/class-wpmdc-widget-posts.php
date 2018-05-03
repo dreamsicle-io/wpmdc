@@ -1,35 +1,39 @@
 <?php
 /**
- * Widget API: WP_Widget_Pages class
+ * The WP Widget Pages class.
  *
  * @package    wpmdc
  * @subpackage includes
  */
 
 /**
- * Core class used to implement a Pages widget.
+ * WPMDC Widget Posts.
+ * 
+ * Core class used to implement a Posts widget.
  *
- * @since WP 2.8.0
- *
- * @see WP_Widget
+ * @since  0.0.1
+ * @see    WP_Widget
  */
 class WPMDC_Widget_Posts extends WP_Widget {
 
 	/**
+	 * Construct.
+	 * 
 	 * Sets up a new Pages widget instance.
 	 *
-	 * @since WP 2.8.0
+	 * @since   0.0.1
+	 * @return  void 
 	 */
 	public function __construct() {
 
 		$widget_ops = array(
-			'classname'                   => 'wpmdc_widget_posts',
+			'classname'                   => 'wpmdc-widget--posts',
 			'description'                 => __( 'A list of your site\'s Posts.', 'wpmdc' ),
 			'customize_selective_refresh' => true,
 		);
 
 		parent::__construct( 'wpmdc_widget_posts', __( 'Posts', 'wpmdc' ), $widget_ops );
-
+		$this->alt_option_name = 'wpmdc_widget_posts';
 	}
 
 	public function get_item_icon( $post ) {
@@ -48,15 +52,20 @@ class WPMDC_Widget_Posts extends WP_Widget {
 	}
 
 	/**
+	 * Widget.
+	 * 
 	 * Outputs the content for the current Pages widget instance.
 	 *
-	 * @since 2.8.0
-	 *
-	 * @param array $args     Display arguments including 'before_title', 'after_title',
-	 *                        'before_widget', and 'after_widget'.
-	 * @param array $instance Settings for the current Pages widget instance.
+	 * @since   0.0.1
+	 * @param   array  $args      Display arguments.
+	 * @param   array  $instance  Settings for the current Pages widget instance.
+	 * @return  void 
 	 */
 	public function widget( $args, $instance ) {
+
+		if ( ! isset( $args['widget_id'] ) ) {
+			$args['widget_id'] = $this->id;
+		}
 
 		$instance = wp_parse_args( $instance, array(
 			'title'     => '', 
@@ -95,11 +104,10 @@ class WPMDC_Widget_Posts extends WP_Widget {
 		/**
 		 * Filters the widget title.
 		 *
-		 * @since 2.6.0
-		 *
-		 * @param string $title    The widget title. Default 'Pages'.
-		 * @param array  $instance Array of settings for the current widget.
-		 * @param mixed  $id_base  The widget ID.
+		 * @since  0.0.1
+		 * @param  string  $title     The widget title. Default 'Pages'.
+		 * @param  array   $instance  Array of settings for the current widget.
+		 * @param  mixed   $id_base   The widget ID.
 		 */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
@@ -115,19 +123,18 @@ class WPMDC_Widget_Posts extends WP_Widget {
 			'post__not_in'        => $excluded,
 			'orderby'             => $orderby,
 			'order'               => $order,
-			'posts_per_page'      => intval( $instance['number'] ),
+			'posts_per_page'      => ( $instance['number'] > 0 ) ? intval( $instance['number'] ) : 5,
 			'post_type'           => esc_attr( $instance['post_type'] ),
 			'post_status'         => 'publish',
 			'ignore_sticky_posts' => true,
 		);
+
 		/**
 		 * Filters the arguments for the posts list.
 		 *
 		 * @since  0.0.1
-		 * @since  WP 2.8.0
-		 * @since  WP 4.9.0                   Added the `$instance` parameter.
-		 * @param  array     $get_posts_args  An array of arguments to retrieve the pages list.
-		 * @param  array     $instance        Array of settings for the current widget.
+		 * @param  array  $get_posts_args  An array of arguments to retrieve the pages list.
+		 * @param  array  $instance        Array of settings for the current widget.
 		 */
 		$get_posts_args = apply_filters( 'wpmdc_widget_posts_get_posts_args', $get_posts_args, $instance );
 		
@@ -158,11 +165,15 @@ class WPMDC_Widget_Posts extends WP_Widget {
 
 				foreach ( $posts as $post ) {
 
-					$excerpt = strip_tags( get_the_excerpt( $post->ID ) );
-					// Fix the excerpt on customizer change. When the widget is 
-					// updated in the customizer, the excerpt only shows when 
-					// there is one explicitly set.
-					$excerpt = ! empty( $excerpt ) ? $excerpt : apply_filters( 'the_excerpt', wp_trim_words( strip_tags( $post->post_content ) ) ); ?>
+					if ( ! post_password_required( $post->ID ) ) {
+						$excerpt = strip_tags( get_the_excerpt( $post->ID ) );
+						// Fix the excerpt on customizer change. When the widget is 
+						// updated in the customizer, the excerpt only shows when 
+						// there is one explicitly set.
+						$excerpt = ! empty( $excerpt ) ? $excerpt : apply_filters( 'the_excerpt', wp_trim_words( strip_tags( $post->post_content ) ) );
+					} else {
+						$excerpt = '';
+					} ?>
 
 					<a 
 					href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" 
@@ -211,14 +222,14 @@ class WPMDC_Widget_Posts extends WP_Widget {
 	}
 
 	/**
+	 * Update.
+	 * 
 	 * Handles updating settings for the current Pages widget instance.
 	 *
-	 * @since 2.8.0
-	 *
-	 * @param array $new_instance New settings for this instance as input by the user via
-	 *                            WP_Widget::form().
-	 * @param array $old_instance Old settings for this instance.
-	 * @return array Updated settings to save.
+	 * @since   0.0.1
+	 * @param   array  $new_instance  New settings for this instance as input by the user.
+	 * @param   array  $old_instance  Old settings for this instance.
+	 * @return  array                 Updated settings to save.
 	 */
 	public function update( $new_instance, $old_instance ) {
 		
@@ -238,10 +249,7 @@ class WPMDC_Widget_Posts extends WP_Widget {
 		$instance['post_type'] = esc_attr( $new_instance['post_type'] );
 		$instance['sortby'] = esc_attr( $new_instance['sortby'] );
 		$instance['exclude'] = esc_attr( $new_instance['exclude'] );
-		$instance['number'] = intval( $new_instance['number'] );
-		if ( $instance['number'] < 1 ) {
-			$instance['number'] = null;
-		}
+		$instance['number'] = absint( $new_instance['number'] );
 		$instance['excerpts'] = boolval( $new_instance['excerpts'] );
 		$instance['graphics'] = boolval( $new_instance['graphics'] );
 
@@ -249,11 +257,13 @@ class WPMDC_Widget_Posts extends WP_Widget {
 	}
 
 	/**
+	 * Form.
+	 * 
 	 * Outputs the settings form for the Pages widget.
 	 *
-	 * @since 2.8.0
-	 *
-	 * @param array $instance Current settings.
+	 * @since   0.0.1
+	 * @param   array  $instance  Current settings.
+	 * @return  void 
 	 */
 	public function form( $instance ) {
 
@@ -334,11 +344,12 @@ class WPMDC_Widget_Posts extends WP_Widget {
 			<input 
 			type="number" 
 			min="1"
-			step="1"
-			class="widefat" 
+			step="1"  
+			size="3"
+			class="tiny-text" 
 			id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" 
 			name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" 
-			value="<?php echo esc_attr( $instance['number'] ); ?>" />
+			value="<?php echo intval( $instance['number'] ); ?>" />
 
 			<small><?php 
 
