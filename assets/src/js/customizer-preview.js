@@ -20,17 +20,20 @@ import { wpmdcRipples } from './modules/ripple';
 		wp.customize.selectiveRefresh.bind('widget-updated', (e) => {
 			const { widgetId, widgetIdParts } = e;
 			const widget = document.getElementById(widgetId);
-			// Update Archives Widget
-			if (widgetIdParts.idBase === 'archives') {
-				wpmdcSelects(widget);
-				wpmdcRipples(widget);
-			}
 			// Update Nav Menu Widget
 			if (widgetIdParts.idBase === 'nav_menu') {
 				wpmdcRipples(widget);
-			}
-			// Update Categories Widget
-			if (widgetIdParts.idBase === 'categories') {
+			} else if (widgetIdParts.idBase === 'wpmdc_widget_pages') {
+				wpmdcRipples(widget);
+			} else if (widgetIdParts.idBase === 'wpmdc_widget_posts') {
+				wpmdcRipples(widget);
+			} else if (widgetIdParts.idBase === 'wpmdc_widget_comments') {
+				wpmdcRipples(widget);
+			} else if (widgetIdParts.idBase === 'archives') {
+				wpmdcSelects(widget);
+				wpmdcRipples(widget);
+			} else if (widgetIdParts.idBase === 'categories') {
+				wpmdcSelects(widget);
 				wpmdcRipples(widget);
 			}
 		});
