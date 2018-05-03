@@ -73,10 +73,14 @@ class WPMDC_Widgets {
 		unregister_widget( 'WP_Nav_Menu_Widget' );
 		unregister_widget( 'WP_Widget_Archives' );
 		unregister_widget( 'WP_Widget_Categories' );
+		unregister_widget( 'WP_Widget_Pages' );
+		unregister_widget( 'WP_Widget_Recent_Posts' );
 
 		register_widget( 'WPMDC_Widget_Nav_Menu' );
 		register_widget( 'WPMDC_Widget_Archives' );
 		register_widget( 'WPMDC_Widget_Categories' );
+		register_widget( 'WPMDC_Widget_Pages' );
+		register_widget( 'WPMDC_Widget_Posts' );
 
 	}
 
