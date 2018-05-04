@@ -47,3 +47,25 @@
 @mixin ramp($from: rgba(0, 0, 0, 0.12), $to: rgba(0, 0, 0, 0.48), $direction: bottom) {
 	background: linear-gradient(to $direction, $from 0%, $to 100%);
 }
+
+@mixin contain($device: 'desktop') {
+	@if ($device == 'phone') {
+		max-width: $wpmdc-contain-phone-width;
+	} @else if ($device == 'tablet') {
+		max-width: $wpmdc-contain-tablet-width;
+	} @else {
+		max-width: $wpmdc-contain-desktop-width;
+	}
+}
+
+@mixin adjust-children {
+	> *:first-child {
+		margin-top: 0;
+		padding-top: 0;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+}
