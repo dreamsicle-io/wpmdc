@@ -21,7 +21,7 @@ $excerpt = get_the_excerpt( $post->ID );
 
 ?>
 
-<article id="<?php echo esc_attr( $post->post_type . '_' . $post->ID ); ?>" <?php post_class( 'wpmdc-card mdc-card' ); ?>>
+<article id="<?php echo esc_attr( $post->post_type . '_' . $post->ID ); ?>" <?php post_class( 'wpmdc-card mdc-card mdc-typography--body2' ); ?>>
 	
 	<a 
 	href="<?php echo esc_url( $permalink ); ?>" 
@@ -39,9 +39,9 @@ $excerpt = get_the_excerpt( $post->ID );
 		
 		<div class="wpmdc-card__content">
 
-			<?php the_title( '<h3 class="mdc-typography--headline6">', '</h3>' ); ?>
+			<?php the_title( '<h3 class="wpmdc-card__title mdc-typography--headline5">', '</h3>' ); ?>
 
-			<h4 class="mdc-typography--subtitle2"><?php 
+			<h4 class="wpmdc-card__subtitle mdc-typography--caption"><?php 
 
 				if ( $post->post_type === 'post' ) {
 
