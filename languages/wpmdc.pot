@@ -161,6 +161,14 @@ msgstr ""
 msgid "Widgets added here will appear in the drawer."
 msgstr ""
 
+#: includes/class-wpmdc-widgets.php:64
+msgid "Footer"
+msgstr ""
+
+#: includes/class-wpmdc-widgets.php:66
+msgid "Widgets added here will appear in the footer."
+msgstr ""
+
 #. translators: 1: current year, 2: site title link.
 #: template-parts/colophon.php:26
 msgctxt "site copyright"
@@ -191,7 +199,7 @@ msgid "Comments are closed."
 msgstr ""
 
 #. translators: 1: post author, 2: post publish date, 3: post publish time.
-#: template-parts/content-card.php:46
+#: template-parts/content-card.php:50
 msgctxt "post card byline"
 msgid "Posted by %1$s on %2$s at %3$s"
 msgstr ""
@@ -215,6 +223,10 @@ msgstr ""
 #: template-parts/header.php:29
 msgctxt "skip link"
 msgid "Skip to Content"
+msgstr ""
+
+#: template-parts/hero.php:77
+msgid "Search"
 msgstr ""
 
 #: template-parts/top-app-bar.php:16
