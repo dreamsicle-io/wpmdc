@@ -22,7 +22,7 @@ shuffle( $header_images );
 
 <aside id="drawer" class="wpmdc-drawer mdc-drawer mdc-drawer--temporary">
 
-	<div class="mdc-drawer__drawer">
+	<div class="mdc-drawer__drawer mdc-theme--surface mdc-theme--on-surface">
 
 		<header 
 		class="mdc-drawer__header mdc-theme--primary-bg mdc-theme--on-primary"
