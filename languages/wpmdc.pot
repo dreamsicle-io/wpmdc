@@ -30,9 +30,21 @@ msgid "Widgets added here will appear in the footer."
 msgstr ""
 
 #. undefined
-#. undefined
-#: includes/tags/hero.php:29, includes/tags/hero.php:75, includes/tags/hero.php:121
+#: includes/tags/hero.php:29, includes/tags/hero.php:79
 msgid "Search"
+msgstr ""
+
+#: includes/tags/hero.php:33
+msgid "Nothing Found"
+msgstr ""
+
+#: includes/tags/hero.php:83
+msgid "404"
+msgstr ""
+
+#: includes/tags/hero.php:133
+msgctxt "404 hero description"
+msgid "Well, this is embarassing. The page you're looking for has either moved, or was never here to begin with. Check the URL or try a search."
 msgstr ""
 
 #: includes/widgets/class-wpmdc-widget-archives.php:45
@@ -216,12 +228,12 @@ msgid "Nothing Found."
 msgstr ""
 
 #. translators: 1: post author, 2: post publish date, 3: post publish time.
-#: template-parts/content-singular.php:45
+#: template-parts/content-singular.php:32
 msgctxt "singular post byline"
 msgid "Posted by %1$s on %2$s at %3$s"
 msgstr ""
 
-#: template-parts/content-singular.php:53
+#: template-parts/content-singular.php:40
 msgctxt "post content read more link"
 msgid "Read More"
 msgstr ""
