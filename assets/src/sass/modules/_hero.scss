@@ -6,6 +6,10 @@
 
 	&__content {
 		@include adjust-children;
+		align-items: center;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
 		text-align: center;
 	}
 }

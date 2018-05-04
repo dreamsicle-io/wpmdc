@@ -28,6 +28,10 @@ if ( ! function_exists( 'wpmdc_get_hero_overline' ) ) {
 
 			$overline = __( 'Search', 'wpmdc' );
 
+		} elseif ( is_404() ) {
+
+			$overline = __( 'Nothing Found', 'wpmdc' );
+
 		} 
 
 		return apply_filters( 'wpmdc_hero_overline', $overline );
@@ -74,6 +78,10 @@ if ( ! function_exists( 'wpmdc_get_hero_title' ) ) {
 
 			$title = __( 'Search', 'wpmdc' );
 
+		} elseif ( is_404() ) {
+
+			$title = __( '404', 'wpmdc' );
+
 		} 
 
 		return apply_filters( 'wpmdc_hero_title', $title );
@@ -106,7 +114,7 @@ if ( ! function_exists( 'wpmdc_get_hero_description' ) ) {
 
 		if ( is_singular() || ( is_home() && ! is_front_page() ) ) {
 
-			$description = single_post_title( '', false );
+			$description = get_the_excerpt();
 
 		} elseif ( is_front_page() ) {
 
@@ -114,11 +122,15 @@ if ( ! function_exists( 'wpmdc_get_hero_description' ) ) {
 			
 		} elseif ( is_archive() ) {
 
-			$description = get_the_archive_title();
+			$description = strip_tags( get_the_archive_description() );
 
 		} elseif ( is_search() ) {
 
-			$description = __( 'Search', 'wpmdc' );
+			$description = get_search_query();
+
+		} elseif ( is_404() ) {
+
+			$description = _x( 'Well, this is embarassing. The page you\'re looking for has either moved, or was never here to begin with. Check the URL or try a search.', '404 hero description', 'wpmdc' );
 
 		} 
 
@@ -132,7 +144,7 @@ if ( ! function_exists( 'wpmdc_hero_description' ) ) {
 
 	function wpmdc_hero_description( $before = '', $after = '' ) {
 
-		$description = wpmdc_get_hero_title();
+		$description = wpmdc_get_hero_description();
 
 		if ( ! empty( $description ) ) {
 
