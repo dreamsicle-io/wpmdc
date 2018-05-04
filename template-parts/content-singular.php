@@ -36,7 +36,7 @@ $title_attr = the_title_attribute( array( 'echo' => false ) );
 
 	<?php }
 	
-	the_title( '<h2>', '</h2>' );
+	the_title( '<h1 class="wpmdc-no-margin-top">', '</h1>' );
 
 	if ( $post->post_type !== 'page' ) {
 
