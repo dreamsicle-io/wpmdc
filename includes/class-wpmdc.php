@@ -2,7 +2,7 @@
 /**
  * WPMDC Theme Setup Class.
  *
- * @package wpmdc
+ * @package    wpmdc
  * @subpackage includes
  */
 
