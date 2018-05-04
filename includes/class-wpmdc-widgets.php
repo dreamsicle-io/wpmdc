@@ -54,7 +54,17 @@ class WPMDC_Widgets {
 			'name'          => esc_html__( 'Drawer', 'wpmdc' ),
 			'id'            => 'drawer',
 			'description'   => esc_html__( 'Widgets added here will appear in the drawer.', 'wpmdc' ),
-			'before_widget' => '<div id="%1$s" class="widget mdc-list-group %2$s">',
+			'before_widget' => '<div id="%1$s" class="%2$s widget mdc-list-group">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title mdc-list-group__subheader">',
+			'after_title'   => '</h3>',
+		) );
+
+		register_sidebar( array(
+			'name'          => esc_html__( 'Footer', 'wpmdc' ),
+			'id'            => 'footer',
+			'description'   => esc_html__( 'Widgets added here will appear in the footer.', 'wpmdc' ),
+			'before_widget' => '<div id="%1$s" class="%2$s widget mdc-list-group mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title mdc-list-group__subheader">',
 			'after_title'   => '</h3>',
