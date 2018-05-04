@@ -1,0 +1,6 @@
+.wpmdc-section {
+	@include clear;
+	@include adjust-children;
+	padding-bottom: 96px;
+	padding-top: 96px;
+}
