@@ -6,6 +6,11 @@
 		padding: 20px;
 	}
 
+	&__title,
+	&__subtitle {
+		margin: 0 0 12px;
+	}
+
 	.mdc-card__primary-action {
 		flex-grow: 1;
 	}
