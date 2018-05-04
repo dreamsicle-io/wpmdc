@@ -13,146 +13,6 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: includes/class-wpmdc-widget-archives.php:45
-msgid "Archives"
-msgstr ""
-
-#: includes/class-wpmdc-widget-archives.php:78
-msgid "Select Year"
-msgstr ""
-
-#: includes/class-wpmdc-widget-archives.php:81
-msgid "Select Month"
-msgstr ""
-
-#: includes/class-wpmdc-widget-archives.php:84
-msgid "Select Day"
-msgstr ""
-
-#: includes/class-wpmdc-widget-archives.php:87
-msgid "Select Week"
-msgstr ""
-
-#: includes/class-wpmdc-widget-archives.php:90
-msgid "Select Post"
-msgstr ""
-
-#. undefined
-#. undefined
-#. undefined
-#. undefined
-#. undefined
-#: includes/class-wpmdc-widget-archives.php:215, includes/class-wpmdc-widget-categories.php:235, includes/class-wpmdc-widget-comments.php:313, includes/class-wpmdc-widget-nav-menu.php:97, includes/class-wpmdc-widget-pages.php:289, includes/class-wpmdc-widget-posts.php:435
-msgid "Display graphics"
-msgstr ""
-
-#. undefined
-#: includes/class-wpmdc-widget-categories.php:220, includes/class-wpmdc-widget-nav-menu.php:82
-msgid "Display descriptions"
-msgstr ""
-
-#. undefined
-#: includes/class-wpmdc-widget-comments.php:32, includes/class-wpmdc-widget-comments.php:77
-msgid "Comments"
-msgstr ""
-
-#. translators: 1: comment author, 2: post title.
-#: includes/class-wpmdc-widget-comments.php:169
-msgctxt "comments widget link"
-msgid "%1$s on %2$s"
-msgstr ""
-
-#. undefined
-#. undefined
-#: includes/class-wpmdc-widget-comments.php:248, includes/class-wpmdc-widget-pages.php:205, includes/class-wpmdc-widget-posts.php:286
-msgid "Title:"
-msgstr ""
-
-#. undefined
-#: includes/class-wpmdc-widget-comments.php:265, includes/class-wpmdc-widget-posts.php:340
-msgid "Number:"
-msgstr ""
-
-#: includes/class-wpmdc-widget-comments.php:281
-msgid "The maximum number of comments to show."
-msgstr ""
-
-#. undefined
-#. undefined
-#: includes/class-wpmdc-widget-comments.php:298, includes/class-wpmdc-widget-pages.php:274, includes/class-wpmdc-widget-posts.php:420
-msgid "Display excerpts"
-msgstr ""
-
-#: includes/class-wpmdc-widget-pages.php:30
-msgid "A list of your site's Pages."
-msgstr ""
-
-#. undefined
-#: includes/class-wpmdc-widget-pages.php:34, includes/class-wpmdc-widget-pages.php:82
-msgid "Pages"
-msgstr ""
-
-#. undefined
-#: includes/class-wpmdc-widget-pages.php:222, includes/class-wpmdc-widget-posts.php:366
-msgid "Sort by:"
-msgstr ""
-
-#. undefined
-#: includes/class-wpmdc-widget-pages.php:230, includes/class-wpmdc-widget-posts.php:374
-msgid "Menu order"
-msgstr ""
-
-#. undefined
-#: includes/class-wpmdc-widget-pages.php:231, includes/class-wpmdc-widget-posts.php:375
-msgid "Title"
-msgstr ""
-
-#. undefined
-#: includes/class-wpmdc-widget-pages.php:232, includes/class-wpmdc-widget-posts.php:376
-msgid "Publish date"
-msgstr ""
-
-#. undefined
-#: includes/class-wpmdc-widget-pages.php:233, includes/class-wpmdc-widget-posts.php:377
-msgid "Modified date"
-msgstr ""
-
-#. undefined
-#: includes/class-wpmdc-widget-pages.php:234, includes/class-wpmdc-widget-posts.php:379
-msgid "ID"
-msgstr ""
-
-#. undefined
-#: includes/class-wpmdc-widget-pages.php:243, includes/class-wpmdc-widget-posts.php:388
-msgid "Exclude:"
-msgstr ""
-
-#. undefined
-#: includes/class-wpmdc-widget-pages.php:258, includes/class-wpmdc-widget-posts.php:403
-msgid "Page IDs, separated by commas."
-msgstr ""
-
-#: includes/class-wpmdc-widget-posts.php:31
-msgid "A list of your site's Posts."
-msgstr ""
-
-#. undefined
-#: includes/class-wpmdc-widget-posts.php:35, includes/class-wpmdc-widget-posts.php:102
-msgid "Posts"
-msgstr ""
-
-#: includes/class-wpmdc-widget-posts.php:305
-msgid "Post type:"
-msgstr ""
-
-#: includes/class-wpmdc-widget-posts.php:356
-msgid "The maximum number of posts to show."
-msgstr ""
-
-#: includes/class-wpmdc-widget-posts.php:378
-msgid "Comment count"
-msgstr ""
-
 #: includes/class-wpmdc-widgets.php:54
 msgid "Drawer"
 msgstr ""
@@ -167,6 +27,152 @@ msgstr ""
 
 #: includes/class-wpmdc-widgets.php:66
 msgid "Widgets added here will appear in the footer."
+msgstr ""
+
+#. undefined
+#. undefined
+#: includes/tags/hero.php:29, includes/tags/hero.php:75, includes/tags/hero.php:121
+msgid "Search"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-archives.php:45
+msgid "Archives"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-archives.php:78
+msgid "Select Year"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-archives.php:81
+msgid "Select Month"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-archives.php:84
+msgid "Select Day"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-archives.php:87
+msgid "Select Week"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-archives.php:90
+msgid "Select Post"
+msgstr ""
+
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#: includes/widgets/class-wpmdc-widget-archives.php:215, includes/widgets/class-wpmdc-widget-categories.php:235, includes/widgets/class-wpmdc-widget-comments.php:313, includes/widgets/class-wpmdc-widget-nav-menu.php:97, includes/widgets/class-wpmdc-widget-pages.php:289, includes/widgets/class-wpmdc-widget-posts.php:435
+msgid "Display graphics"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-categories.php:220, includes/widgets/class-wpmdc-widget-nav-menu.php:82
+msgid "Display descriptions"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-comments.php:32, includes/widgets/class-wpmdc-widget-comments.php:77
+msgid "Comments"
+msgstr ""
+
+#. translators: 1: comment author, 2: post title.
+#: includes/widgets/class-wpmdc-widget-comments.php:169
+msgctxt "comments widget link"
+msgid "%1$s on %2$s"
+msgstr ""
+
+#. undefined
+#. undefined
+#: includes/widgets/class-wpmdc-widget-comments.php:248, includes/widgets/class-wpmdc-widget-pages.php:205, includes/widgets/class-wpmdc-widget-posts.php:286
+msgid "Title:"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-comments.php:265, includes/widgets/class-wpmdc-widget-posts.php:340
+msgid "Number:"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-comments.php:281
+msgid "The maximum number of comments to show."
+msgstr ""
+
+#. undefined
+#. undefined
+#: includes/widgets/class-wpmdc-widget-comments.php:298, includes/widgets/class-wpmdc-widget-pages.php:274, includes/widgets/class-wpmdc-widget-posts.php:420
+msgid "Display excerpts"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-pages.php:30
+msgid "A list of your site's Pages."
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:34, includes/widgets/class-wpmdc-widget-pages.php:82
+msgid "Pages"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:222, includes/widgets/class-wpmdc-widget-posts.php:366
+msgid "Sort by:"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:230, includes/widgets/class-wpmdc-widget-posts.php:374
+msgid "Menu order"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:231, includes/widgets/class-wpmdc-widget-posts.php:375
+msgid "Title"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:232, includes/widgets/class-wpmdc-widget-posts.php:376
+msgid "Publish date"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:233, includes/widgets/class-wpmdc-widget-posts.php:377
+msgid "Modified date"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:234, includes/widgets/class-wpmdc-widget-posts.php:379
+msgid "ID"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:243, includes/widgets/class-wpmdc-widget-posts.php:388
+msgid "Exclude:"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:258, includes/widgets/class-wpmdc-widget-posts.php:403
+msgid "Page IDs, separated by commas."
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-posts.php:31
+msgid "A list of your site's Posts."
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-posts.php:35, includes/widgets/class-wpmdc-widget-posts.php:102
+msgid "Posts"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-posts.php:305
+msgid "Post type:"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-posts.php:356
+msgid "The maximum number of posts to show."
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-posts.php:378
+msgid "Comment count"
 msgstr ""
 
 #. translators: 1: current year, 2: site title link.
@@ -223,10 +229,6 @@ msgstr ""
 #: template-parts/header.php:29
 msgctxt "skip link"
 msgid "Skip to Content"
-msgstr ""
-
-#: template-parts/hero.php:77
-msgid "Search"
 msgstr ""
 
 #: template-parts/top-app-bar.php:16
