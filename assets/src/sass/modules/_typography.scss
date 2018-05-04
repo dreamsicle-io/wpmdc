@@ -1,25 +1,45 @@
 h1 {
 	@include mdc-typography('headline1');
+	margin: 40px 0;
 }
 
 h2 {
 	@include mdc-typography('headline2');
+	margin: 36px 0;
 }
 
 h3 {
 	@include mdc-typography('headline3');
+	margin: 32px 0;
 }
 
 h4 {
 	@include mdc-typography('headline4');
+	margin: 24px 0;
 }
 
 h5 {
 	@include mdc-typography('headline5');
+	margin: 20px 0;
+
 }
 
 h6 {
 	@include mdc-typography('headline6');
+	margin: 16px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	word-wrap: break-word;
+}
+
+p {
+	margin: 16px 0;
 }
 
 .wp-caption-text {
