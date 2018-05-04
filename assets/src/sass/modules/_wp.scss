@@ -28,7 +28,13 @@
 	}
 }
 
+.entry-excerpt,
 .entry-content {
+	@include clear;
+	@include adjust-children;
+}
+
+.hentry {
 	@include clear;
 }
 
