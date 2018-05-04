@@ -10,7 +10,7 @@
 
 if ( is_active_sidebar( 'footer' ) ) { ?>
 
-	<section id="footer_widgets" class="wpmdc-section">
+	<section id="footer_widgets" class="wpmdc-section mdc-theme--surface mdc-theme--on-surface mdc-elevation--z4">
 
 		<?php if ( is_active_sidebar( 'footer' ) ) { ?>
 
