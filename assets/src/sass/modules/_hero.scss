@@ -1,0 +1,11 @@
+.wpmdc-hero {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	min-height: 80vh;
+
+	&__content {
+		@include adjust-children;
+		text-align: center;
+	}
+}
