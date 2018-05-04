@@ -21,72 +21,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="mdc-layout-grid__inner">
 
-			<div class="wpmdc-hero__content mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+			<div class="wpmdc-hero__content mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone"><?php 
 
-				<?php if ( is_singular() || ( is_home() && ! is_front_page() ) ) { ?>
+				wpmdc_hero_overline( '<p class="wpmdc-hero__overline mdc-typography--overline wpmdc-no-margin">', '</p>' );
 
-					<p class="mdc-typography--overline wpmdc-no-margin"><?php 
+				wpmdc_hero_title( '<h1 class="wpmdc-hero__title">', '</h1>' );
 
-						single_post_title();
+				wpmdc_hero_description( '<p class="wpmdc-hero__description wpmdc-no-margin">', '</p>' );
 
-					?></p>
-
-					<h1><?php 
-
-						single_post_title();
-
-					?></h1>
-
-				<?php } elseif ( is_front_page() ) { ?>
-
-					<span class="mdc-typography--overline"><?php 
-
-						bloginfo( 'name' );
-
-					?></span>
-
-					<h1><?php 
-
-						bloginfo( 'name' );
-
-					?></h1>
-
-					<p class="wpmdc-no-margin"><?php 
-
-						bloginfo( 'description' );
-
-					?></p>
-
-				<?php } elseif ( is_archive() ) { ?>
-
-					<span class="mdc-typography--overline"><?php 
-
-						the_archive_title();
-
-					?></span>
-
-					<?php 
-					the_archive_title( '<h1>', '</h1>' );
-
-					the_archive_description( '<div class="wpmdc-no-margin">', '</div>' );
-
-				} elseif ( is_search() ) { ?>
-
-					<span class="mdc-typography--overline"><?php 
-
-						esc_html_e( 'Search', 'wpmdc' );
-
-					?></span>
-
-					<h1><?php 
-
-						the_search_query();
-
-					?></h1>
-
-				<?php } ?>
-
-			</div>
+			?></div>
 
 		</div>
 
