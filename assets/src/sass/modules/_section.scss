@@ -1,6 +1,16 @@
 .wpmdc-section {
 	@include clear;
 	@include adjust-children;
-	padding-bottom: 96px;
-	padding-top: 96px;
+	padding-bottom: $wpmdc-section-spacing;
+	padding-top: $wpmdc-section-spacing;
+
+	&--pull-top {
+		margin-top: -#{$wpmdc-section-spacing};
+		padding-top: 0;
+	}
+
+	&--pull-bottom {
+		margin-bottom: -#{$wpmdc-section-spacing};
+		padding-bottom: 0;
+	}
 }

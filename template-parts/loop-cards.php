@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<section class="wpmdc-section"><?php 
+<section class="wpmdc-section wpmdc-section--pull-top"><?php 
 
 	if ( have_posts() ) { ?>
 
