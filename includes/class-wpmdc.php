@@ -41,7 +41,7 @@ class WPMDC {
 		add_action( 'after_setup_theme', array( $this, 'manage_theme_support' ), 10 );
 		add_action( 'init', array( $this, 'manage_post_type_support' ), 20 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'manage_site_scripts' ), 10 );
-		add_action( 'wp_head', array( $this, 'manage_head' ), 10 );
+		add_action( 'wp_head', array( $this, 'manage_head' ), 0 );
 
 		// Filters
 		add_filter( 'body_class', array( $this, 'manage_body_classes' ), 10 );
@@ -151,16 +151,34 @@ class WPMDC {
 	 * @since   0.0.1
 	 * @return  void
 	 */
-	public function manage_head() { ?>
+	public function manage_head() { 
+
+		$is_singular = is_singular(); ?>
 
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 		<meta name="theme-color" content="#000000">
+
+		<?php if ( $is_singular ) {
+
+			$post = get_queried_object();
+			$excerpt = $post->post_excerpt ? $post->post_excerpt : $post->post_content;
+			$excerpt = apply_filters( 'get_the_excerpt', $post->post_excerpt ? $post->post_excerpt : $post->post_content );
+			$excerpt = wp_trim_words( strip_tags( $excerpt ), 25 ); ?>
+			
+			<meta property="og:url" content="<?php the_permalink(); ?>" />
+			<meta property="og:type" content="article" />
+			<meta property="og:title" content="<?php the_title_attribute(); ?>" />
+			<meta property="og:description" content="<?php echo esc_attr( $excerpt ); ?>" />
+			<meta property="og:image" content="<?php the_post_thumbnail_url( 'full' ); ?>" />
+		
+		<?php } ?>
+
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-		<?php if ( is_singular() && pings_open() ) { ?>
+		<?php if ( $is_singular && pings_open() ) { ?>
 			<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>" />
 		<?php }
 
