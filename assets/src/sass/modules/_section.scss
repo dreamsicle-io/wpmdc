@@ -3,6 +3,7 @@
 	@include adjust-children;
 	padding-bottom: $wpmdc-section-spacing;
 	padding-top: $wpmdc-section-spacing;
+	position: relative;
 
 	&--pull-top {
 		margin-top: -#{$wpmdc-section-spacing};
