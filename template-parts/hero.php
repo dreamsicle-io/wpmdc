@@ -15,7 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<header class="wpmdc-hero mdc-theme--primary-bg mdc-theme--on-primary">
+<header 
+class="wpmdc-hero mdc-theme--primary-bg mdc-theme--on-primary"
+style="background-image:url('<?php wpmdc_hero_background_url(); ?>');">
 
 	<div class="mdc-layout-grid wpmdc-contain-tablet">
 
@@ -27,11 +29,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				if ( is_singular() ) {
 				
-					wpmdc_hero_title( '<h1 class="mdc-typography--headline2">', '</h1>' );
+					wpmdc_hero_title( '<h2 class="mdc-typography--headline2">', '</h2>' );
 
 				} else {
 
-					wpmdc_hero_title( '<h2 class="mdc-typography--headline2">', '</h2>' );
+					wpmdc_hero_title( '<h1 class="mdc-typography--headline2">', '</h1>' );
 
 				}
 
