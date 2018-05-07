@@ -254,7 +254,7 @@ class WPMDC_Navigation {
    					
    					<span class="mdc-list-item__text"><?php 
 
-   						echo ( esc_html( $text ) ); 
+   						echo esc_html( $text ); 
 
    					?></span>
 
