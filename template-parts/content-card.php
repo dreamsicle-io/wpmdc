@@ -26,7 +26,6 @@ $excerpt = get_the_excerpt( $post->ID );
 	<a 
 	href="<?php echo esc_url( $permalink ); ?>" 
 	class="mdc-card__primary-action mdc-ripple-surface"
-	title="<?php echo esc_attr( $title_attr ); ?>"
 	rel="bookmark">
 
 		<?php if ( has_post_thumbnail() ) { ?>
