@@ -18,7 +18,7 @@ $actions_toggle_label = _x( 'Toggle Actions', 'top app bar actions toggle label'
 
 ?>
 
-<header class="wpmdc-top-app-bar mdc-top-app-bar mdc-theme--primary-bg mdc-theme--on-primary">
+<header class="wpmdc-top-app-bar mdc-top-app-bar">
 
 	<div class="mdc-top-app-bar__row">
 
@@ -31,15 +31,26 @@ $actions_toggle_label = _x( 'Toggle Actions', 'top app bar actions toggle label'
 			alt="<?php echo esc_attr( $drawer_toggle_label ); ?>"
 			aria-label="<?php echo esc_attr( $drawer_toggle_label ); ?>">menu</button>
 
-			<a 
-			class="mdc-top-app-bar__title mdc-theme--on-primary"
-			href="<?php echo esc_url( home_url( '/' ) ); ?>" 
-			title="<?php echo esc_attr( get_bloginfo( 'description' ) ) ?>"
-			rel="home"><?php 
+			<?php 
+			if ( is_author() ) {
 
-				bloginfo( 'name' ); 
+				$author = get_queried_object();
 
-			?></a>
+				echo get_avatar( 
+					sanitize_email( $author->user_email ), 
+					112, 
+					'', 
+					esc_attr( $author->display_name ), 
+					array(
+						'height' => 40, 
+						'width'  => 40, 
+						'class'  => array( 'mdc-elevation--z2' ), 
+					) 
+				);
+
+			} ?>
+
+			<?php wpmdc_top_app_bar_title( '<h4 class="mdc-top-app-bar__title">', '</h4>'); ?>
 
 		</section>
 
