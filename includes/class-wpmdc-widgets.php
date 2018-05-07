@@ -54,7 +54,7 @@ class WPMDC_Widgets {
 			'name'          => esc_html__( 'Drawer', 'wpmdc' ),
 			'id'            => 'drawer',
 			'description'   => esc_html__( 'Widgets added here will appear in the drawer.', 'wpmdc' ),
-			'before_widget' => '<div id="%1$s" class="%2$s widget mdc-list-group">',
+			'before_widget' => '<div id="%1$s" class="widget wpmdc-widget %2$s mdc-list-group">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title mdc-list-group__subheader">',
 			'after_title'   => '</h3>',
@@ -64,7 +64,7 @@ class WPMDC_Widgets {
 			'name'          => esc_html__( 'Footer', 'wpmdc' ),
 			'id'            => 'footer',
 			'description'   => esc_html__( 'Widgets added here will appear in the footer.', 'wpmdc' ),
-			'before_widget' => '<div id="%1$s" class="%2$s widget mdc-list-group mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">',
+			'before_widget' => '<div id="%1$s" class="widget wpmdc-widget %2$s mdc-list-group mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title mdc-list-group__subheader">',
 			'after_title'   => '</h3>',
@@ -89,7 +89,7 @@ class WPMDC_Widgets {
 
 		register_widget( 'WPMDC_Widget_Nav_Menu' );
 		register_widget( 'WPMDC_Widget_Archives' );
-		register_widget( 'WPMDC_Widget_Categories' );
+		register_widget( 'WPMDC_Widget_Terms' );
 		register_widget( 'WPMDC_Widget_Pages' );
 		register_widget( 'WPMDC_Widget_Posts' );
 		register_widget( 'WPMDC_Widget_Comments' );
