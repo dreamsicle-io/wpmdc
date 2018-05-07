@@ -15,23 +15,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<section><?php 
+<section class="wpmdc-section wpmdc-section--pull-top"><?php 
 	
 	while ( have_posts() ) { the_post();
 
-		global $post;
+		global $post; ?>
 
-		get_template_part( 'template-parts/content-singular', $post->post_type );
-		
-		// Note the opening slash and `.php` suffix.
-		comments_template( '/template-parts/comments.php' );
+		<div class="mdc-layout-grid wpmdc-contain-tablet">
 
-		if ( $post->post_type !== 'page' ) {
+			<div class="mdc-layout-grid__inner">
 
-			the_post_navigation();
+				<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone"><?php 
 
-		}
+					get_template_part( 'template-parts/content-singular', $post->post_type );
+					
+					// Note the opening slash and `.php` suffix.
+					comments_template( '/template-parts/comments.php' );
 
-	}
+					if ( $post->post_type !== 'page' ) {
+
+						the_post_navigation();
+
+					}
+
+				?></div>
+
+			</div>
+
+		</div>
+
+	<?php }
 
 ?></section>

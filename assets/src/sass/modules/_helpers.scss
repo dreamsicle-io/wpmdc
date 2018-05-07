@@ -39,3 +39,16 @@
 .wpmdc-no-padding-right {
 	padding-right: 0 !important;
 }
+
+// Contain
+.wpmdc-contain-desktop {
+	@include contain('desktop');
+}
+
+.wpmdc-contain-tablet {
+	@include contain('tablet');
+}
+
+.wpmdc-contain-phone {
+	@include contain('phone');
+}

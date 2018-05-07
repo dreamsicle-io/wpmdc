@@ -66,7 +66,7 @@ class WPMDC_Widget_Nav_Menu extends WP_Nav_Menu_Widget {
 			'wpmdc_menu_widget_graphics'     => false, 
 		) ); ?>
 
-		<div class="wpmdc-nav-menu-widget-form-controls" <?php echo empty( wp_get_nav_menus() ) ? 'style="display:none;"' : ''; ?>>
+		<div class="wpmdc-widget-form-controls" <?php echo empty( wp_get_nav_menus() ) ? 'style="display:none;"' : ''; ?>>
 			
 			<p>
 

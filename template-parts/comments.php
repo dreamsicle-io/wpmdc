@@ -27,8 +27,6 @@ if ( post_password_required() ) {
 $comments_open = comments_open();
 $comments_number = intval( get_comments_number() );
 
-var_dump( 'assassa ' . $comments_number );
-
 if ( $comments_open || ( $comments_number > 0 ) ) { ?>
 
 	<section id="comments" class="comments-area">

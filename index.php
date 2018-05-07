@@ -20,7 +20,7 @@ get_template_part( 'template-parts/header' ); ?>
 
 	<main id="main"><?php 
 
-		get_template_part( 'template-parts/page-header' );
+		get_template_part( 'template-parts/hero' );
 
 		get_template_part( 'template-parts/loop', is_singular() ? 'singular' : 'cards' ); 
 

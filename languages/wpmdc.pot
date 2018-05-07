@@ -13,45 +13,290 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: includes/class-wpmdc-widget-archives.php:45
+#: includes/class-wpmdc-comments.php:61
+msgctxt "comment author field label"
+msgid "Name"
+msgstr ""
+
+#: includes/class-wpmdc-comments.php:62
+msgctxt "comment author field helper text"
+msgid "A name is required."
+msgstr ""
+
+#: includes/class-wpmdc-comments.php:73
+msgctxt "comment email field label"
+msgid "Email"
+msgstr ""
+
+#: includes/class-wpmdc-comments.php:74
+msgctxt "comment email field helper text"
+msgid "A valid email address is required. This will never be published."
+msgstr ""
+
+#: includes/class-wpmdc-comments.php:85
+msgctxt "comment url field label"
+msgid "Website / Profile"
+msgstr ""
+
+#: includes/class-wpmdc-comments.php:86
+msgctxt "comment url field helper text"
+msgid "Enter an optional website or social profile url. This will be published."
+msgstr ""
+
+#. translators: 1: argument value, 2: argument key, 3: CSV of allowed values.
+#: includes/class-wpmdc-component.php:97
+msgid "The value \"%1$s\" for key \"%2$s\" is not one of [\"%3$s\"]."
+msgstr ""
+
+#. translators: 1: argument value, 2: argument key, 3: argument type.
+#: includes/class-wpmdc-component.php:107
+msgid "The value \"%1$s\" for key \"%2$s\" is not of type \"%3$s\"."
+msgstr ""
+
+#: includes/class-wpmdc-widgets.php:54
+msgid "Drawer"
+msgstr ""
+
+#: includes/class-wpmdc-widgets.php:56
+msgid "Widgets added here will appear in the drawer."
+msgstr ""
+
+#: includes/class-wpmdc-widgets.php:64
+msgid "Footer"
+msgstr ""
+
+#: includes/class-wpmdc-widgets.php:66
+msgid "Widgets added here will appear in the footer."
+msgstr ""
+
+#: includes/components/class-wpmdc-text-field.php:53
+msgctxt "text field component default label"
+msgid "Text Field"
+msgstr ""
+
+#. undefined
+#. undefined
+#: includes/tags/hero.php:53, includes/widgets/class-wpmdc-widget-archives.php:40, includes/widgets/class-wpmdc-widget-archives.php:63
 msgid "Archives"
 msgstr ""
 
-#: includes/class-wpmdc-widget-archives.php:77
+#. undefined
+#: includes/tags/hero.php:65, includes/tags/top-app-bar.php:28
+msgid "Yearly Archives"
+msgstr ""
+
+#. undefined
+#: includes/tags/hero.php:69, includes/tags/top-app-bar.php:32
+msgid "Monthly Archives"
+msgstr ""
+
+#. undefined
+#: includes/tags/hero.php:73, includes/tags/top-app-bar.php:36
+msgid "Daily Archives"
+msgstr ""
+
+#. undefined
+#: includes/tags/hero.php:79, includes/tags/top-app-bar.php:42
+msgid "Search"
+msgstr ""
+
+#. undefined
+#: includes/tags/hero.php:83, includes/tags/top-app-bar.php:46
+msgid "Nothing Found"
+msgstr ""
+
+#: includes/tags/hero.php:133
+msgid "404"
+msgstr ""
+
+#. translators: 1: search query.
+#: includes/tags/hero.php:177
+msgid "Search results for &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: includes/tags/hero.php:183
+msgctxt "404 hero description"
+msgid "Well, this is embarassing. The page you're looking for has either moved, or was never here to begin with. Check the URL or try a search."
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-archives.php:96
 msgid "Select Year"
 msgstr ""
 
-#: includes/class-wpmdc-widget-archives.php:80
+#: includes/widgets/class-wpmdc-widget-archives.php:99
 msgid "Select Month"
 msgstr ""
 
-#: includes/class-wpmdc-widget-archives.php:83
+#: includes/widgets/class-wpmdc-widget-archives.php:102
 msgid "Select Day"
 msgstr ""
 
-#: includes/class-wpmdc-widget-archives.php:86
+#: includes/widgets/class-wpmdc-widget-archives.php:105
 msgid "Select Week"
 msgstr ""
 
-#: includes/class-wpmdc-widget-archives.php:89
+#: includes/widgets/class-wpmdc-widget-archives.php:108
 msgid "Select Post"
 msgstr ""
 
 #. undefined
-#: includes/class-wpmdc-widget-archives.php:211, includes/class-wpmdc-widget-nav-menu.php:97
+#. undefined
+#. undefined
+#. undefined
+#: includes/widgets/class-wpmdc-widget-archives.php:234, includes/widgets/class-wpmdc-widget-comments.php:240, includes/widgets/class-wpmdc-widget-pages.php:197, includes/widgets/class-wpmdc-widget-posts.php:279, includes/widgets/class-wpmdc-widget-terms.php:239
+msgid "Title:"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-archives.php:258, includes/widgets/class-wpmdc-widget-terms.php:263
+msgid "Display as dropdown"
+msgstr ""
+
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#: includes/widgets/class-wpmdc-widget-archives.php:291, includes/widgets/class-wpmdc-widget-comments.php:305, includes/widgets/class-wpmdc-widget-nav-menu.php:97, includes/widgets/class-wpmdc-widget-pages.php:281, includes/widgets/class-wpmdc-widget-posts.php:428, includes/widgets/class-wpmdc-widget-terms.php:327
 msgid "Display graphics"
 msgstr ""
 
-#: includes/class-wpmdc-widget-nav-menu.php:82
+#. undefined
+#: includes/widgets/class-wpmdc-widget-comments.php:32, includes/widgets/class-wpmdc-widget-comments.php:77
+msgid "Comments"
+msgstr ""
+
+#. translators: 1: comment author, 2: post title.
+#: includes/widgets/class-wpmdc-widget-comments.php:161
+msgctxt "comments widget link"
+msgid "%1$s on %2$s"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-comments.php:257, includes/widgets/class-wpmdc-widget-posts.php:333
+msgid "Number:"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-comments.php:273
+msgid "The maximum number of comments to show."
+msgstr ""
+
+#. undefined
+#. undefined
+#: includes/widgets/class-wpmdc-widget-comments.php:290, includes/widgets/class-wpmdc-widget-pages.php:266, includes/widgets/class-wpmdc-widget-posts.php:413
+msgid "Display excerpts"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-nav-menu.php:82, includes/widgets/class-wpmdc-widget-terms.php:311
 msgid "Display descriptions"
 msgstr ""
 
-#: includes/class-wpmdc.php:115
-msgid "Drawer"
+#: includes/widgets/class-wpmdc-widget-pages.php:30
+msgid "A list of your site's Pages."
 msgstr ""
 
-#: includes/class-wpmdc.php:117
-msgid "Widgets added here will appear in the drawer."
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:34, includes/widgets/class-wpmdc-widget-pages.php:82
+msgid "Pages"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:214, includes/widgets/class-wpmdc-widget-posts.php:359
+msgid "Sort by:"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:222, includes/widgets/class-wpmdc-widget-posts.php:367
+msgid "Menu order"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:223, includes/widgets/class-wpmdc-widget-posts.php:368
+msgid "Title"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:224, includes/widgets/class-wpmdc-widget-posts.php:369
+msgid "Publish date"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:225, includes/widgets/class-wpmdc-widget-posts.php:370
+msgid "Modified date"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:226, includes/widgets/class-wpmdc-widget-posts.php:372
+msgid "ID"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:235, includes/widgets/class-wpmdc-widget-posts.php:381
+msgid "Exclude:"
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-pages.php:250, includes/widgets/class-wpmdc-widget-posts.php:396
+msgid "Page IDs, separated by commas."
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-posts.php:31
+msgid "A list of your site's Posts."
+msgstr ""
+
+#. undefined
+#: includes/widgets/class-wpmdc-widget-posts.php:35, includes/widgets/class-wpmdc-widget-posts.php:102
+msgid "Posts"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-posts.php:298
+msgid "Post type:"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-posts.php:349
+msgid "The maximum number of posts to show."
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-posts.php:371
+msgid "Comment count"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-terms.php:28
+msgid "A list or dropdown of your sit's taxonomy terms."
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-terms.php:32
+msgctxt "wpmdc"
+msgid "Terms"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-terms.php:57
+msgid "Terms"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-terms.php:278
+msgid "Show post counts"
+msgstr ""
+
+#: includes/widgets/class-wpmdc-widget-terms.php:293
+msgid "Show hierarchy"
+msgstr ""
+
+#: page-templates/docs.php:3
+msgid "Docs"
+msgstr ""
+
+#: page-templates/docs.php:20
+msgid "This is the helper text."
+msgstr ""
+
+#: page-templates/docs.php:28
+msgid "Components"
+msgstr ""
+
+#: page-templates/docs.php:36
+msgid "Text Field"
 msgstr ""
 
 #. translators: 1: current year, 2: site title link.
@@ -67,24 +312,24 @@ msgid "Designed by %1$s"
 msgstr ""
 
 #. translators: 1: title.
-#: template-parts/comments.php:47
+#: template-parts/comments.php:45
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
 #. translators: 1: comment count number, 2: title.
-#: template-parts/comments.php:55
+#: template-parts/comments.php:53
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: template-parts/comments.php:82
+#: template-parts/comments.php:80
 msgid "Comments are closed."
 msgstr ""
 
 #. translators: 1: post author, 2: post publish date, 3: post publish time.
-#: template-parts/content-card.php:46
+#: template-parts/content-card.php:49
 msgctxt "post card byline"
 msgid "Posted by %1$s on %2$s at %3$s"
 msgstr ""
@@ -95,12 +340,12 @@ msgid "Nothing Found."
 msgstr ""
 
 #. translators: 1: post author, 2: post publish date, 3: post publish time.
-#: template-parts/content-singular.php:45
+#: template-parts/content-singular.php:32
 msgctxt "singular post byline"
 msgid "Posted by %1$s on %2$s at %3$s"
 msgstr ""
 
-#: template-parts/content-singular.php:53
+#: template-parts/content-singular.php:40
 msgctxt "post content read more link"
 msgid "Read More"
 msgstr ""

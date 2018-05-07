@@ -15,19 +15,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<section><?php 
+<section class="wpmdc-section wpmdc-section--pull-top"><?php 
 
-	if ( have_posts() ) {
+	if ( have_posts() ) { ?>
 
-		while ( have_posts() ) { the_post();
+		<div class="mdc-layout-grid wpmdc-contain-desktop">
 
-			get_template_part( 'template-parts/content-card', get_post_type() );
+			<div class="mdc-layout-grid__inner"><?php 
 
-		}
+				while ( have_posts() ) { the_post(); ?>
 
-		the_posts_pagination();
+					<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone"><?php
 
-	} else {
+						get_template_part( 'template-parts/content-card', get_post_type() );
+
+					?></div>
+
+				<?php } ?>
+
+				<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone"><?php 
+
+					the_posts_pagination();
+
+				?></div>
+
+			</div>
+
+		</div>
+
+	<?php } else {
 
 		get_template_part( 'template-parts/content-none' );
 

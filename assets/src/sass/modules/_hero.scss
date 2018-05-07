@@ -1,0 +1,31 @@
+.wpmdc-hero {
+	align-items: center;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	min-height: 80vh;
+	position: relative;
+
+	&__content {
+		@include adjust-children;
+		align-items: center;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		position: relative;
+		text-align: center;
+		z-index: 1;
+	}
+
+	.mdc-layout-grid {
+		width: 100%;
+	}
+
+	&::before {
+		@include overlay;
+		@include ramp;
+		content: '';
+	}
+}

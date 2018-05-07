@@ -105,7 +105,7 @@ class WPMDC_Navigation {
 	 * @param   integer  $depth    The current depth of the walker.
 	 * @return  array
 	 */
-	function manage_submenu_classes( $classes, $args, $depth ) { 
+	public function manage_submenu_classes( $classes, $args, $depth ) { 
 
 		if ( in_array( 'mdc-list', explode( ' ', $args->menu_class ) ) ) {
 			$classes = array_merge( $classes, array( 
@@ -131,7 +131,7 @@ class WPMDC_Navigation {
 	 * @param   integer  $depth  The current depth of the walker.
 	 * @return  array
 	 */
-	function manage_item_args( $args, $item, $depth ) {
+	public function manage_item_args( $args, $item, $depth ) {
 
 		$menu_classes = explode( ' ', $args->menu_class );
 
@@ -142,7 +142,7 @@ class WPMDC_Navigation {
 			$meta = '';
 
 			if ( in_array( 'mdc-list--avatar-list', $menu_classes ) ) {
-				$graphic = '<span class="mdc-list-item__graphic"><i class="material-icons" aria-hidden="true">folder</i></span>';
+				$graphic = '<span class="mdc-list-item__graphic"><i class="material-icons" aria-hidden="true">' . $this->get_item_icon( $item ) . '</i></span>';
 			} 
 
 			if ( in_array( 'mdc-list--two-line', $menu_classes ) ) {
@@ -162,6 +162,23 @@ class WPMDC_Navigation {
 
 	}
 
+	public function get_item_icon( $item ) {
+
+		switch ( $item->type ) {
+
+			case 'taxonomy':
+				$icon = 'label';
+				break;
+			
+			default:
+				$icon = 'bookmark';
+				break;
+		}
+
+		return apply_filters( 'wpmdc_nav_menu_item_icon', $icon, $item );
+
+	}
+
 	/**
 	 * Manage Link Attributes 
 	 * 
@@ -177,7 +194,7 @@ class WPMDC_Navigation {
 	 * @param   integer  $depth  The current depth of the walker.
 	 * @return  array
 	 */
-	function manage_link_attributes( $atts, $item, $args, $depth ) {
+	public function manage_link_attributes( $atts, $item, $args, $depth ) {
 
 		$classes = isset( $atts['class'] ) ? explode(' ', $atts['class']) : array();
 
@@ -211,7 +228,7 @@ class WPMDC_Navigation {
      * @param   string  $after   Content to append to the description.
      * @return  string           The archive link output.
      */
-   function manage_archives_link( $html, $url, $text, $format, $before, $after ) {
+   public function manage_archives_link( $html, $url, $text, $format, $before, $after ) {
 
    		if ( $format === 'custom' ) {
 
@@ -237,7 +254,7 @@ class WPMDC_Navigation {
    					
    					<span class="mdc-list-item__text"><?php 
 
-   						echo ( esc_html( $text ) ); 
+   						echo esc_html( $text ); 
 
    					?></span>
 

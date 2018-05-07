@@ -36,15 +36,25 @@
 		justify-content: flex-end;
 		z-index: 1;
 	}
+
+	.widget {
+
+		.wpmdc-select {
+			border-radius: 0;
+			width: 100%;
+
+			select {
+				border-radius: 0;
+			}
+		}
+	}
 }
 
 .admin-bar {
 
 	.wpmdc-drawer {
-
-		.mdc-drawer__header {
-			margin-top: $admin-bar-height-mobile;
-		}
+		height: calc(100% - #{$wpmdc-admin-bar-height-mobile});
+		top: $wpmdc-admin-bar-height-mobile;
 	}
 }
 
@@ -52,10 +62,8 @@
 	.admin-bar {
 
 		.wpmdc-drawer {
-
-			.mdc-drawer__header {
-				margin-top: $admin-bar-height-desktop;
-			}
+			height: calc(100% - #{$wpmdc-admin-bar-height-desktop});
+			top: $wpmdc-admin-bar-height-desktop;
 		}
 	}
 }

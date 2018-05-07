@@ -1,0 +1,24 @@
+.wpmdc-card {
+
+	&__content {
+		@include adjust-children;
+		flex-grow: 1;
+		padding: 20px;
+	}
+
+	&__title,
+	&__subtitle {
+		margin: 0 0 12px;
+	}
+
+	.mdc-card__primary-action {
+		flex-grow: 1;
+	}
+}
+
+.mdc-layout-grid__cell {
+
+	.wpmdc-card {
+		height: 100%;
+	}
+}

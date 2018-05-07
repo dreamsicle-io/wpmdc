@@ -1,72 +1,8 @@
 import { MDCTemporaryDrawer } from '@material/drawer/dist/mdc.drawer';
 
-export function wpmdcDrawerHeaderImagesInterval(element) {
-	let intervalInst = null;
-	// start the interval on slide 2 (index 1), 
-	// slide 1 (index 0) is already active on initialization.
-	let i = 1;
-
-	return {
-		start: () => {
-			if (element) {
-				const slider = element.querySelector('.wpmdc-drawer__header-slider');
-				if (slider) {
-					const slides = slider.querySelectorAll('.wpmdc-drawer__header-slide');
-					if (slides && (slides.length > 0)) {
-						// start the interval on slide 2 (index 1), 
-						// slide 1 (index 0) is already active on initialization.
-						intervalInst = setInterval(() => {
-							if (i >= slides.length) {
-								i = 0;
-							}
-							console.log('yo');
-							slides.forEach((oldSlide) => {
-								if (oldSlide.classList.contains('wpmdc-drawer__header-slide--active')) {
-									oldSlide.classList.remove('wpmdc-drawer__header-slide--active');
-								}
-							});
-							slides[i].classList.add('wpmdc-drawer__header-slide--active');
-							i++;
-						}, 7000);
-					}
-				}
-			}
-		}, 
-		stop: () => {
-			clearInterval(intervalInst);
-		}
-	};
-}
-
-export function wpmdcDrawerHeaderImages(element) {
-	if (element) {
-		const imagesAttr = element.getAttribute('data-wpmdc-header-images');
-		if (imagesAttr) {
-			const images = JSON.parse(imagesAttr);
-			const slider = document.createElement('DIV');
-			slider.classList.add('wpmdc-drawer__header-slider');
-			let isFirstSlide = true;
-			for (var imageId in images) {
-				const image = images[imageId];
-				let slide = document.createElement('DIV');
-				slide.classList.add('wpmdc-drawer__header-slide');
-				slide.style.backgroundImage = `url("${image.url}")`;
-				// activate the first slide on init.
-				if (isFirstSlide) {
-					slide.classList.add('wpmdc-drawer__header-slide--active');
-					isFirstSlide = false;
-				}
-				slider.appendChild(slide);
-			}
-			element.appendChild(slider);
-		}
-	}
-}
-
 export function wpmdcTemporaryDrawer(element) {
 	if (element) {
 		const toggles = element.id ? document.querySelectorAll(`*[for="${element.id}"]`) : [];
-		const header = element.querySelector('.mdc-drawer__header');
 		const MDCTemporaryDrawerInst = new MDCTemporaryDrawer(element);
 		if (toggles) {
 			toggles.forEach((toggle, i) => {
@@ -74,16 +10,6 @@ export function wpmdcTemporaryDrawer(element) {
 					e.preventDefault();
 					MDCTemporaryDrawerInst.open = ! MDCTemporaryDrawerInst.open;
 				});
-			});
-		}
-		if (header) {
-			wpmdcDrawerHeaderImages(header);
-			const { start, stop } = wpmdcDrawerHeaderImagesInterval(header);
-			MDCTemporaryDrawerInst.listen('MDCTemporaryDrawer:open', (e) => {
-				start();
-			});
-			MDCTemporaryDrawerInst.listen('MDCTemporaryDrawer:close', (e) => {
-				stop();
 			});
 		}
 	}

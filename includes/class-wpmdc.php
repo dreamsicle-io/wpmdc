@@ -2,7 +2,7 @@
 /**
  * WPMDC Theme Setup Class.
  *
- * @package wpmdc
+ * @package    wpmdc
  * @subpackage includes
  */
 
@@ -39,10 +39,9 @@ class WPMDC {
 		// Hooks
 		add_action( 'after_setup_theme', array( $this, 'manage_globals' ), 0 );
 		add_action( 'after_setup_theme', array( $this, 'manage_theme_support' ), 10 );
-		add_action( 'widgets_init', array( $this, 'manage_widget_areas' ), 10 );
-		add_action( 'widgets_init', array( $this, 'manage_widgets' ), 10 );
+		add_action( 'init', array( $this, 'manage_post_type_support' ), 20 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'manage_site_scripts' ), 10 );
-		add_action( 'wp_head', array( $this, 'manage_head' ), 10 );
+		add_action( 'wp_head', array( $this, 'manage_head' ), 0 );
 
 		// Filters
 		add_filter( 'body_class', array( $this, 'manage_body_classes' ), 10 );
@@ -103,39 +102,9 @@ class WPMDC {
 		
 	}
 
-	/**
-	 * Manage Widget Areas.
-	 *
-	 * @since   0.0.1
-	 * @return  void
-	 */
-	public function manage_widget_areas() {
+	public function manage_post_type_support() {
 
-		register_sidebar( array(
-			'name'          => esc_html__( 'Drawer', 'wpmdc' ),
-			'id'            => 'drawer',
-			'description'   => esc_html__( 'Widgets added here will appear in the drawer.', 'wpmdc' ),
-			'before_widget' => '<div id="%1$s" class="widget mdc-list-group %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="widget-title mdc-list-group__subheader">',
-			'after_title'   => '</h3>',
-		) );
-
-	}
-
-	/**
-	 * Manage Widgets.
-	 *
-	 * @since   0.0.1
-	 * @return  void
-	 */
-	public function manage_widgets() {
-
-		unregister_widget( 'WP_Nav_Menu_Widget' );
-		unregister_widget( 'WP_Widget_Archives' );
-
-		register_widget( 'WPMDC_Widget_Nav_Menu' );
-		register_widget( 'WPMDC_Widget_Archives' );
+		add_post_type_support( 'page', 'excerpt' );
 
 	}
 
@@ -182,16 +151,34 @@ class WPMDC {
 	 * @since   0.0.1
 	 * @return  void
 	 */
-	public function manage_head() { ?>
+	public function manage_head() { 
+
+		$is_singular = is_singular(); ?>
 
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 		<meta name="theme-color" content="#000000">
+
+		<?php if ( $is_singular ) {
+
+			$post = get_queried_object();
+			$excerpt = $post->post_excerpt ? $post->post_excerpt : $post->post_content;
+			$excerpt = apply_filters( 'get_the_excerpt', $post->post_excerpt ? $post->post_excerpt : $post->post_content );
+			$excerpt = wp_trim_words( strip_tags( $excerpt ), 25 ); ?>
+			
+			<meta property="og:url" content="<?php the_permalink(); ?>" />
+			<meta property="og:type" content="article" />
+			<meta property="og:title" content="<?php the_title_attribute(); ?>" />
+			<meta property="og:description" content="<?php echo esc_attr( $excerpt ); ?>" />
+			<meta property="og:image" content="<?php the_post_thumbnail_url( 'full' ); ?>" />
+		
+		<?php } ?>
+
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-		<?php if ( is_singular() && pings_open() ) { ?>
+		<?php if ( $is_singular && pings_open() ) { ?>
 			<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>" />
 		<?php }
 

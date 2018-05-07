@@ -28,7 +28,13 @@
 	}
 }
 
+.entry-excerpt,
 .entry-content {
+	@include clear;
+	@include adjust-children;
+}
+
+.hentry {
 	@include clear;
 }
 
@@ -58,7 +64,6 @@
 }
 
 .wp-caption-text {
-	font-size: smaller;
 	padding: 8px 16px;
 	text-align: center;
 }

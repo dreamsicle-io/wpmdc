@@ -19,13 +19,13 @@ $current_user = wp_get_current_user();
 
 <aside id="drawer" class="wpmdc-drawer mdc-drawer mdc-drawer--temporary">
 
-	<div class="mdc-drawer__drawer">
+	<div class="mdc-drawer__drawer mdc-theme--surface mdc-theme--on-surface">
 
-		<header 
-		class="mdc-drawer__header mdc-theme--primary-bg mdc-theme--on-primary"
-		data-wpmdc-header-images='<?php echo json_encode( get_uploaded_header_images() ); ?>'>
+		<header class="mdc-drawer__header mdc-theme--primary-bg mdc-theme--on-primary">
 
-			<?php if ( $current_user->ID > 0 ) { ?>
+			<?php if ( is_user_logged_in() ) {
+
+				$current_user = wp_get_current_user(); ?>
 
 				<a 
 				href="<?php echo esc_url( get_dashboard_url( $current_user->ID ) ); ?>" 

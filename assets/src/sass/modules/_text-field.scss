@@ -1,0 +1,34 @@
+.wpmdc-text-field {
+
+	&.mdc-text-field--fullwidth {
+
+		&.mdc-text-field--with-leading-icon {
+			padding-left: 36px;
+			padding-right: 0;
+
+			.mdc-text-field__icon {
+				left: 0;
+				right: unset;
+			}
+		}
+	}
+}
+
+*[dir='rtl'] {
+
+	.wpmdc-text-field {
+
+		&.mdc-text-field--fullwidth {
+
+			&.mdc-text-field--with-leading-icon {
+				padding-left: 0;
+				padding-right: 36px;
+
+				.mdc-text-field__icon { // sass-lint:disable-line nesting-depth
+					left: unset;
+					right: 0;
+				}
+			}
+		}
+	}
+}

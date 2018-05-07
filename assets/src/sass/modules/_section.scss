@@ -1,0 +1,17 @@
+.wpmdc-section {
+	@include clear;
+	@include adjust-children;
+	padding-bottom: $wpmdc-section-spacing;
+	padding-top: $wpmdc-section-spacing;
+	position: relative;
+
+	&--pull-top {
+		margin-top: -#{$wpmdc-section-spacing};
+		padding-top: 0;
+	}
+
+	&--pull-bottom {
+		margin-bottom: -#{$wpmdc-section-spacing};
+		padding-bottom: 0;
+	}
+}

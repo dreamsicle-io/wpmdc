@@ -19,7 +19,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			</div><!-- #content -->
 
-			<?php 
+			<?php
+			get_template_part( 'template-parts/footer-widgets' ); 
+			
 			get_template_part( 'template-parts/colophon' );
 
 			get_template_part( 'template-parts/drawer' ); ?>
