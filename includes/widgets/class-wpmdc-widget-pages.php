@@ -81,15 +81,7 @@ class WPMDC_Widget_Pages extends WP_Widget {
 
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Pages', 'wpmdc' );
 
-		/**
-		 * Filters the widget title.
-		 *
-		 * @since   0.0.1
-		 * @param   string  $title     The widget title. Default 'Pages'.
-		 * @param   array   $instance  Array of settings for the current widget.
-		 * @param   mixed   $id_base   The widget ID.
-		 * @return  void 
-		 */
+		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
 		$list_args = array(
@@ -134,7 +126,7 @@ class WPMDC_Widget_Pages extends WP_Widget {
 			echo $args['before_widget'];
 
 			if ( $title ) {
-				echo $args['before_title'] . $title . $args['after_title'];
+				echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 			} ?>
 
 			<ul class="<?php echo esc_attr( implode( ' ', $list_classes ) ); ?>"><?php 

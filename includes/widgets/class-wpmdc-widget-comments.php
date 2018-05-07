@@ -76,15 +76,7 @@ class WPMDC_Widget_Comments extends WP_Widget {
 
 		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Comments', 'wpmdc' );
 
-		/**
-		 * Filters the widget title.
-		 *
-		 * @since   0.0.1
-		 * @param   string  $title     The widget title. Default 'Pages'.
-		 * @param   array   $instance  Array of settings for the current widget.
-		 * @param   mixed   $id_base   The widget ID.
-		 * @return  void 
-		 */
+		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
 		$get_comments_args = array(
@@ -108,7 +100,7 @@ class WPMDC_Widget_Comments extends WP_Widget {
 		if ( is_array( $comments ) && ! empty( $comments ) && ! is_wp_error( $comments ) ) {
 			
 			// Prime cache for associated posts. 
-			// (Prime post term cache if we need it for permalinks.)
+			// Prime post term cache if needed for permalinks.
 			$post_ids = array_unique( wp_list_pluck( $comments, 'comment_post_ID' ) );
 			_prime_post_caches( $post_ids, strpos( get_option( 'permalink_structure' ), '%category%' ), false );
 
