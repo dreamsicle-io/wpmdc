@@ -1,6 +1,26 @@
 .wpmdc-top-app-bar {
 	top: 0;
 	z-index: 5;
+
+	.avatar {
+		border: 2px solid;
+		margin-left: 8px;
+		margin-right: 0;
+	}
+}
+
+*[dir='rtl'] {
+
+	.wpmdc-top-app-bar {
+		top: 0;
+		z-index: 5;
+
+		.avatar {
+			margin-left: 0;
+			margin-right: 8px;
+		}
+	}
+
 }
 
 .admin-bar {
