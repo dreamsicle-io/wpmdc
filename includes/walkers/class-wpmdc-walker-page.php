@@ -193,11 +193,11 @@ class WPMDC_Walker_Page extends Walker {
 		}
 
 		if ( ! post_password_required( $page->ID ) ) {
-			$excerpt = get_the_excerpt( $page->ID );
 			// Fix the excerpt on customizer change. When the widget is 
 			// updated in the customizer, the excerpt only shows when 
 			// there is one explicitly set.
-			$excerpt = ! empty( $excerpt ) ? $excerpt : apply_filters( 'the_excerpt', wp_trim_words( strip_tags( $page->post_content ) ) );
+			$excerpt = ! empty( $page->post_excerpt ) ? $page->post_excerpt : $page->post_content;
+			$excerpt = wp_trim_words( strip_tags( $excerpt ) );
 		} else {
 			$excerpt = '';
 		}

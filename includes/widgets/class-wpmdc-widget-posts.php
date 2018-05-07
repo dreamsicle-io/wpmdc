@@ -101,14 +101,7 @@ class WPMDC_Widget_Posts extends WP_Widget {
 
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Posts', 'wpmdc' );
 
-		/**
-		 * Filters the widget title.
-		 *
-		 * @since  0.0.1
-		 * @param  string  $title     The widget title. Default 'Pages'.
-		 * @param  array   $instance  Array of settings for the current widget.
-		 * @param  mixed   $id_base   The widget ID.
-		 */
+		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
 		$excluded = explode( ',', intval( trim( $instance['exclude'] ) ) );
@@ -158,7 +151,7 @@ class WPMDC_Widget_Posts extends WP_Widget {
 			echo $args['before_widget'];
 
 			if ( $title ) {
-				echo $args['before_title'] . $title . $args['after_title'];
+				echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 			} ?>
 
 			<div class="<?php echo esc_attr( implode( ' ', $list_classes ) ); ?>"><?php 
@@ -166,11 +159,11 @@ class WPMDC_Widget_Posts extends WP_Widget {
 				foreach ( $posts as $post ) {
 
 					if ( ! post_password_required( $post->ID ) ) {
-						$excerpt = strip_tags( get_the_excerpt( $post->ID ) );
 						// Fix the excerpt on customizer change. When the widget is 
 						// updated in the customizer, the excerpt only shows when 
 						// there is one explicitly set.
-						$excerpt = ! empty( $excerpt ) ? $excerpt : apply_filters( 'the_excerpt', wp_trim_words( strip_tags( $post->post_content ) ) );
+						$excerpt = ! empty( $post->post_excerpt ) ? $post->post_excerpt : $post->post_content;
+						$excerpt = wp_trim_words( strip_tags( $excerpt ) );
 					} else {
 						$excerpt = '';
 					} ?>
