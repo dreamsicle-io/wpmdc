@@ -22,13 +22,31 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since  WP 4.4.0            Parent class changed.
  * @see    WP_Widget_Archives
  */
-class WPMDC_Widget_Archives extends WP_Widget_Archives {
+class WPMDC_Widget_Archives extends WP_Widget {
 
 	/**
+	 * Construct. 
+	 * 
+	 * Sets up a new Archives widget instance.
+	 *
+	 * @since 0.0.1
+	 */
+	public function __construct() {
+		$widget_ops = array(
+			'classname'                   => 'wpmdc-widget--archives',
+			'description'                 => __( 'A monthly archive of your site&#8217;s Posts.' ),
+			'customize_selective_refresh' => true,
+		);
+		parent::__construct( 'wpmdc_widget_archives', __( 'Archives', 'wpmdc' ), $widget_ops );
+		$this->alt_option_name = 'wpmdc_widget_archives';
+	}
+
+	/**
+	 * Widget.
+	 * 
 	 * Outputs the content for the current Archives widget instance.
 	 *
 	 * @since   0.0.1
-	 * @since   WP 2.8.0
 	 * @param   array     $args      Widget display arguments.
 	 * @param   array     $instance  Settings for the current widget instance.
 	 * @return  void
@@ -36,10 +54,10 @@ class WPMDC_Widget_Archives extends WP_Widget_Archives {
 	public function widget( $args, $instance ) {
 
 		$instance = wp_parse_args( $instance, array(
-			'title'                     => '', 
-			'dropdown'                  => false, 
-			'count'                     => false, 
-			'wpmdc_widget_graphics'     => false, 
+			'title'    => '', 
+			'dropdown' => false, 
+			'count'    => false, 
+			'graphics' => false, 
 		) );
 
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Archives', 'wpmdc' );
@@ -71,7 +89,7 @@ class WPMDC_Widget_Archives extends WP_Widget_Archives {
 			 * @param array $args     An array of Archives widget drop-down arguments.
 			 * @param array $instance Settings for the current Archives widget instance.
 			 */
-			$dropdown_args = apply_filters( 'widget_archives_dropdown_args', $dropdown_args, $instance );
+			$dropdown_args = apply_filters( 'wpmdc_widget_archives_dropdown_args', $dropdown_args, $instance );
 
 			switch ( $dropdown_args['type'] ) {
 				case 'yearly':
@@ -122,14 +140,14 @@ class WPMDC_Widget_Archives extends WP_Widget_Archives {
 				'mdc-list', 
 			);
 
-			if ( $instance['wpmdc_widget_graphics'] ) {
+			if ( $instance['graphics'] ) {
 				$list_classes[] = 'mdc-list--avatar-list';
 			}
 
 			$list_args = array(
 				'type'            => 'monthly',
 				'format'          => 'custom', 
-				'before'          => $instance['wpmdc_widget_graphics'] ? 'today' : '', 
+				'before'          => $instance['graphics'] ? 'today' : '', 
 				'show_post_count' => $instance['count'],
 			);
 
@@ -142,10 +160,12 @@ class WPMDC_Widget_Archives extends WP_Widget_Archives {
 			 * @param  array     $args      An array of Archives option arguments.
 			 * @param  array     $instance  Array of settings for the current widget.
 			 */
-			$list_args = apply_filters( 'widget_archives_args', $list_args, $instance ); 
+			$list_args = apply_filters( 'wpmdc_widget_archives_list_args', $list_args, $instance ); 
 
 			if ( ! empty( $title ) ) {
+
 				echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
+			
 			} ?>
 
 			<ul class="<?php echo esc_attr( implode( ' ', $list_classes ) ); ?>"><?php
@@ -174,10 +194,16 @@ class WPMDC_Widget_Archives extends WP_Widget_Archives {
 		$instance = parent::update( $new_instance, $old_instance );
 
 		$new_instance = wp_parse_args( $new_instance, array(
-			'wpmdc_widget_graphics' => false, 
+			'title'    => '', 
+			'count'    => false, 
+			'dropdown' => false, 
+			'graphics' => false, 
 		) );
 
-		$instance['wpmdc_widget_graphics'] = boolval( $new_instance['wpmdc_widget_graphics'] );
+		$instance['title'] = sanitize_text_field( $new_instance['title'] );
+		$instance['count'] = boolval( $new_instance['count'] );
+		$instance['dropdown'] = boolval( $new_instance['dropdown'] );
+		$instance['graphics'] = boolval( $new_instance['graphics'] );
 
 		return $instance;
 
@@ -187,7 +213,6 @@ class WPMDC_Widget_Archives extends WP_Widget_Archives {
 	 * Outputs the settings form for the Archives widget.
 	 *
 	 * @since   0.0.1
-	 * @since   WP 2.8.0
 	 * @param   array     $instance  Current settings.
 	 * @return  void
 	 */
@@ -196,30 +221,79 @@ class WPMDC_Widget_Archives extends WP_Widget_Archives {
 		parent::form( $instance );
 
 		$instance = wp_parse_args( $instance, array( 
-			'wpmdc_widget_graphics'     => false, 
+			'title'    => '', 
+			'count'    => false, 
+			'dropdown' => false, 
+			'graphics' => false, 
 		) ); ?>
 
-		<div class="wpmdc-widget-form-controls">
-			
-			<p>
+		<p>
 
-				<input 
-				type="checkbox" 
-				id="<?php echo $this->get_field_id( 'wpmdc_widget_graphics' ); ?>" 
-				name="<?php echo $this->get_field_name( 'wpmdc_widget_graphics' ); ?>" 
-				value="1"
-				<?php checked( boolval( $instance['wpmdc_widget_graphics'] ) ); ?> />
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php 
 
-				<label for="<?php echo $this->get_field_id( 'wpmdc_widget_graphics' ); ?>"><?php 
+				esc_html_e( 'Title:', 'wpmdc' ); 
 
-					esc_html_e( 'Display graphics', 'wpmdc' ); 
+			?></label>
 
-				?></label>
-			
-			</p>
+			<input 
+			class="widefat" 
+			id="<?php echo $this->get_field_id( 'title' ); ?>" 
+			name="<?php echo $this->get_field_name( 'title' ); ?>" 
+			type="text" 
+			value="<?php echo esc_attr( $title ); ?>" />
 
-		</div>
+		</p>
 		
+		<p>
+
+			<input  
+			type="checkbox"
+			class="checkbox"
+			id="<?php echo $this->get_field_id( 'dropdown' ); ?>" 
+			name="<?php echo $this->get_field_name( 'dropdown' ); ?>"
+			<?php checked( boolval( $instance['dropdown'] ) ); ?>  />
+
+			<label for="<?php echo $this->get_field_id( 'dropdown' ); ?>"><?php 
+
+				esc_html_e( 'Display as dropdown', 'wpmdc' ); 
+
+			?></label>
+
+			<br/>
+
+			<input 
+			type="checkbox"
+			class="checkbox" 
+			id="<?php echo $this->get_field_id( 'count' ); ?>" 
+			name="<?php echo $this->get_field_name( 'count' ); ?>"
+			<?php checked( boolval( $instance['count'] ) ); ?>  />
+
+			<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php 
+
+				esc_html_e( 'Show post counts' ); 
+
+			?></label>
+
+		</p>
+			
+		<p>
+
+			<input 
+			type="checkbox" 
+			class="checkbox" 
+			id="<?php echo $this->get_field_id( 'graphics' ); ?>" 
+			name="<?php echo $this->get_field_name( 'graphics' ); ?>" 
+			value="1"
+			<?php checked( boolval( $instance['graphics'] ) ); ?> />
+
+			<label for="<?php echo $this->get_field_id( 'graphics' ); ?>"><?php 
+
+				esc_html_e( 'Display graphics', 'wpmdc' ); 
+
+			?></label>
+		
+		</p>
+
 	<?php }
 
 }
