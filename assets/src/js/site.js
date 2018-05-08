@@ -4,6 +4,7 @@ import { wpmdcTemporaryDrawers } from './modules/drawer';
 import { wpmdcTextFields } from './modules/text-field';
 import { wpmdcSelects } from './modules/select';
 import { wpmdcRipples } from './modules/ripple';
+import { wpmdcCheckboxes } from './modules/checkbox';
 
 document.addEventListener('DOMContentLoaded', () => {
 	wpmdcMobileAdminBarFix();
@@ -11,5 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	wpmdcTemporaryDrawers();
 	wpmdcTextFields();
 	wpmdcSelects();
+	wpmdcCheckboxes();
 	wpmdcRipples();
 });
