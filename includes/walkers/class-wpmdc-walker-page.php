@@ -2,9 +2,8 @@
 /**
  * Post API: Walker_Page class
  *
- * @package WordPress
- * @subpackage Template
- * @since 4.4.0
+ * @package    wpmdc
+ * @subpackage includes/wakers
  */
 
 /**
