@@ -44,12 +44,12 @@ msgid "Enter an optional website or social profile url. This will be published."
 msgstr ""
 
 #. translators: 1: argument value, 2: argument key, 3: CSV of allowed values.
-#: includes/class-wpmdc-component.php:97
+#: includes/class-wpmdc-component.php:99
 msgid "The value \"%1$s\" for key \"%2$s\" is not one of [\"%3$s\"]."
 msgstr ""
 
 #. translators: 1: argument value, 2: argument key, 3: argument type.
-#: includes/class-wpmdc-component.php:107
+#: includes/class-wpmdc-component.php:109
 msgid "The value \"%1$s\" for key \"%2$s\" is not of type \"%3$s\"."
 msgstr ""
 
@@ -69,7 +69,22 @@ msgstr ""
 msgid "Widgets added here will appear in the footer."
 msgstr ""
 
-#: includes/components/class-wpmdc-text-field.php:53
+#: includes/components/class-wpmdc-button.php:43
+msgctxt "button component default text"
+msgid "Button"
+msgstr ""
+
+#: includes/components/class-wpmdc-checkbox.php:47
+msgctxt "checkbox component default label"
+msgid "Checkbox"
+msgstr ""
+
+#: includes/components/class-wpmdc-switch.php:45
+msgctxt "switch component default label"
+msgid "Switch"
+msgstr ""
+
+#: includes/components/class-wpmdc-text-field.php:55
 msgctxt "text field component default label"
 msgid "Text Field"
 msgstr ""
@@ -297,6 +312,18 @@ msgstr ""
 
 #: page-templates/docs.php:36
 msgid "Text Field"
+msgstr ""
+
+#: page-templates/docs.php:235
+msgid "Button"
+msgstr ""
+
+#: page-templates/docs.php:379
+msgid "Checkbox"
+msgstr ""
+
+#: page-templates/docs.php:420
+msgid "Switch"
 msgstr ""
 
 #. translators: 1: current year, 2: site title link.
