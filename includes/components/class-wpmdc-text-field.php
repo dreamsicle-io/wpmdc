@@ -1,9 +1,9 @@
 <?php
 /**
- * WPMDC Theme Customizer Class.
+ * WPMDC Text Field Class.
  *
- * @package wpmdc
- * @subpackage includes
+ * @package    wpmdc
+ * @subpackage includes/components
  */
 
 // Security: Exit if accessed directly.
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * WPMDC Customizer.
+ * WPMDC Text Field.
  *
  * @since  0.0.1 
  */
@@ -25,6 +25,8 @@ class WPMDC_Text_Field extends WPMDC_Component {
 	 * @return  void 
 	 */
 	function __construct( $args = array() ) {
+
+		$uniqid = $this->get_uniqid();
 
 		$this->arg_types = array(
 			'mod'           => array( '', 'outlined', 'box', 'fullwidth' ), 
@@ -47,8 +49,8 @@ class WPMDC_Text_Field extends WPMDC_Component {
 			'icon'          => '', 
 			'icon_position' => 'leading',
 			'type'          => 'text', 
-			'name'          => $this->uniqid, 
-			'id'            => $this->uniqid, 
+			'name'          => $uniqid, 
+			'id'            => $uniqid, 
 			'value'         => '', 
 			'label'         => _x( 'Text Field', 'text field component default label', 'wpmdc' ), 
 			'helper_text'   => '', 
@@ -70,15 +72,14 @@ class WPMDC_Text_Field extends WPMDC_Component {
 		$has_icon = ( ! empty( $this->args['icon'] ) && in_array( $this->args['mod'], array( 'outlined', 'box', 'fullwidth' ) ) );
 
 		$container_class = self::parse_classes( array(
-			'wpmdc-text-field'                   => true, 
-			'mdc-text-field'                     => true, 
-			'mdc-text-field--outlined'           => ( $this->args['mod'] === 'outlined' ), 
-			'mdc-text-field--box'                => ( $this->args['mod'] === 'box' ), 
-			'mdc-text-field--fullwidth'          => ( $this->args['mod'] === 'fullwidth' ), 
-			'mdc-text-field--dense'              => $this->args['dense'], 
-			'mdc-text-field--with-leading-icon'  => $has_icon && ( $this->args['icon_position'] === 'leading' ),
-			'mdc-text-field--with-trailing-icon' => $has_icon && ( $this->args['icon_position'] === 'trailing' ),
-			'mdc-text-field--upgraded'           => ! empty( $args['value'] ), 
+			'wpmdc-text-field'                      => true, 
+			'mdc-text-field'                        => true, 
+			'mdc-text-field--' . $this->args['mod'] => ! empty( $this->args['mod'] ), 
+			'mdc-text-field--dense'                 => $this->args['dense'], 
+			'mdc-text-field--disabled'              => $this->args['disabled'], 
+			'mdc-text-field--with-leading-icon'     => $has_icon && ( $this->args['icon_position'] === 'leading' ),
+			'mdc-text-field--with-trailing-icon'    => $has_icon && ( $this->args['icon_position'] === 'trailing' ),
+			'mdc-text-field--upgraded'              => ! empty( $args['value'] ), 
 		) );
 
 		$label_class = self::parse_classes( array(
@@ -168,7 +169,7 @@ class WPMDC_Text_Field extends WPMDC_Component {
 			class="mdc-text-field-helper-text" 
 			aria-hidden="true"><?php 
 			
-				echo esc_html( $this->args['helper_text'] );
+				echo wp_kses_post( $this->args['helper_text'] );
 
 			?></p>
 
