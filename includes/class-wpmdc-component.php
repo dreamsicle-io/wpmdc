@@ -2,8 +2,6 @@
 
 class WPMDC_Component {
 
-	public $uniqid = '';
-
 	public $args = array();
 
 	public $arg_types = array();
@@ -22,7 +20,11 @@ class WPMDC_Component {
 
 		$this->args = $args;
 
-		$this->uniqid = uniqid( strtolower( get_class( $this ) ) . '_' );
+	}
+
+	public function get_uniqid() {
+
+		return uniqid( strtolower( get_class( $this ) ) . '_' );
 
 	}
 
