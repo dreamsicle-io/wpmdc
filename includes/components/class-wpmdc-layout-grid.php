@@ -13,7 +13,7 @@ class WPMDC_Layout_Grid {
 		$errors = WPMDC_Component::check_arg_types( $args, array(
 			'echo'  => 'boolean', 
 			'fixed' => 'boolean', 
-			'align' => array( 'left', 'right' ), 
+			'align' => array( '', 'left', 'right' ), 
 		) );
 
 		WPMDC_Component::render_errors( $errors );
@@ -24,7 +24,7 @@ class WPMDC_Layout_Grid {
 			'mdc-layout-grid--align-' . $args['align'] => ! empty( $args['align'] ), 
 		) );
 		
-		$output = '<div class="' . $class . '">';
+		$output = '<div class="' . esc_attr( $class ) . '">';
 
 		if ( $args['echo'] ) {
 
@@ -147,7 +147,7 @@ class WPMDC_Layout_Grid {
 			'mdc-layout-grid__cell--align-' . $args['align']               => ! empty( $args['align'] ), 
 		) );
 
-		$output = '<div class="' . $class . '">';
+		$output = '<div class="' . esc_attr( $class ) . '">';
 
 		if ( $args['echo'] ) {
 

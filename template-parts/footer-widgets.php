@@ -12,7 +12,7 @@ if ( ! is_active_sidebar( 'footer' ) ) {
 	return;
 } ?>
 
-<aside id="footer_widgets" class="wpmdc-section mdc-theme--surface mdc-theme--on-surface mdc-elevation--z4">
+<aside id="footer_widgets" class="wpmdc-section mdc-theme--surface mdc-theme--on-surface">
 
 	<?php if ( is_active_sidebar( 'footer' ) ) { ?>
 
