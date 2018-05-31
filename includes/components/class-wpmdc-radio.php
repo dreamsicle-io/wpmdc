@@ -1,6 +1,6 @@
 <?php
 /**
- * WPMDC Switch Class.
+ * WPMDC Radio Class.
  *
  * @package    wpmdc
  * @subpackage includes/components
@@ -12,11 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * WPMDC Switch.
+ * WPMDC Radio.
  *
  * @since  0.0.1 
  */
-class WPMDC_Switch extends WPMDC_Component {
+class WPMDC_Radio extends WPMDC_Component {
 
 	/**
 	 * Construct.
@@ -42,7 +42,7 @@ class WPMDC_Switch extends WPMDC_Component {
 			'id'            => $uniqid, 
 			'name'          => $uniqid, 
 			'value'         => '1', 
-			'label'         => _x( 'Switch', 'switch component default label', 'wpmdc' ), 
+			'label'         => _x( 'Radio', 'radio component default label', 'wpmdc' ), 
 			'checked'       => false, 
 			'required'      => false, 
 			'disabled'      => false, 
@@ -60,9 +60,9 @@ class WPMDC_Switch extends WPMDC_Component {
 		}
 
 		$container_class = self::parse_classes( array(
-			'wpmdc-switch'         => true, 
-			'mdc-switch'           => true, 
-			'mdc-switch--disabled' => $this->args['disabled'], 
+			'wpmdc-radio'         => true, 
+			'mdc-radio'           => true, 
+			'mdc-radio--disabled' => $this->args['disabled'], 
 		) );
 
 		$input_attrs = self::parse_attrs( array( 
@@ -81,18 +81,19 @@ class WPMDC_Switch extends WPMDC_Component {
 			class="<?php echo esc_attr( $container_class ); ?>">
 
 				<input 
-				type="checkbox"
-				role="switch"
-				class="mdc-switch__native-control" 
+				type="radio"
+				class="mdc-radio__native-control" 
 				name="<?php echo esc_attr( $this->args['name'] ); ?>"
 				id="<?php echo esc_attr( $this->args['id'] ); ?>_input"
 				value="<?php echo esc_attr( $this->args['value'] ); ?>"
 				<?php echo $input_attrs; ?> />
 
-				<div class="mdc-switch__background">
-				
-					<div class="mdc-switch__knob"></div>
-				
+				<div class="mdc-radio__background">
+					
+					<div class="mdc-radio__outer-circle"></div>
+					
+					<div class="mdc-radio__inner-circle"></div>
+
 				</div>
 			
 			</div>
