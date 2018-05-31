@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <header 
-class="wpmdc-hero mdc-theme--primary-bg mdc-theme--on-primary"
+class="wpmdc-hero"
 style="background-image:url('<?php wpmdc_hero_background_url(); ?>');">
 
 	<div class="mdc-layout-grid wpmdc-contain-tablet">
