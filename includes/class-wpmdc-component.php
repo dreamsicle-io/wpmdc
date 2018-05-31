@@ -89,8 +89,7 @@ class WPMDC_Component {
 
 	public static function get_arg_type_error( $key = '', $value = '', $type = '' ) {
 
-		$error_slug = sprintf( 'wpmdc_component_arg_type_error_%1$s', $key );
-		$error = null;
+		$error_slug = "wpmdc_component_arg_type_error_{$key}";
 
 		if ( is_array( $type ) ) {
 
@@ -160,11 +159,33 @@ class WPMDC_Component {
 
 	}
 
+	public static function parse_attrs( $attrs = array() ) {
+
+		$parsed = array();
+
+		if ( is_array( $attrs ) && ! empty( $attrs ) ) {
+
+			foreach ( $attrs as $attr => $is_active ) {
+
+				if ( boolval( $is_active ) ) {
+
+					$parsed[] = $attr;
+
+				}
+
+			}
+
+		}
+
+		return implode( ' ', $parsed );
+
+	}
+
 	public function render() {
 
-		if ( $this->has_errors() ) { 
+		if ( self::has_errors() ) { 
 
-			$this->render_errors(); 
+			self::render_errors(); 
 
 			return; 
 
