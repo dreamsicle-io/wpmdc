@@ -19,9 +19,9 @@ class WPMDC_Layout_Grid {
 		WPMDC_Component::render_errors( $errors );
 
 		$class = WPMDC_Component::parse_classes( array( 
-			'mdc-layout-grid'                          => true, 
-			'mdc-layout-grid--fixed-column-width'      => $args['fixed'], 
-			'mdc-layout-grid--align-' . $args['align'] => ! empty( $args['align'] ), 
+			'mdc-layout-grid'                                      => true, 
+			'mdc-layout-grid--fixed-column-width'                  => $args['fixed'], 
+			'mdc-layout-grid--align-' . esc_attr( $args['align'] ) => ! empty( $args['align'] ), 
 		) );
 		
 		$output = '<div class="' . esc_attr( $class ) . '">';
