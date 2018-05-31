@@ -1,4 +1,4 @@
-@mixin clear {
+@mixin wpmdc-clear {
 	&::before,
 	&::after {
 		clear: both;
@@ -9,14 +9,14 @@
 	}
 }
 
-@mixin center {
+@mixin wpmdc-center {
 	clear: both;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-@mixin float($direction: left, $clear: true) {
+@mixin wpmdc-float($direction: left, $clear: true) {
 	@if ($clear) {
 		clear: $direction;
 	}
@@ -29,7 +29,7 @@
 	}
 }
 
-@mixin overlay {
+@mixin wpmdc-overlay {
 	height: 100%;
 	left: 0;
 	pointer-events: none;
@@ -38,17 +38,17 @@
 	width: 100%;
 }
 
-@mixin background-cover {
-	background-position: center;
+@mixin wpmdc-background-cover($position: center) {
+	background-position: $position;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
-@mixin ramp($from: rgba(0, 0, 0, 0.12), $to: rgba(0, 0, 0, 0.48), $direction: bottom) {
+@mixin wpmdc-ramp($from: rgba(0, 0, 0, 0.12), $to: rgba(0, 0, 0, 0.48), $direction: bottom) {
 	background: linear-gradient(to $direction, $from 0%, $to 100%);
 }
 
-@mixin contain($device: 'desktop') {
+@mixin wpmdc-contain($device: 'desktop') {
 	@if ($device == 'phone') {
 		max-width: $wpmdc-contain-phone-width;
 	} @else if ($device == 'tablet') {
@@ -58,7 +58,7 @@
 	}
 }
 
-@mixin adjust-children {
+@mixin wpmdc-adjust-children {
 	> *:first-child {
 		margin-top: 0;
 		padding-top: 0;
@@ -68,4 +68,18 @@
 		margin-bottom: 0;
 		padding-bottom: 0;
 	}
+}
+
+@mixin wpmdc-inherit-ripple-color {
+	&::after,
+	&::before {
+		background-color: currentColor;
+	}
+}
+
+@mixin wpmdc-flex($flow: row, $align: flex-start, $justify: flex-start) {
+	align-items: $align;
+	display: flex;
+	flex-flow: $flow;
+	justify-content: $justify;
 }

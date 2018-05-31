@@ -1,7 +1,7 @@
 .wpmdc-card {
 
 	&__content {
-		@include adjust-children;
+		@include wpmdc-adjust-children;
 		flex-grow: 1;
 		padding: 20px;
 	}
@@ -18,7 +18,7 @@
 
 .mdc-layout-grid__cell {
 
-	.wpmdc-card {
+	& > .wpmdc-card {
 		height: 100%;
 	}
 }

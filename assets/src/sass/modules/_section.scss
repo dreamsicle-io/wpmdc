@@ -1,6 +1,6 @@
 .wpmdc-section {
-	@include clear;
-	@include adjust-children;
+	@include wpmdc-clear;
+	@include wpmdc-adjust-children;
 	padding-bottom: $wpmdc-section-spacing;
 	padding-top: $wpmdc-section-spacing;
 	position: relative;

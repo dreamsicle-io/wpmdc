@@ -42,13 +42,13 @@
 
 // Contain
 .wpmdc-contain-desktop {
-	@include contain('desktop');
+	@include wpmdc-contain('desktop');
 }
 
 .wpmdc-contain-tablet {
-	@include contain('tablet');
+	@include wpmdc-contain('tablet');
 }
 
 .wpmdc-contain-phone {
-	@include contain('phone');
+	@include wpmdc-contain('phone');
 }
