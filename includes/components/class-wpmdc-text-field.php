@@ -85,6 +85,18 @@ class WPMDC_Text_Field extends WPMDC_Component {
 		$label_class = self::parse_classes( array(
 			'mdc-floating-label'              => true, 
 			'mdc-floating-label--float-above' => ! empty( $args['value'] ), 
+		) ); 
+
+		$input_attrs = self::parse_attrs( array( 
+			'placeholder="' . esc_attr( $this->args['label'] ) . '"'               => ( $this->args['mod'] === 'fullwidth' ),
+			'checked'                                                              => $this->args['checked'],
+			'aria-checked="true"'                                                  => $this->args['checked'],
+			'required'                                                             => $this->args['required'],
+			'aria-required="true"'                                                 => $this->args['required'],
+			'disabled'                                                             => $this->args['disabled'],
+			'aria-disabled="true"'                                                 => $this->args['disabled'],
+			'aria-controls="' . esc_attr( $this->args['id'] ) . '_helper_text"'    => ! empty( $this->args['helper_text'] ), 
+			'aria-describedby="' . esc_attr( $this->args['id'] ) . '_helper_text"' => ! empty( $this->args['helper_text'] ), 
 		) ); ?>
 
 		<div 
@@ -107,15 +119,7 @@ class WPMDC_Text_Field extends WPMDC_Component {
 			id="<?php echo esc_attr( $this->args['id'] . '_input' ); ?>" 
 			value="<?php echo esc_attr( $this->args['value'] ); ?>" 
 			class="mdc-text-field__input"
-			<?php 
-			echo ( $this->args['mod'] === 'fullwidth' ) ? ' placeholder="' . esc_attr( $this->args['label'] ) . '"' : '';
-			echo $this->args['required'] ? ' required' : '';
-			echo $this->args['required'] ? ' aria-required="true"' : '';
-			echo $this->args['disabled'] ? ' disabled' : '';
-			echo $this->args['disabled'] ? ' aria-disabled="true"' : ''; 
-			echo $this->args['helper_text'] ? 'aria-controls="' . esc_attr( $this->args['id'] ) . '_helper_text"' : '';
-			echo $this->args['helper_text'] ? 'aria-describedby="' . esc_attr( $this->args['id'] ) . '_helper_text"' : '';
-			?> />
+			<?php echo $input_attrs; ?> />
 
 			<?php if ( $this->args['mod'] !== 'fullwidth' ) { ?>
 
