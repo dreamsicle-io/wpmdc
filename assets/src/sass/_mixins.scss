@@ -38,7 +38,8 @@
 	width: 100%;
 }
 
-@mixin wpmdc-background-cover($position: center) {
+@mixin wpmdc-background-cover($position: center, $attachment: scroll) {
+	background-attachment: $attachment;
 	background-position: $position;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -58,15 +59,23 @@
 	}
 }
 
-@mixin wpmdc-adjust-children {
+@mixin wpmdc-adjust-children($margin: true, $padding: true) {
 	> *:first-child {
-		margin-top: 0;
-		padding-top: 0;
+		@if ($margin) {
+			margin-top: 0;
+		}
+		@if ($padding) {
+			padding-top: 0;
+		}
 	}
 
 	> *:last-child {
-		margin-bottom: 0;
-		padding-bottom: 0;
+		@if ($margin) {
+			margin-bottom: 0;
+		}
+		@if ($padding) {
+			padding-bottom: 0;
+		}
 	}
 }
 
