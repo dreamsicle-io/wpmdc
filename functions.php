@@ -16,7 +16,6 @@ define( 'WPMDCINC', get_template_directory() . '/includes' );
  * Require all files.
  */
 require WPMDCINC . '/class-wpmdc.php';
-require WPMDCINC . '/class-wpmdc-options.php';
 require WPMDCINC . '/class-wpmdc-widgets.php';
 require WPMDCINC . '/class-wpmdc-navigation.php';
 require WPMDCINC . '/class-wpmdc-comments.php';
@@ -39,6 +38,8 @@ require WPMDCINC . '/components/class-wpmdc-radio.php';
 // require WPMDCINC . '/components/class-wpmdc-icon-button.php';
 require WPMDCINC . '/components/class-wpmdc-icon-toggle.php';
 require WPMDCINC . '/components/class-wpmdc-button.php';
+require WPMDCINC . '/components/class-wpmdc-tab.php';
+require WPMDCINC . '/components/class-wpmdc-chip.php';
 require WPMDCINC . '/tags/component.php';
 require WPMDCINC . '/tags/top-app-bar.php';
 require WPMDCINC . '/tags/hero.php';
@@ -51,7 +52,6 @@ require WPMDCINC . '/tags/hero.php';
  * hook to be hooked properly.
  */
 add_action( 'after_setup_theme', array( new WPMDC, 'init' ), 0 );
-add_action( 'after_setup_theme', array( new WPMDC_Options, 'init' ), 0 );
 add_action( 'after_setup_theme', array( new WPMDC_Widgets, 'init' ), 0 );
 add_action( 'after_setup_theme', array( new WPMDC_Navigation, 'init' ), 0 );
 add_action( 'after_setup_theme', array( new WPMDC_Comments, 'init' ), 0 );
