@@ -73,9 +73,8 @@ class WPMDC_Icon_Button extends WPMDC_Component {
 		) );
 
 		$attrs = self::parse_attrs( array( 
-			'disabled'                                                                => $this->args['disabled'],
-			'aria-disabled="true"'                                                    => $this->args['disabled'],
-			'data-wpmdc-option-name="' . esc_attr( $this->args['option_name'] ) . '"' => ! empty( $this->args['option_name'] ), 
+			'disabled'             => $this->args['disabled'],
+			'aria-disabled="true"' => $this->args['disabled'],
 		) ); ?>
 
 		<button 

@@ -99,11 +99,10 @@ class WPMDC_Icon_Toggle extends WPMDC_Component {
 		) );
 
 		$attrs = self::parse_attrs( array( 
-			'aria-pressed="' . esc_attr( $pressed ) . '"'                             => true,
-			'disabled'                                                                => $this->args['disabled'],
-			'aria-disabled="true"'                                                    => $this->args['disabled'],
-			'tabindex="' . esc_attr( $tabindex ) . '"'                                => true,
-			'data-wpmdc-option-name="' . esc_attr( $this->args['option_name'] ) . '"' => ! empty( $this->args['option_name'] ), 
+			'aria-pressed="' . esc_attr( $pressed ) . '"' => true,
+			'disabled'                                    => $this->args['disabled'],
+			'aria-disabled="true"'                        => $this->args['disabled'],
+			'tabindex="' . esc_attr( $tabindex ) . '"'    => true,
 		) ); ?>
 
 		<i 
