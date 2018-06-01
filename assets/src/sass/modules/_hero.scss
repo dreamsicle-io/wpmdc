@@ -1,19 +1,14 @@
 .wpmdc-hero {
-	align-items: center;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	display: flex;
-	justify-content: center;
+	@include wpmdc-flex(column, center, center);
+	@include wpmdc-background-cover;
+	@include mdc-theme-prop(background-color, 'primary');
+	@include mdc-theme-prop(color, 'on-primary');
 	min-height: 80vh;
 	position: relative;
 
 	&__content {
-		@include adjust-children;
-		align-items: center;
-		display: flex;
-		flex-flow: column;
-		justify-content: center;
+		@include wpmdc-flex(column, center, center);
+		@include wpmdc-adjust-children;
 		position: relative;
 		text-align: center;
 		z-index: 1;
@@ -24,8 +19,8 @@
 	}
 
 	&::before {
-		@include overlay;
-		@include ramp;
+		@include wpmdc-overlay;
+		@include wpmdc-ramp;
 		content: '';
 	}
 }

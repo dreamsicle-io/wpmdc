@@ -44,12 +44,12 @@ msgid "Enter an optional website or social profile url. This will be published."
 msgstr ""
 
 #. translators: 1: argument value, 2: argument key, 3: CSV of allowed values.
-#: includes/class-wpmdc-component.php:99
+#: includes/class-wpmdc-component.php:98
 msgid "The value \"%1$s\" for key \"%2$s\" is not one of [\"%3$s\"]."
 msgstr ""
 
 #. translators: 1: argument value, 2: argument key, 3: argument type.
-#: includes/class-wpmdc-component.php:109
+#: includes/class-wpmdc-component.php:108
 msgid "The value \"%1$s\" for key \"%2$s\" is not of type \"%3$s\"."
 msgstr ""
 
@@ -69,8 +69,8 @@ msgstr ""
 msgid "Widgets added here will appear in the footer."
 msgstr ""
 
-#: includes/components/class-wpmdc-button.php:43
-msgctxt "button component default text"
+#: includes/components/class-wpmdc-button.php:45
+msgctxt "button component default button text"
 msgid "Button"
 msgstr ""
 
@@ -79,9 +79,67 @@ msgctxt "checkbox component default label"
 msgid "Checkbox"
 msgstr ""
 
+#: includes/components/class-wpmdc-chip.php:43
+msgctxt "chip component default button text"
+msgid "Chip"
+msgstr ""
+
+#: includes/components/class-wpmdc-icon-button.php:46
+msgctxt "icon button component default label"
+msgid "Icon Button"
+msgstr ""
+
+#: includes/components/class-wpmdc-icon-button.php:50
+msgctxt "icon button component default \"on\" label"
+msgid "On"
+msgstr ""
+
+#: includes/components/class-wpmdc-icon-button.php:52
+msgctxt "icon button component default \"off\" label"
+msgid "Off"
+msgstr ""
+
+#: includes/components/class-wpmdc-icon-toggle.php:42
+msgctxt "icon toggle component default label"
+msgid "Icon Toggle"
+msgstr ""
+
+#: includes/components/class-wpmdc-icon-toggle.php:47
+msgctxt "icon toggle component default \"on\" label"
+msgid "On"
+msgstr ""
+
+#: includes/components/class-wpmdc-icon-toggle.php:51
+msgctxt "icon toggle component default \"off\" label"
+msgid "Off"
+msgstr ""
+
+#. translators: 1: argument key, 2: CSV of expected values.
+#: includes/components/class-wpmdc-icon-toggle.php:77
+msgid "The key \"%1$s\" expects an array with the keys [\"%2$s\"]."
+msgstr ""
+
+#: includes/components/class-wpmdc-radio.php:45
+msgctxt "radio component default label"
+msgid "Radio"
+msgstr ""
+
 #: includes/components/class-wpmdc-switch.php:45
 msgctxt "switch component default label"
 msgid "Switch"
+msgstr ""
+
+#: includes/components/class-wpmdc-tab.php:46
+msgctxt "tab component default button text"
+msgid "Tab"
+msgstr ""
+
+#: includes/components/class-wpmdc-tab.php:240
+msgid "Back"
+msgstr ""
+
+#: includes/components/class-wpmdc-tab.php:282
+msgid "Next"
 msgstr ""
 
 #: includes/components/class-wpmdc-text-field.php:55
@@ -89,33 +147,66 @@ msgctxt "text field component default label"
 msgid "Text Field"
 msgstr ""
 
-#. undefined
-#. undefined
+#: includes/components/examples/button.php:24
+msgid "Button"
+msgstr ""
+
+#: includes/components/examples/checkbox.php:24
+msgid "Checkbox"
+msgstr ""
+
+#: includes/components/examples/chips.php:24
+msgid "Chips"
+msgstr ""
+
+#: includes/components/examples/icon-button.php:24
+msgid "Icon Button"
+msgstr ""
+
+#: includes/components/examples/icon-toggle.php:24
+msgid "Icon Toggle"
+msgstr ""
+
+#: includes/components/examples/radio.php:24
+msgid "Radio"
+msgstr ""
+
+#: includes/components/examples/switch.php:24
+msgid "Switch"
+msgstr ""
+
+#: includes/components/examples/tabs.php:24
+msgid "Tabs"
+msgstr ""
+
+#: includes/components/examples/text-field.php:16
+msgid "This is the helper text."
+msgstr ""
+
+#: includes/components/examples/text-field.php:26
+msgid "Text Field"
+msgstr ""
+
 #: includes/tags/hero.php:53, includes/widgets/class-wpmdc-widget-archives.php:40, includes/widgets/class-wpmdc-widget-archives.php:63
 msgid "Archives"
 msgstr ""
 
-#. undefined
 #: includes/tags/hero.php:65, includes/tags/top-app-bar.php:28
 msgid "Yearly Archives"
 msgstr ""
 
-#. undefined
 #: includes/tags/hero.php:69, includes/tags/top-app-bar.php:32
 msgid "Monthly Archives"
 msgstr ""
 
-#. undefined
 #: includes/tags/hero.php:73, includes/tags/top-app-bar.php:36
 msgid "Daily Archives"
 msgstr ""
 
-#. undefined
 #: includes/tags/hero.php:79, includes/tags/top-app-bar.php:42
 msgid "Search"
 msgstr ""
 
-#. undefined
 #: includes/tags/hero.php:83, includes/tags/top-app-bar.php:46
 msgid "Nothing Found"
 msgstr ""
@@ -154,29 +245,18 @@ msgstr ""
 msgid "Select Post"
 msgstr ""
 
-#. undefined
-#. undefined
-#. undefined
-#. undefined
 #: includes/widgets/class-wpmdc-widget-archives.php:234, includes/widgets/class-wpmdc-widget-comments.php:240, includes/widgets/class-wpmdc-widget-pages.php:197, includes/widgets/class-wpmdc-widget-posts.php:279, includes/widgets/class-wpmdc-widget-terms.php:239
 msgid "Title:"
 msgstr ""
 
-#. undefined
 #: includes/widgets/class-wpmdc-widget-archives.php:258, includes/widgets/class-wpmdc-widget-terms.php:263
 msgid "Display as dropdown"
 msgstr ""
 
-#. undefined
-#. undefined
-#. undefined
-#. undefined
-#. undefined
 #: includes/widgets/class-wpmdc-widget-archives.php:291, includes/widgets/class-wpmdc-widget-comments.php:305, includes/widgets/class-wpmdc-widget-nav-menu.php:97, includes/widgets/class-wpmdc-widget-pages.php:281, includes/widgets/class-wpmdc-widget-posts.php:428, includes/widgets/class-wpmdc-widget-terms.php:327
 msgid "Display graphics"
 msgstr ""
 
-#. undefined
 #: includes/widgets/class-wpmdc-widget-comments.php:32, includes/widgets/class-wpmdc-widget-comments.php:77
 msgid "Comments"
 msgstr ""
@@ -187,7 +267,6 @@ msgctxt "comments widget link"
 msgid "%1$s on %2$s"
 msgstr ""
 
-#. undefined
 #: includes/widgets/class-wpmdc-widget-comments.php:257, includes/widgets/class-wpmdc-widget-posts.php:333
 msgid "Number:"
 msgstr ""
@@ -196,13 +275,10 @@ msgstr ""
 msgid "The maximum number of comments to show."
 msgstr ""
 
-#. undefined
-#. undefined
 #: includes/widgets/class-wpmdc-widget-comments.php:290, includes/widgets/class-wpmdc-widget-pages.php:266, includes/widgets/class-wpmdc-widget-posts.php:413
 msgid "Display excerpts"
 msgstr ""
 
-#. undefined
 #: includes/widgets/class-wpmdc-widget-nav-menu.php:82, includes/widgets/class-wpmdc-widget-terms.php:311
 msgid "Display descriptions"
 msgstr ""
@@ -211,47 +287,38 @@ msgstr ""
 msgid "A list of your site's Pages."
 msgstr ""
 
-#. undefined
 #: includes/widgets/class-wpmdc-widget-pages.php:34, includes/widgets/class-wpmdc-widget-pages.php:82
 msgid "Pages"
 msgstr ""
 
-#. undefined
 #: includes/widgets/class-wpmdc-widget-pages.php:214, includes/widgets/class-wpmdc-widget-posts.php:359
 msgid "Sort by:"
 msgstr ""
 
-#. undefined
 #: includes/widgets/class-wpmdc-widget-pages.php:222, includes/widgets/class-wpmdc-widget-posts.php:367
 msgid "Menu order"
 msgstr ""
 
-#. undefined
 #: includes/widgets/class-wpmdc-widget-pages.php:223, includes/widgets/class-wpmdc-widget-posts.php:368
 msgid "Title"
 msgstr ""
 
-#. undefined
 #: includes/widgets/class-wpmdc-widget-pages.php:224, includes/widgets/class-wpmdc-widget-posts.php:369
 msgid "Publish date"
 msgstr ""
 
-#. undefined
 #: includes/widgets/class-wpmdc-widget-pages.php:225, includes/widgets/class-wpmdc-widget-posts.php:370
 msgid "Modified date"
 msgstr ""
 
-#. undefined
 #: includes/widgets/class-wpmdc-widget-pages.php:226, includes/widgets/class-wpmdc-widget-posts.php:372
 msgid "ID"
 msgstr ""
 
-#. undefined
 #: includes/widgets/class-wpmdc-widget-pages.php:235, includes/widgets/class-wpmdc-widget-posts.php:381
 msgid "Exclude:"
 msgstr ""
 
-#. undefined
 #: includes/widgets/class-wpmdc-widget-pages.php:250, includes/widgets/class-wpmdc-widget-posts.php:396
 msgid "Page IDs, separated by commas."
 msgstr ""
@@ -260,7 +327,6 @@ msgstr ""
 msgid "A list of your site's Posts."
 msgstr ""
 
-#. undefined
 #: includes/widgets/class-wpmdc-widget-posts.php:35, includes/widgets/class-wpmdc-widget-posts.php:102
 msgid "Posts"
 msgstr ""
@@ -302,28 +368,8 @@ msgstr ""
 msgid "Docs"
 msgstr ""
 
-#: page-templates/docs.php:20
-msgid "This is the helper text."
-msgstr ""
-
-#: page-templates/docs.php:28
+#: page-templates/docs.php:26
 msgid "Components"
-msgstr ""
-
-#: page-templates/docs.php:36
-msgid "Text Field"
-msgstr ""
-
-#: page-templates/docs.php:235
-msgid "Button"
-msgstr ""
-
-#: page-templates/docs.php:379
-msgid "Checkbox"
-msgstr ""
-
-#: page-templates/docs.php:420
-msgid "Switch"
 msgstr ""
 
 #. translators: 1: current year, 2: site title link.

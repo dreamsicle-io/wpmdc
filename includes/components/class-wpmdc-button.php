@@ -27,24 +27,50 @@ class WPMDC_Button extends WPMDC_Component {
 	function __construct( $args = array() ) {
 
 		$this->arg_types = array(
-			'mod'           => array( '', 'outlined', 'raised', 'unelevated' ), 
-			'type'          => array( 'button', 'reset' ), 
-			'dense'         => 'boolean', 
-			'icon'          => 'string', 
-			'text'          => 'string', 
-			'disabled'      => 'boolean', 
+			'mod'      => array( '', 'outlined', 'raised', 'unelevated' ), 
+			'type'     => array( 'button', 'submit', 'reset' ), 
+			'href'     => 'string', 
+			'dense'    => 'boolean', 
+			'icon'     => 'string', 
+			'text'     => 'string', 
+			'disabled' => 'boolean', 
 		);
 
 		$this->default_args = array(
-			'mod'           => '', 
-			'type'          => 'button', 
-			'dense'         => false, 
-			'icon'          => '', 
-			'text'          => _x( 'Button', 'button component default text', 'wpmdc' ), 
-			'disabled'      => false, 
+			'mod'      => '', 
+			'type'     => 'button', 
+			'href'     => '', 
+			'dense'    => false, 
+			'icon'     => '', 
+			'text'     => _x( 'Button', 'button component default button text', 'wpmdc' ), 
+			'disabled' => false, 
 		);
 
 		parent::__construct( $args );
+
+	}
+
+	public function render_internal_elements() {
+
+		if ( ! empty( $this->args['icon'] ) ) { ?>
+
+			<i class="material-icons mdc-button__icon" aria-hidden="true"><?php 
+
+				echo esc_html( $this->args['icon'] );
+
+			?></i>
+
+		<?php } 
+
+		if ( ! empty( $this->args['text'] ) ) { ?>
+
+			<span><?php 
+
+				echo esc_html( $this->args['text'] );
+
+			?></span>
+
+		<?php }
 
 	}
 
@@ -56,39 +82,41 @@ class WPMDC_Button extends WPMDC_Component {
 		}
 
 		$class = self::parse_classes( array(
-			'wpmdc-button'                      => true, 
-			'mdc-button'                        => true, 
-			'mdc-ripple-surface'                => true, 
-			'mdc-button--' . $this->args['mod'] => ! empty( $this->args['mod'] ), 
-			'mdc-button--dense'                 => $this->args['dense'], 
-		) ); ?>
+			'wpmdc-button'                                  => true, 
+			'mdc-button'                                    => true, 
+			'mdc-ripple-surface'                            => true, 
+			'mdc-button--' . esc_attr( $this->args['mod'] ) => ! empty( $this->args['mod'] ), 
+			'mdc-button--dense'                             => $this->args['dense'], 
+		) ); 
 
-		<button 
-		type="<?php echo esc_attr( $this->args['type'] ); ?>" 
-		class="<?php echo esc_attr( $class ); ?>"
-		<?php 
-		echo $this->args['disabled'] ? ' disabled' : ''; 
-		echo $this->args['disabled'] ? ' aria-disabled="disabled"' : ''; 
-		?>>
+		if ( ! empty( $this->args['href'] ) ) { ?>
 
-			<?php if ( ! empty( $this->args['icon'] ) ) { ?>
+			<a 
+			href="<?php echo esc_url( $this->args['href'] ); ?>"
+			class="<?php echo esc_attr( $class ); ?>"><?php 
 
-				<i class="material-icons mdc-button__icon" aria-hidden="true"><?php 
+				$this->render_internal_elements(); 
 
-					echo esc_html( $this->args['icon'] );
+			?></a>
 
-				?></i>
+		<?php } else {
 
-			<?php } ?>
+			$button_attrs = self::parse_attrs( array( 
+				'disabled'             => $this->args['disabled'],
+				'aria-disabled="true"' => $this->args['disabled'],
+			) ); ?> 
 
-			<?php if ( ! empty( $this->args['text'] ) ) {
+			<button 
+			type="<?php echo esc_attr( $this->args['type'] ); ?>" 
+			class="<?php echo esc_attr( $class ); ?>"
+			<?php echo $button_attrs; ?>><?php 
 
-				echo esc_html( $this->args['text'] );
+				$this->render_internal_elements(); 
 
-			} ?>
+			?></button>
 
-		</a>
+		<?php }
 
-	<?php }
+	}
 
 }

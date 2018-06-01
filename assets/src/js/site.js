@@ -4,7 +4,12 @@ import { wpmdcTemporaryDrawers } from './modules/drawer';
 import { wpmdcTextFields } from './modules/text-field';
 import { wpmdcSelects } from './modules/select';
 import { wpmdcRipples } from './modules/ripple';
+import { wpmdcRadios } from './modules/radio';
+// import { wpmdcIconButtons } from './modules/icon-button';
+import { wpmdcIconToggles } from './modules/icon-toggle';
 import { wpmdcCheckboxes } from './modules/checkbox';
+import { wpmdcTabs, wpmdcTabBars, wpmdcTabBarScrollers } from './modules/tabs';
+import { wpmdcChips, wpmdcChipSets } from './modules/chips';
 
 document.addEventListener('DOMContentLoaded', () => {
 	wpmdcMobileAdminBarFix();
@@ -13,5 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	wpmdcTextFields();
 	wpmdcSelects();
 	wpmdcCheckboxes();
+	wpmdcRadios();
 	wpmdcRipples();
+	wpmdcTabBarScrollers();
+	wpmdcTabBars();
+	wpmdcTabs();
+	wpmdcChipSets();
+	wpmdcChips();
+	wpmdcIconToggles();
+	// wpmdcIconButtons();
 });

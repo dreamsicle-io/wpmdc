@@ -2,6 +2,12 @@
 
 	& + label {
 		padding-left: 16px;
-		user-select: none;
+	}
+
+	&:not(.mdc-switch--disabled) {
+
+		& + label {
+			cursor: pointer;
+		}
 	}
 }

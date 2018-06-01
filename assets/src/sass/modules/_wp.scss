@@ -30,12 +30,12 @@
 
 .entry-excerpt,
 .entry-content {
-	@include clear;
-	@include adjust-children;
+	@include wpmdc-clear;
+	@include wpmdc-adjust-children;
 }
 
 .hentry {
-	@include clear;
+	@include wpmdc-clear;
 }
 
 // Smileys
@@ -58,7 +58,7 @@
 
 	img {
 		&[class*='wp-image-'] {
-			@include center;
+			@include wpmdc-center;
 		}
 	}
 }
@@ -70,22 +70,22 @@
 
 // Alignments
 .alignleft {
-	@include float(left);
+	@include wpmdc-float(left);
 }
 
 .alignright {
-	@include float(right);
+	@include wpmdc-float(right);
 }
 
 .aligncenter {
-	@include center;
+	@include wpmdc-center;
 }
 
 .wp-caption,
 img {
 
 	&.alignnone {
-		@include center;
+		@include wpmdc-center;
 	}
 }
 
@@ -100,7 +100,7 @@ img {
 
 // Widgets
 .widget {
-	@include clear;
+	@include wpmdc-clear;
 }
 
 // Avatars

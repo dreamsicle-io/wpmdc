@@ -1,0 +1,9 @@
+.wpmdc-radio {
+
+	&:not(.mdc-radio--disabled) {
+
+		& + label {
+			cursor: pointer;
+		}
+	}
+}

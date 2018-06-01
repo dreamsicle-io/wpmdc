@@ -1,6 +1,9 @@
 .wpmdc-checkbox {
 
-	& + label {
-		user-select: none;
+	&:not(.mdc-checkbox--disabled) {
+
+		& + label {
+			cursor: pointer;
+		}
 	}
 }

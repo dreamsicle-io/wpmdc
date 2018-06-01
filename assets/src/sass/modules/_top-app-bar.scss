@@ -26,7 +26,7 @@
 .admin-bar {
 
 	.wpmdc-top-app-bar {
-		margin-top: 46px;
+		margin-top: $wpmdc-admin-bar-height-mobile;
 	}
 }
 
@@ -34,7 +34,7 @@
 	.admin-bar {
 
 		.wpmdc-top-app-bar {
-			margin-top: 32px;
+			margin-top: $wpmdc-admin-bar-height-desktop;
 		}
 	}
 }

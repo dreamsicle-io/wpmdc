@@ -61,32 +61,35 @@ class WPMDC_Checkbox extends WPMDC_Component {
 			return; 
 		}
 
-		$class = self::parse_classes( array(
+		$container_class = self::parse_classes( array(
 			'wpmdc-checkbox'                      => true, 
 			'mdc-checkbox'                        => true, 
 			'wpmdc-checkbox--start-indeterminate' => $this->args['indeterminate'], 
 			'mdc-checkbox--disabled'              => $this->args['disabled'], 
+		) );
+
+		$input_attrs = self::parse_attrs( array( 
+			'checked'              => $this->args['checked'],
+			'aria-checked="true"'  => $this->args['checked'],
+			'required'             => $this->args['required'],
+			'aria-required="true"' => $this->args['required'],
+			'disabled'             => $this->args['disabled'],
+			'aria-disabled="true"' => $this->args['disabled'],
 		) ); ?>
 
 		<div class="mdc-form-field">
 
 			<div 
 			id="<?php echo esc_attr( $this->args['id'] ); ?>"
-			class="<?php echo esc_attr( $class ); ?>">
+			class="<?php echo esc_attr( $container_class ); ?>">
 
 				<input 
 				type="checkbox"
 				class="mdc-checkbox__native-control" 
+				name="<?php echo esc_attr( $this->args['name'] ); ?>"
 				id="<?php echo esc_attr( $this->args['id'] ); ?>_input"
 				value="<?php echo esc_attr( $this->args['value'] ); ?>"
-				<?php 
-				echo $this->args['checked'] ? ' checked' : ''; 
-				echo $this->args['checked'] ? ' aria-checked="true"' : ''; 
-				echo $this->args['required'] ? ' required' : '';
-				echo $this->args['required'] ? ' aria-required="true"' : '';
-				echo $this->args['disabled'] ? ' disabled' : '';
-				echo $this->args['disabled'] ? ' aria-disabled="true"' : ''; 
-				?> />
+				<?php echo $input_attrs; ?> />
 				
 				<div class="mdc-checkbox__background">
 					
