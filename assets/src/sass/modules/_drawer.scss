@@ -1,28 +1,5 @@
 .wpmdc-drawer {
 
-	&__header-slider {
-		@include wpmdc-overlay;
-		pointer-events: none;
-		z-index: 0;
-
-		&::after {
-			@include wpmdc-overlay;
-			@include wpmdc-ramp(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.36), bottom);
-			content: '';
-		}
-	}
-
-	&__header-slide {
-		@include wpmdc-overlay;
-		@include wpmdc-background-cover;
-		opacity: 0;
-		transition: opacity 560ms ease-in-out;
-
-		&--active {
-			opacity: 1;
-		}
-	}
-
 	.mdc-drawer__header {
 
 		.avatar {
