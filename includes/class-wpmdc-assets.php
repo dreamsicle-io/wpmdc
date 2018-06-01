@@ -58,6 +58,11 @@ class WPMDC_Assets {
 			$this->theme_version, 
 			true 
 		);
+
+		wp_localize_script( $this->theme_textdomain, 'wpmdcRest', array(
+			'nonce' => wp_create_nonce( 'wp_rest' ), 
+			'user'  => wp_get_current_user(), 
+		) );
 	}
 
 	public function enqueue_admin_assets() {
