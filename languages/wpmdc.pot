@@ -53,20 +53,6 @@ msgstr ""
 msgid "The value \"%1$s\" for key \"%2$s\" is not of type \"%3$s\"."
 msgstr ""
 
-#: includes/class-wpmdc-options.php:35
-msgctxt "test icon toggle user field title"
-msgid "Test Icon Toggle User Field"
-msgstr ""
-
-#: includes/class-wpmdc-options.php:36
-msgctxt "test icon toggle user field label"
-msgid "Enable Option"
-msgstr ""
-
-#: includes/class-wpmdc-options.php:95
-msgid "These settings were rendered for use as admin counterparts for WPMDC Icon Toggle components."
-msgstr ""
-
 #: includes/class-wpmdc-widgets.php:54
 msgid "Drawer"
 msgstr ""
@@ -91,6 +77,11 @@ msgstr ""
 #: includes/components/class-wpmdc-checkbox.php:47
 msgctxt "checkbox component default label"
 msgid "Checkbox"
+msgstr ""
+
+#: includes/components/class-wpmdc-chip.php:43
+msgctxt "chip component default button text"
+msgid "Chip"
 msgstr ""
 
 #: includes/components/class-wpmdc-icon-button.php:46
@@ -138,6 +129,19 @@ msgctxt "switch component default label"
 msgid "Switch"
 msgstr ""
 
+#: includes/components/class-wpmdc-tab.php:46
+msgctxt "tab component default button text"
+msgid "Tab"
+msgstr ""
+
+#: includes/components/class-wpmdc-tab.php:240
+msgid "Back"
+msgstr ""
+
+#: includes/components/class-wpmdc-tab.php:282
+msgid "Next"
+msgstr ""
+
 #: includes/components/class-wpmdc-text-field.php:55
 msgctxt "text field component default label"
 msgid "Text Field"
@@ -149,6 +153,10 @@ msgstr ""
 
 #: includes/components/examples/checkbox.php:24
 msgid "Checkbox"
+msgstr ""
+
+#: includes/components/examples/chips.php:24
+msgid "Chips"
 msgstr ""
 
 #: includes/components/examples/icon-button.php:24
@@ -165,6 +173,10 @@ msgstr ""
 
 #: includes/components/examples/switch.php:24
 msgid "Switch"
+msgstr ""
+
+#: includes/components/examples/tabs.php:24
+msgid "Tabs"
 msgstr ""
 
 #: includes/components/examples/text-field.php:16
