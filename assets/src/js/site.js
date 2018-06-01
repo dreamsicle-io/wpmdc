@@ -8,6 +8,8 @@ import { wpmdcRadios } from './modules/radio';
 // import { wpmdcIconButtons } from './modules/icon-button';
 import { wpmdcIconToggles } from './modules/icon-toggle';
 import { wpmdcCheckboxes } from './modules/checkbox';
+import { wpmdcTabs, wpmdcTabBars, wpmdcTabBarScrollers } from './modules/tabs';
+import { wpmdcChips, wpmdcChipSets } from './modules/chips';
 
 document.addEventListener('DOMContentLoaded', () => {
 	wpmdcMobileAdminBarFix();
@@ -17,7 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	wpmdcSelects();
 	wpmdcCheckboxes();
 	wpmdcRadios();
+	wpmdcRipples();
+	wpmdcTabBarScrollers();
+	wpmdcTabBars();
+	wpmdcTabs();
+	wpmdcChipSets();
+	wpmdcChips();
 	wpmdcIconToggles();
 	// wpmdcIconButtons();
-	wpmdcRipples();
 });
