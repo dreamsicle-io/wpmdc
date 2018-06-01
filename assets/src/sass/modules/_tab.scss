@@ -1,0 +1,16 @@
+.wpmdc-tab {
+	background: transparent;
+	border: 0;
+}
+
+.wpmdc-tab-bar-scroller {
+
+	.mdc-tab-bar-scroller__scroll-frame {
+		white-space: nowrap;
+	}
+
+	.mdc-tab-bar-scroller__indicator__inner {
+		background: transparent;
+		border: 0;
+	}
+}
