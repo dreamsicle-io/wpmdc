@@ -52,10 +52,17 @@ class WPMDC_Chip extends WPMDC_Component {
 
 	public function render_leading_icon() {
 
-		if ( ! empty( $this->args['icon'] ) ) { ?> 
+		if ( ! empty( $this->args['icon'] ) ) {
+
+			$icon_class = self::parse_classes( array(
+				'material-icons'                 => true, 
+				'mdc-chip__icon'                 => true, 
+				'mdc-chip__icon--leading'        => true, 
+				'mdc-chip__icon--leading-hidden' => $this->args['selected'], 
+			) ); ?> 
 
 			<i 
-			class="mdc-chip__icon mdc-chip__icon--leading material-icons" 
+			class="<?php echo esc_attr( $icon_class ); ?>" 
 			aria-hidden="true"><?php 
 
 				echo esc_html( $this->args['icon'] );
@@ -129,7 +136,6 @@ class WPMDC_Chip extends WPMDC_Component {
 			'wpmdc-chip'         => true, 
 			'mdc-chip'           => true, 
 			'mdc-chip--selected' => $this->args['selected'], 
-			'mdc-chip--disabled' => $this->args['disabled'], 
 		) ); 
 
 		if ( ! empty( $this->args['href'] ) ) { ?>
@@ -159,6 +165,66 @@ class WPMDC_Chip extends WPMDC_Component {
 			?></button>
 
 		<?php }
+
+	}
+
+	public static function open_set( $args = array() ) {
+
+		$args = wp_parse_args( $args, array(
+			'echo' => true, 
+			'mod'  => array( '', 'input', 'choice', 'filter' ), 
+		) );
+
+		$errors = WPMDC_Component::check_arg_types( $args, array(
+			'echo' => 'boolean', 
+			'mod'  => '', 
+		) );
+
+		WPMDC_Component::render_errors( $errors );
+
+		$class = WPMDC_Component::parse_classes( array( 
+			'wpmdc-chip-set'                                  => true, 
+			'mdc-chip-set'                                    => true, 
+			'mdc-chip-set--' . esc_attr( $args['mod'] ) => ! empty( $args['mod'] ), 
+		) );
+		
+		$output = '<div class="' . esc_attr( $class ) . '">';
+
+		if ( $args['echo'] ) {
+
+			echo $output;
+
+		} else {
+
+			return $output;
+			
+		}
+
+	}
+
+	public static function close_set( $args = array() ) {
+		
+		$args = wp_parse_args( $args, array(
+			'echo' => true, 
+		) );
+
+		$errors = WPMDC_Component::check_arg_types( $args, array(
+			'echo' => 'boolean', 
+		) );
+
+		WPMDC_Component::render_errors( $errors );
+		
+		$output = '</div>';
+
+		if ( $args['echo'] ) {
+
+			echo $output;
+
+		} else {
+
+			return $output;
+			
+		}
 
 	}
 
