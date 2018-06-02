@@ -5,11 +5,12 @@ import { wpmdcTextFields } from './modules/text-field';
 import { wpmdcSelects } from './modules/select';
 import { wpmdcRipples } from './modules/ripple';
 import { wpmdcRadios } from './modules/radio';
-// import { wpmdcIconButtons } from './modules/icon-button';
-import { wpmdcIconToggles } from './modules/icon-toggle';
 import { wpmdcCheckboxes } from './modules/checkbox';
+import { wpmdcSliders } from './modules/slider';
 import { wpmdcTabs, wpmdcTabBars, wpmdcTabBarScrollers } from './modules/tabs';
 import { wpmdcChips, wpmdcChipSets } from './modules/chips';
+import { wpmdcIconToggles } from './modules/icon-toggle';
+// import { wpmdcIconButtons } from './modules/icon-button';
 
 document.addEventListener('DOMContentLoaded', () => {
 	wpmdcMobileAdminBarFix();
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	wpmdcTabs();
 	wpmdcChipSets();
 	wpmdcChips();
+	wpmdcSliders();
 	wpmdcIconToggles();
 	// wpmdcIconButtons();
 });

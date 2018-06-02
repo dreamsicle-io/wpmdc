@@ -6,5 +6,9 @@
 		box-shadow: 0;
 		color: $mdc-button-disabled-ink-color;
 		pointer-events: none;
+
+		.mdc-chip__icon {
+			color: $mdc-button-disabled-ink-color;
+		}
 	}
 }

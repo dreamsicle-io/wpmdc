@@ -124,6 +124,11 @@ msgctxt "radio component default label"
 msgid "Radio"
 msgstr ""
 
+#: includes/components/class-wpmdc-slider.php:53
+msgctxt "slider component default label"
+msgid "Slider"
+msgstr ""
+
 #: includes/components/class-wpmdc-switch.php:45
 msgctxt "switch component default label"
 msgid "Switch"
@@ -169,6 +174,10 @@ msgstr ""
 
 #: includes/components/examples/radio.php:24
 msgid "Radio"
+msgstr ""
+
+#: includes/components/examples/slider.php:24
+msgid "Slider"
 msgstr ""
 
 #: includes/components/examples/switch.php:24

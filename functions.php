@@ -35,6 +35,7 @@ require WPMDCINC . '/components/class-wpmdc-text-field.php';
 require WPMDCINC . '/components/class-wpmdc-checkbox.php';
 require WPMDCINC . '/components/class-wpmdc-switch.php';
 require WPMDCINC . '/components/class-wpmdc-radio.php';
+require WPMDCINC . '/components/class-wpmdc-slider.php';
 // require WPMDCINC . '/components/class-wpmdc-icon-button.php';
 require WPMDCINC . '/components/class-wpmdc-icon-toggle.php';
 require WPMDCINC . '/components/class-wpmdc-button.php';
