@@ -139,12 +139,12 @@ msgstr ""
 msgid "The key \"%1$s\" expects an array with the keys [\"%2$s\"]."
 msgstr ""
 
-#: includes/components/class-wpmdc-list-item.php:45
+#: includes/components/class-wpmdc-list-item.php:46
 msgctxt "list item component default primary text"
 msgid "List Item"
 msgstr ""
 
-#: includes/components/class-wpmdc-list-item.php:46
+#: includes/components/class-wpmdc-list-item.php:47
 msgctxt "list item component default secondary text"
 msgid "List Item Secondary Text"
 msgstr ""
@@ -235,6 +235,30 @@ msgstr ""
 
 #: includes/components/examples/list.php:24
 msgid "List"
+msgstr ""
+
+#: includes/components/examples/menu.php:24
+msgid "Menu"
+msgstr ""
+
+#: includes/components/examples/menu.php:33
+msgctxt "wpmdc"
+msgid "Toggle Menu Top Start (Default)"
+msgstr ""
+
+#: includes/components/examples/menu.php:57
+msgctxt "wpmdc"
+msgid "Toggle Menu Top End"
+msgstr ""
+
+#: includes/components/examples/menu.php:81
+msgctxt "wpmdc"
+msgid "Toggle Menu Bottom Start"
+msgstr ""
+
+#: includes/components/examples/menu.php:105
+msgctxt "wpmdc"
+msgid "Toggle Menu Bottom End"
 msgstr ""
 
 #: includes/components/examples/radio.php:24
