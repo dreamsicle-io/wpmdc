@@ -1,5 +1,21 @@
 <?php 
+/**
+ * WPMDC Layout Grid Class.
+ *
+ * @package    wpmdc
+ * @subpackage includes/components/templates
+ */
 
+// Security: Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; 
+}
+
+/**
+ * WPMDC Layout Grid.
+ *
+ * @since  0.0.1 
+ */
 class WPMDC_Layout_Grid {
 
 	public static function open_grid( $args = array() ) {
@@ -19,6 +35,7 @@ class WPMDC_Layout_Grid {
 		WPMDC_Component::render_errors( $errors );
 
 		$class = WPMDC_Component::parse_classes( array( 
+			'wpmdc-layout-grid'                                    => true, 
 			'mdc-layout-grid'                                      => true, 
 			'mdc-layout-grid--fixed-column-width'                  => $args['fixed'], 
 			'mdc-layout-grid--align-' . esc_attr( $args['align'] ) => ! empty( $args['align'] ), 
