@@ -153,6 +153,7 @@ class WPMDC_List_Item extends WPMDC_Component {
 			'two_line'    => false, 
 			'avatar_list' => false, 
 			'dense'       => false, 
+			'container'   => 'ul', 
 		) );
 
 		$errors = WPMDC_Component::check_arg_types( $args, array(
@@ -160,19 +161,20 @@ class WPMDC_List_Item extends WPMDC_Component {
 			'two_line'    => 'boolean', 
 			'avatar_list' => 'boolean', 
 			'dense'       => 'boolean', 
+			'container'   => array( 'ul', 'div', 'nav' ), 
 		) );
 
 		WPMDC_Component::render_errors( $errors );
 
 		$class = WPMDC_Component::parse_classes( array( 
-			'wpmdc-list'                            => true, 
-			'mdc-list'                              => true, 
-			'mdc-list--two-line'                    => $args['two_line'], 
-			'mdc-list--avatar-list'                 => $args['avatar_list'], 
-			'mdc-list--dense'                       => $args['dense'], 
+			'wpmdc-list'            => true, 
+			'mdc-list'              => true, 
+			'mdc-list--two-line'    => $args['two_line'], 
+			'mdc-list--avatar-list' => $args['avatar_list'], 
+			'mdc-list--dense'       => $args['dense'], 
 		) );
 		
-		$output = '<div class="' . esc_attr( $class ) . '">';
+		$output = '<' . esc_attr( $args['container'] ) . ' class="' . esc_attr( $class ) . '">';
 
 		if ( $args['echo'] ) {
 
@@ -189,16 +191,18 @@ class WPMDC_List_Item extends WPMDC_Component {
 	public static function close_list( $args = array() ) {
 		
 		$args = wp_parse_args( $args, array(
-			'echo' => true, 
+			'echo'      => true, 
+			'container' => 'ul', 
 		) );
 
 		$errors = WPMDC_Component::check_arg_types( $args, array(
-			'echo' => 'boolean', 
+			'echo'      => 'boolean', 
+			'container' => array( 'ul', 'div', 'nav' ), 
 		) );
 
 		WPMDC_Component::render_errors( $errors );
 		
-		$output = '</div>';
+		$output = '</' . esc_attr( $args['container'] ) . '>';
 
 		if ( $args['echo'] ) {
 
