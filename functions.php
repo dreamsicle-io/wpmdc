@@ -44,6 +44,7 @@ require WPMDCINC . '/components/class-wpmdc-fab.php';
 require WPMDCINC . '/components/class-wpmdc-tab.php';
 require WPMDCINC . '/components/class-wpmdc-chip.php';
 require WPMDCINC . '/components/class-wpmdc-dialog.php';
+require WPMDCINC . '/components/class-wpmdc-menu.php';
 require WPMDCINC . '/tags/component.php';
 require WPMDCINC . '/tags/top-app-bar.php';
 require WPMDCINC . '/tags/hero.php';
