@@ -34,6 +34,7 @@ class WPMDC_Button extends WPMDC_Component {
 			'icon'     => 'string', 
 			'text'     => 'string', 
 			'disabled' => 'boolean', 
+			'data'     => 'array', 
 		);
 
 		$this->default_args = array(
@@ -44,6 +45,7 @@ class WPMDC_Button extends WPMDC_Component {
 			'icon'     => '', 
 			'text'     => _x( 'Button', 'button component default button text', 'wpmdc' ), 
 			'disabled' => false, 
+			'data'     => array(), 
 		);
 
 		parent::__construct( $args );
@@ -89,11 +91,14 @@ class WPMDC_Button extends WPMDC_Component {
 			'mdc-button--dense'                             => $this->args['dense'], 
 		) ); 
 
+		$data_attrs = self::parse_data_attrs( $this->args['data'] );
+
 		if ( ! empty( $this->args['href'] ) ) { ?>
 
 			<a 
 			href="<?php echo esc_url( $this->args['href'] ); ?>"
-			class="<?php echo esc_attr( $class ); ?>"><?php 
+			class="<?php echo esc_attr( $class ); ?>"
+			<?php echo $data_attrs; ?>><?php 
 
 				$this->render_internal_elements(); 
 
@@ -109,7 +114,8 @@ class WPMDC_Button extends WPMDC_Component {
 			<button 
 			type="<?php echo esc_attr( $this->args['type'] ); ?>" 
 			class="<?php echo esc_attr( $class ); ?>"
-			<?php echo $button_attrs; ?>><?php 
+			<?php echo $button_attrs; ?>
+			<?php echo $data_attrs; ?>><?php 
 
 				$this->render_internal_elements(); 
 
