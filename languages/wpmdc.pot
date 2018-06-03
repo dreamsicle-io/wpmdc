@@ -69,7 +69,7 @@ msgstr ""
 msgid "Widgets added here will appear in the footer."
 msgstr ""
 
-#: includes/components/class-wpmdc-button.php:45
+#: includes/components/class-wpmdc-button.php:46
 msgctxt "button component default button text"
 msgid "Button"
 msgstr ""
@@ -82,6 +82,21 @@ msgstr ""
 #: includes/components/class-wpmdc-chip.php:43
 msgctxt "chip component default button text"
 msgid "Chip"
+msgstr ""
+
+#: includes/components/class-wpmdc-dialog.php:43
+msgctxt "dialog component default title"
+msgid "Dialog"
+msgstr ""
+
+#: includes/components/class-wpmdc-dialog.php:45
+msgctxt "dialog component default cancel text"
+msgid "Cancel"
+msgstr ""
+
+#: includes/components/class-wpmdc-dialog.php:46
+msgctxt "dialog component default accept text"
+msgid "Accept"
 msgstr ""
 
 #: includes/components/class-wpmdc-fab.php:44
@@ -122,6 +137,16 @@ msgstr ""
 #. translators: 1: argument key, 2: CSV of expected values.
 #: includes/components/class-wpmdc-icon-toggle.php:77
 msgid "The key \"%1$s\" expects an array with the keys [\"%2$s\"]."
+msgstr ""
+
+#: includes/components/class-wpmdc-list-item.php:45
+msgctxt "list item component default primary text"
+msgid "List Item"
+msgstr ""
+
+#: includes/components/class-wpmdc-list-item.php:46
+msgctxt "list item component default secondary text"
+msgid "List Item Secondary Text"
 msgstr ""
 
 #: includes/components/class-wpmdc-radio.php:45
@@ -169,6 +194,33 @@ msgstr ""
 msgid "Chips"
 msgstr ""
 
+#: includes/components/examples/dialog.php:26
+msgid "Dialog"
+msgstr ""
+
+#: includes/components/examples/dialog.php:34
+msgctxt "wpmdc"
+msgid "Toggle Standard Dialog"
+msgstr ""
+
+#: includes/components/examples/dialog.php:47
+msgctxt "wpmdc"
+msgid "Toggle Scrollable Dialog"
+msgstr ""
+
+#: includes/components/examples/dialog.php:61
+msgctxt "wpmdc"
+msgid "Toggle Dialog with Custom Actions"
+msgstr ""
+
+#: includes/components/examples/dialog.php:67
+msgid "Go Back"
+msgstr ""
+
+#: includes/components/examples/dialog.php:68
+msgid "Continue"
+msgstr ""
+
 #: includes/components/examples/fab.php:24
 msgid "Fab"
 msgstr ""
@@ -179,6 +231,10 @@ msgstr ""
 
 #: includes/components/examples/icon-toggle.php:24
 msgid "Icon Toggle"
+msgstr ""
+
+#: includes/components/examples/list.php:24
+msgid "List"
 msgstr ""
 
 #: includes/components/examples/radio.php:24
