@@ -84,6 +84,11 @@ msgctxt "chip component default button text"
 msgid "Chip"
 msgstr ""
 
+#: includes/components/class-wpmdc-fab.php:44
+msgctxt "fab component default button text"
+msgid "Fab"
+msgstr ""
+
 #: includes/components/class-wpmdc-icon-button.php:46
 msgctxt "icon button component default label"
 msgid "Icon Button"
@@ -162,6 +167,10 @@ msgstr ""
 
 #: includes/components/examples/chips.php:24
 msgid "Chips"
+msgstr ""
+
+#: includes/components/examples/fab.php:24
+msgid "Fab"
 msgstr ""
 
 #: includes/components/examples/icon-button.php:24

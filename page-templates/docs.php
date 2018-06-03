@@ -28,6 +28,7 @@ get_template_part( 'template-parts/header' ); ?>
 		<?php
 		get_template_part( 'includes/components/examples/text-field' ); 
 		get_template_part( 'includes/components/examples/button' ); 
+		get_template_part( 'includes/components/examples/fab' ); 
 		get_template_part( 'includes/components/examples/checkbox' ); 
 		get_template_part( 'includes/components/examples/switch' ); 
 		get_template_part( 'includes/components/examples/radio' ); 

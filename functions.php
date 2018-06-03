@@ -39,6 +39,7 @@ require WPMDCINC . '/components/class-wpmdc-slider.php';
 // require WPMDCINC . '/components/class-wpmdc-icon-button.php';
 require WPMDCINC . '/components/class-wpmdc-icon-toggle.php';
 require WPMDCINC . '/components/class-wpmdc-button.php';
+require WPMDCINC . '/components/class-wpmdc-fab.php';
 require WPMDCINC . '/components/class-wpmdc-tab.php';
 require WPMDCINC . '/components/class-wpmdc-chip.php';
 require WPMDCINC . '/tags/component.php';
