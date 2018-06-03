@@ -36,6 +36,7 @@ get_template_part( 'template-parts/header' ); ?>
 		get_template_part( 'includes/components/examples/chips' );
 		get_template_part( 'includes/components/examples/slider' );
 		get_template_part( 'includes/components/examples/icon-toggle' );
+		get_template_part( 'includes/components/examples/dialog' );
 		// get_template_part( 'includes/components/examples/icon-button' ); ?>
 
 	</main>
