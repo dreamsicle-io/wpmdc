@@ -1,0 +1,9 @@
+.wpmdc-menu {
+	@include mdc-theme-prop(background-color, 'surface');
+	@include mdc-theme-prop(color, 'on-surface');
+}
+
+.wpmdc-menu-anchor {
+	display: inline-block;
+	width: auto;
+}
