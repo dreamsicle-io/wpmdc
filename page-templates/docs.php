@@ -26,6 +26,7 @@ get_template_part( 'template-parts/header' ); ?>
 		<h2><?php esc_html_e( 'Components', 'wpmdc' ); ?></h2>
 
 		<?php
+		get_template_part( 'includes/components/examples/list' ); 
 		get_template_part( 'includes/components/examples/text-field' ); 
 		get_template_part( 'includes/components/examples/button' ); 
 		get_template_part( 'includes/components/examples/fab' ); 

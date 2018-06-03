@@ -31,6 +31,7 @@ require WPMDCINC . '/widgets/class-wpmdc-widget-terms.php';
 require WPMDCINC . '/walkers/class-wpmdc-walker-page.php';
 require WPMDCINC . '/walkers/class-wpmdc-walker-category.php';
 require WPMDCINC . '/components/class-wpmdc-layout-grid.php';
+require WPMDCINC . '/components/class-wpmdc-list-item.php';
 require WPMDCINC . '/components/class-wpmdc-text-field.php';
 require WPMDCINC . '/components/class-wpmdc-checkbox.php';
 require WPMDCINC . '/components/class-wpmdc-switch.php';
