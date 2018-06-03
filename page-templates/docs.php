@@ -26,8 +26,10 @@ get_template_part( 'template-parts/header' ); ?>
 		<h2><?php esc_html_e( 'Components', 'wpmdc' ); ?></h2>
 
 		<?php
+		get_template_part( 'includes/components/examples/list' ); 
 		get_template_part( 'includes/components/examples/text-field' ); 
 		get_template_part( 'includes/components/examples/button' ); 
+		get_template_part( 'includes/components/examples/fab' ); 
 		get_template_part( 'includes/components/examples/checkbox' ); 
 		get_template_part( 'includes/components/examples/switch' ); 
 		get_template_part( 'includes/components/examples/radio' ); 
@@ -35,6 +37,7 @@ get_template_part( 'template-parts/header' ); ?>
 		get_template_part( 'includes/components/examples/chips' );
 		get_template_part( 'includes/components/examples/slider' );
 		get_template_part( 'includes/components/examples/icon-toggle' );
+		get_template_part( 'includes/components/examples/dialog' );
 		// get_template_part( 'includes/components/examples/icon-button' ); ?>
 
 	</main>

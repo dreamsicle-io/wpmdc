@@ -1,6 +1,6 @@
 <?php
 /**
- * WPMDC Button Class.
+ * WPMDC Fab Class.
  *
  * @package    wpmdc
  * @subpackage includes/components
@@ -12,11 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * WPMDC Button.
+ * WPMDC Fab.
  *
  * @since  0.0.1 
  */
-class WPMDC_Button extends WPMDC_Component {
+class WPMDC_Fab extends WPMDC_Component {
 
 	/**
 	 * Construct.
@@ -27,25 +27,23 @@ class WPMDC_Button extends WPMDC_Component {
 	function __construct( $args = array() ) {
 
 		$this->arg_types = array(
-			'mod'      => array( '', 'outlined', 'raised', 'unelevated' ), 
+			'mod'      => array( '', 'mini' ), 
 			'type'     => array( 'button', 'submit', 'reset' ), 
 			'href'     => 'string', 
-			'dense'    => 'boolean', 
 			'icon'     => 'string', 
-			'text'     => 'string', 
+			'label'    => 'string', 
 			'disabled' => 'boolean', 
-			'data'     => 'array', 
+			'exited'   => 'boolean', 
 		);
 
 		$this->default_args = array(
 			'mod'      => '', 
 			'type'     => 'button', 
 			'href'     => '', 
-			'dense'    => false, 
-			'icon'     => '', 
-			'text'     => _x( 'Button', 'button component default button text', 'wpmdc' ), 
+			'icon'     => 'favorite_border', 
+			'label'    => _x( 'Fab', 'fab component default button text', 'wpmdc' ), 
 			'disabled' => false, 
-			'data'     => array(), 
+			'exited'   => false, 
 		);
 
 		parent::__construct( $args );
@@ -56,23 +54,13 @@ class WPMDC_Button extends WPMDC_Component {
 
 		if ( ! empty( $this->args['icon'] ) ) { ?>
 
-			<i class="material-icons mdc-button__icon" aria-hidden="true"><?php 
+			<i class="material-icons mdc-fab__icon" aria-hidden="true"><?php 
 
 				echo esc_html( $this->args['icon'] );
 
 			?></i>
 
 		<?php } 
-
-		if ( ! empty( $this->args['text'] ) ) { ?>
-
-			<span><?php 
-
-				echo esc_html( $this->args['text'] );
-
-			?></span>
-
-		<?php }
 
 	}
 
@@ -84,21 +72,24 @@ class WPMDC_Button extends WPMDC_Component {
 		}
 
 		$class = self::parse_classes( array(
-			'wpmdc-button'                                  => true, 
-			'mdc-button'                                    => true, 
-			'mdc-ripple-surface'                            => true, 
-			'mdc-button--' . esc_attr( $this->args['mod'] ) => ! empty( $this->args['mod'] ), 
-			'mdc-button--dense'                             => $this->args['dense'], 
-		) ); 
+			'wpmdc-fab'                                  => true, 
+			'mdc-fab'                                    => true, 
+			'mdc-ripple-surface'                         => true, 
+			'mdc-fab--' . esc_attr( $this->args['mod'] ) => ! empty( $this->args['mod'] ), 
+			'mdc-fab--exited'                            => $this->args['exited'], 
+		) );
 
-		$data_attrs = self::parse_data_attrs( $this->args['data'] );
+		$attrs = self::parse_attrs( array(
+			'aria-label="' . esc_attr( $this->args['label'] ) . '"' => ! empty( $this->args['label'] ),  
+			'title="' . esc_attr( $this->args['label'] ) . '"'      => ! empty( $this->args['label'] ),  
+		) ); 
 
 		if ( ! empty( $this->args['href'] ) ) { ?>
 
 			<a 
 			href="<?php echo esc_url( $this->args['href'] ); ?>"
 			class="<?php echo esc_attr( $class ); ?>"
-			<?php echo $data_attrs; ?>><?php 
+			<?php echo $attrs; ?>><?php 
 
 				$this->render_internal_elements(); 
 
@@ -114,8 +105,7 @@ class WPMDC_Button extends WPMDC_Component {
 			<button 
 			type="<?php echo esc_attr( $this->args['type'] ); ?>" 
 			class="<?php echo esc_attr( $class ); ?>"
-			<?php echo $button_attrs; ?>
-			<?php echo $data_attrs; ?>><?php 
+			<?php echo $attrs . ' ' . $button_attrs; ?>><?php 
 
 				$this->render_internal_elements(); 
 

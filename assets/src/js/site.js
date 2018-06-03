@@ -7,6 +7,7 @@ import { wpmdcRipples } from './modules/ripple';
 import { wpmdcRadios } from './modules/radio';
 import { wpmdcCheckboxes } from './modules/checkbox';
 import { wpmdcSliders } from './modules/slider';
+import { wpmdcDialogs } from './modules/dialog';
 import { wpmdcTabs, wpmdcTabBars, wpmdcTabBarScrollers } from './modules/tabs';
 import { wpmdcChips, wpmdcChipSets } from './modules/chips';
 import { wpmdcIconToggles } from './modules/icon-toggle';
@@ -28,5 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	wpmdcChips();
 	wpmdcSliders();
 	wpmdcIconToggles();
+	wpmdcDialogs();
 	// wpmdcIconButtons();
 });

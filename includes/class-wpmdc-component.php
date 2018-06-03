@@ -181,6 +181,28 @@ class WPMDC_Component {
 
 	}
 
+	public static function parse_data_attrs( $data = array() ) {
+
+		$parsed = array();
+
+		if ( is_array( $data ) && ! empty( $data ) ) {
+
+			foreach ( $data as $key => $value ) {
+
+				if ( ! empty( $key ) && ! empty( $value ) ) {
+
+					$parsed[] = 'data-' . esc_attr( $key ) . '="' . esc_attr( $value ) . '"';
+
+				}
+
+			}
+
+		}
+
+		return implode( ' ', $parsed );
+
+	}
+
 	public function render() {
 
 		if ( self::has_errors() ) { 
