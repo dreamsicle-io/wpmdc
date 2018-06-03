@@ -35,6 +35,7 @@ class WPMDC_List_Item extends WPMDC_Component {
 			'disabled'       => 'boolean', 
 			'two_line'       => 'boolean', 
 			'avatar_list'    => 'boolean', 
+			'menu_item'      => 'boolean',
 			'data'           => 'array', 
 		);
 
@@ -47,6 +48,7 @@ class WPMDC_List_Item extends WPMDC_Component {
 			'disabled'       => false, 
 			'two_line'       => false, 
 			'avatar_list'    => false, 
+			'menu_item'      => false, 
 			'data'           => array(), 
 		);
 
@@ -113,11 +115,19 @@ class WPMDC_List_Item extends WPMDC_Component {
 			return; 
 		}
 
+		$tabindex = $this->args['disabled'] ? '-1' : '0';
+
 		$class = self::parse_classes( array(
 			'wpmdc-list-item'    => true, 
 			'mdc-list-item'      => true, 
 			'mdc-ripple-surface' => true, 
 		) ); 
+
+		$attrs = self::parse_attrs( array( 
+			'role="menuitem"'                          => $this->args['menu_item'], 
+			'tabindex="' . esc_attr( $tabindex ) . '"' => $this->args['menu_item'],
+			'aria-disabled="true"'                     => ( $this->args['menu_item'] && $this->args['disabled'] ),
+		) );
 
 		$data_attrs = self::parse_data_attrs( $this->args['data'] );
 
@@ -126,6 +136,7 @@ class WPMDC_List_Item extends WPMDC_Component {
 			<a 
 			href="<?php echo esc_url( $this->args['href'] ); ?>"
 			class="<?php echo esc_attr( $class ); ?>"
+			<?php echo $attrs; ?>
 			<?php echo $data_attrs; ?>><?php 
 
 				$this->render_internal_elements(); 
@@ -136,6 +147,7 @@ class WPMDC_List_Item extends WPMDC_Component {
 
 			<li 
 			class="<?php echo esc_attr( $class ); ?>"
+			<?php echo $attrs; ?>
 			<?php echo $data_attrs; ?>><?php 
 
 				$this->render_internal_elements(); 
@@ -153,6 +165,7 @@ class WPMDC_List_Item extends WPMDC_Component {
 			'two_line'    => false, 
 			'avatar_list' => false, 
 			'dense'       => false, 
+			'menu_list'   => false, 
 			'container'   => 'ul', 
 		) );
 
@@ -161,6 +174,7 @@ class WPMDC_List_Item extends WPMDC_Component {
 			'two_line'    => 'boolean', 
 			'avatar_list' => 'boolean', 
 			'dense'       => 'boolean', 
+			'menu_list'   => 'boolean', 
 			'container'   => array( 'ul', 'div', 'nav' ), 
 		) );
 
@@ -172,9 +186,14 @@ class WPMDC_List_Item extends WPMDC_Component {
 			'mdc-list--two-line'    => $args['two_line'], 
 			'mdc-list--avatar-list' => $args['avatar_list'], 
 			'mdc-list--dense'       => $args['dense'], 
+			'mdc-menu__items'       => $args['menu_list'], 
+		) );
+
+		$attrs = WPMDC_Component::parse_attrs( array( 
+			'role="menu"' => $args['menu_list'],
 		) );
 		
-		$output = '<' . esc_attr( $args['container'] ) . ' class="' . esc_attr( $class ) . '">';
+		$output = '<' . esc_attr( $args['container'] ) . ' class="' . esc_attr( $class ) . '" ' . $attrs . '>';
 
 		if ( $args['echo'] ) {
 
@@ -203,6 +222,45 @@ class WPMDC_List_Item extends WPMDC_Component {
 		WPMDC_Component::render_errors( $errors );
 		
 		$output = '</' . esc_attr( $args['container'] ) . '>';
+
+		if ( $args['echo'] ) {
+
+			echo $output;
+
+		} else {
+
+			return $output;
+			
+		}
+
+	}
+
+	public static function divider( $args = array() ) {
+
+		$args = wp_parse_args( $args, array(
+			'echo'      => true, 
+			'padded'    => false, 
+			'inset'     => false, 
+			'container' => 'li', 
+		) );
+
+		$errors = WPMDC_Component::check_arg_types( $args, array(
+			'echo'      => 'boolean', 
+			'padded'    => 'boolean', 
+			'inset'     => 'boolean', 
+			'container' => array( 'li', 'span' ), 
+		) );
+
+		WPMDC_Component::render_errors( $errors );
+
+		$class = WPMDC_Component::parse_classes( array( 
+			'wpmdc-list-divider'       => true, 
+			'mdc-list-divider'         => true, 
+			'mdc-list-divider--padded' => $args['padded'], 
+			'mdc-list-divider--inset'  => $args['inset'], 
+		) );
+		
+		$output = '<' . esc_attr( $args['container'] ) . ' class="' . esc_attr( $class ) . '"></' . esc_attr( $args['container'] ) . '>';
 
 		if ( $args['echo'] ) {
 

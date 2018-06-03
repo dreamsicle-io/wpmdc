@@ -97,10 +97,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			WPMDC_Layout_Grid::close_cell();
 			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 4, 'tablet'  => 4, 'phone'  => 4 ) ); 
 
-				WPMDC_List_Item::open_list( array( 
-					'avatar_list' => true, 
-					'two_line' => true 
-				) );
+				WPMDC_List_Item::open_list( array( 'avatar_list' => true, 'two_line' => true ) );
 					for ($i = 1; $i <= 3; $i++) {
 						wpmdc_component( new WPMDC_List_Item( array( 
 							'avatar_list' => true, 
@@ -113,11 +110,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			WPMDC_Layout_Grid::close_cell();
 			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 4, 'tablet'  => 4, 'phone'  => 4 ) ); 
 
-				WPMDC_List_Item::open_list( array( 
-					'avatar_list' => true, 
-					'two_line'    => true, 
-					'container'   => 'nav',  
-				) );
+				WPMDC_List_Item::open_list( array( 'avatar_list' => true, 'two_line' => true, 'container' => 'nav' ) );
 					for ($i = 1; $i <= 3; $i++) {
 						wpmdc_component( new WPMDC_List_Item( array( 
 							'avatar_list' => true, 
@@ -126,6 +119,41 @@ if ( ! defined( 'ABSPATH' ) ) {
 							'href'        => '#', 
 						) ) ); 
 					}
+				WPMDC_List_Item::close_list( array( 'container' => 'nav' ) );
+
+			WPMDC_Layout_Grid::close_cell();
+			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 4, 'tablet'  => 4, 'phone'  => 4 ) ); 
+
+				WPMDC_List_Item::open_list( array( 'avatar_list' => true, 'two_line' => true, 'container' => 'nav' ) );
+					wpmdc_component( new WPMDC_List_Item( array( 
+						'avatar_list' => true, 
+						'two_line'    => true, 
+						'meta'        => 'info', 
+					) ) ); 
+					WPMDC_List_Item::divider();
+					wpmdc_component( new WPMDC_List_Item( array( 
+						'avatar_list' => true, 
+						'two_line'    => true, 
+						'meta'        => 'info', 
+					) ) ); 
+					WPMDC_List_Item::divider( array( 'padded' => true ) );
+					wpmdc_component( new WPMDC_List_Item( array( 
+						'avatar_list' => true, 
+						'two_line'    => true, 
+						'meta'        => 'info', 
+					) ) ); 
+					WPMDC_List_Item::divider( array( 'inset' => true ) );
+					wpmdc_component( new WPMDC_List_Item( array( 
+						'avatar_list' => true, 
+						'two_line'    => true, 
+						'meta'        => 'info', 
+					) ) ); 
+					WPMDC_List_Item::divider( array( 'inset' => true, 'padded' => true ) );
+					wpmdc_component( new WPMDC_List_Item( array( 
+						'avatar_list' => true, 
+						'two_line'    => true, 
+						'meta'        => 'info', 
+					) ) ); 
 				WPMDC_List_Item::close_list( array( 'container' => 'nav' ) );
 
 			WPMDC_Layout_Grid::close_cell();
