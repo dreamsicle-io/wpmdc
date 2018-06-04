@@ -36,7 +36,7 @@ $body_template = 'Lorem ipsum dolor sit amet. A descipling consectateur elit. ';
 				) ) );
 				wpmdc_component( new WPMDC_Dialog( array( 
 					'id' => 'wpmdc_standard_dialog_demo', 
-					'body' => str_repeat( $body_template, 5 ), 
+					'body' => '<p>' . str_repeat( $body_template, 5 ) . '</p>', 
 				) ) );
 
 			WPMDC_Layout_Grid::close_cell();
@@ -49,7 +49,7 @@ $body_template = 'Lorem ipsum dolor sit amet. A descipling consectateur elit. ';
 				) ) );
 				wpmdc_component( new WPMDC_Dialog( array( 
 					'id'         => 'wpmdc_scrollable_dialog_demo', 
-					'body'       => str_repeat( $body_template, 25 ), 
+					'body'       => '<p>' . str_repeat( $body_template, 25 ) . '</p>', 
 					'scrollable' => true, 
 				) ) );
 
@@ -63,7 +63,7 @@ $body_template = 'Lorem ipsum dolor sit amet. A descipling consectateur elit. ';
 				) ) );
 				wpmdc_component( new WPMDC_Dialog( array( 
 					'id'             => 'wpmdc_dialog_with_footer_buttons_demo', 
-					'body'           => str_repeat( $body_template, 5 ), 
+					'body'           => '<p>' . str_repeat( $body_template, 5 ) . '</p>', 
 					'cancel_text'    => __( 'Go Back', 'wpmdc' ),  
 					'accept_text'    => __( 'Continue', 'wpmdc' ),  
 				) ) );
