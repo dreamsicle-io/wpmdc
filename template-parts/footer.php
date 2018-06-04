@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			
 			get_template_part( 'template-parts/colophon' );
 
-			get_template_part( 'template-parts/drawer' ); ?>
+			get_template_part( 'template-parts/drawer', 'temporary' ); ?>
 
 		</div><!-- #site -->
 
