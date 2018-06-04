@@ -1,0 +1,5 @@
+.page-template-docs {
+	#content { // sass-lint:disable-line no-ids
+		@include wpmdc-flex(row, stretch, flex-start);
+	}
+}
