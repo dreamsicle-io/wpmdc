@@ -1,16 +1,25 @@
 .wpmdc-drawer {
 
+	.mdc-drawer__surface {
+		@include mdc-theme-prop(background-color, 'surface');
+		@include mdc-theme-prop(color, 'on-surface');
+	}
+
 	.mdc-drawer__header {
+		@include mdc-theme-prop(background-color, 'primary');
+		@include mdc-theme-prop(color, 'on-primary');
 
 		.avatar {
 			margin-bottom: auto;
 		}
+
+		a {
+			@include mdc-theme-prop(color, 'on-primary');
+		}
 	}
 
 	.mdc-drawer__header-content {
-		align-items: flex-start;
-		flex-flow: column;
-		justify-content: flex-end;
+		@include wpmdc-flex(column, flex-start, flex-end);
 		z-index: 1;
 	}
 

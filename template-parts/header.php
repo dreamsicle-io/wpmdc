@@ -32,10 +32,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php get_template_part( 'template-parts/top-app-bar' ); ?>
 
-		<?php if ( false ) { ?>
-
-			<div class="mdc-top-app-bar--fixed-adjust"></div>
-
-		<?php } ?>
-
-		<div id="content">
+		<div id="content" class="mdc-top-app-bar--fixed-adjust">

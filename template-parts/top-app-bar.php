@@ -25,7 +25,8 @@ $actions_toggle_label = _x( 'Toggle Actions', 'top app bar actions toggle label'
 		<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
 
 			<button 
-			for="drawer"
+			type="button"
+			data-for-drawer="drawer_temporary"
 			class="material-icons mdc-top-app-bar__navigation-icon"
 			title="<?php echo esc_attr( $drawer_toggle_label ); ?>" 
 			alt="<?php echo esc_attr( $drawer_toggle_label ); ?>"

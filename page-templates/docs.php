@@ -17,7 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; 
 }
 
-get_template_part( 'template-parts/header' ); ?>
+get_template_part( 'template-parts/header' );
+get_template_part( 'template-parts/drawer', 'permanent' ); ?>
 
 	<main id="main" class="mdc-theme--surface mdc-theme--on-surface">
 

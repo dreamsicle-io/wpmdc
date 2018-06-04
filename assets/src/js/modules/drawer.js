@@ -2,7 +2,7 @@ import { MDCTemporaryDrawer } from '@material/drawer/dist/mdc.drawer';
 
 export function wpmdcTemporaryDrawer(element) {
 	if (element) {
-		const toggles = element.id ? document.querySelectorAll(`*[for="${element.id}"]`) : [];
+		const toggles = element.id ? document.querySelectorAll(`*[data-for-drawer="${element.id}"]`) : [];
 		const MDCTemporaryDrawerInst = new MDCTemporaryDrawer(element);
 		if (toggles) {
 			toggles.forEach((toggle, i) => {
