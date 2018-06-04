@@ -466,7 +466,7 @@ msgstr ""
 msgid "Docs"
 msgstr ""
 
-#: page-templates/docs.php:26
+#: page-templates/docs.php:27
 msgid "Components"
 msgstr ""
 
