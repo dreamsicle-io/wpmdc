@@ -14,6 +14,16 @@
 	.mdc-card__primary-action {
 		flex-grow: 1;
 	}
+
+	.mdc-card__media {
+		@include mdc-theme-prop(background-color, 'primary');
+		@include mdc-theme-prop(color, 'on-primary');
+	}
+
+	.mdc-card__media-content {
+		@include wpmdc-flex(column, flex-start, flex-end);
+		padding: 12px;
+	}
 }
 
 .mdc-layout-grid__cell {

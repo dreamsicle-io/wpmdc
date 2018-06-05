@@ -24,6 +24,7 @@ require WPMDCINC . '/class-wpmdc-customizer.php';
 require WPMDCINC . '/class-wpmdc-component.php';
 require WPMDCINC . '/components/class-wpmdc-layout-grid.php';
 require WPMDCINC . '/components/class-wpmdc-top-app-bar.php';
+require WPMDCINC . '/components/class-wpmdc-card.php';
 require WPMDCINC . '/components/class-wpmdc-drawer.php';
 require WPMDCINC . '/components/class-wpmdc-list-item.php';
 require WPMDCINC . '/components/class-wpmdc-text-field.php';
