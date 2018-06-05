@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $actions_toggle_label = _x( 'Toggle Actions', 'top app bar actions toggle label', 'wpmdc' );
 
-WPMDC_Top_App_Bar::open_app_bar();
+WPMDC_Top_App_Bar::open_app_bar( array( 'id' => 'top_app_bar' ) );
 
 	WPMDC_Top_App_Bar::open_row();
 
@@ -28,35 +28,18 @@ WPMDC_Top_App_Bar::open_app_bar();
 
 			if ( is_author() ) {
 
-				$author = get_queried_object();
-
-				echo get_avatar( 
-					sanitize_email( $author->user_email ), 
-					112, 
-					'', 
-					esc_attr( $author->display_name ), 
-					array(
-						'height' => 40, 
-						'width'  => 40, 
-						'class'  => array( 'mdc-elevation--z2' ), 
-					) 
-				);
+				wpmdc_top_app_bar_graphic();
 
 			}
 
-			wpmdc_top_app_bar_title( '<h4 class="mdc-top-app-bar__title">', '</h4>');
+			WPMDC_Top_App_Bar::title( array( 'text' => wpmdc_get_top_app_bar_title() ) );
 
 		WPMDC_Top_App_Bar::close_section();
 
-		WPMDC_Top_App_Bar::open_section( array( 'align' => 'end', 'menu_anchor' => true ) ); ?>
+		WPMDC_Top_App_Bar::open_section( array( 'align' => 'end', 'menu_anchor' => true ) );
 					
-			<button 
-			class="material-icons mdc-top-app-bar__action-item" 
-			title="<?php echo esc_attr( $actions_toggle_label ); ?>" 
-			alt="<?php echo esc_attr( $actions_toggle_label ); ?>"
-			aria-label="<?php echo esc_attr( $actions_toggle_label ); ?>">more_vert</button>
+			WPMDC_Top_App_Bar::action_item( array( 'menu' => 'top_app_bar_actions' ) );
 
-		<?php 
 		WPMDC_Top_App_Bar::close_section();
 	
 	WPMDC_Top_App_Bar::close_row();
