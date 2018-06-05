@@ -26,9 +26,13 @@ class WPMDC_Button extends WPMDC_Component {
 	 */
 	function __construct( $args = array() ) {
 
+		$uniqid = $this->get_uniqid();
+
 		$this->arg_types = array(
 			'mod'      => array( '', 'outlined', 'raised', 'unelevated' ), 
 			'type'     => array( 'button', 'submit', 'reset' ), 
+			'id'       => $uniqid, 
+			'name'     => $uniqid, 
 			'href'     => 'string', 
 			'dense'    => 'boolean', 
 			'icon'     => 'string', 
@@ -40,6 +44,8 @@ class WPMDC_Button extends WPMDC_Component {
 		$this->default_args = array(
 			'mod'      => '', 
 			'type'     => 'button', 
+			'id'       => '', 
+			'name'     => '', 
 			'href'     => '', 
 			'dense'    => false, 
 			'icon'     => '', 
@@ -96,6 +102,7 @@ class WPMDC_Button extends WPMDC_Component {
 		if ( ! empty( $this->args['href'] ) ) { ?>
 
 			<a 
+			id="<?php echo esc_attr( $this->args['id'] ); ?>"
 			href="<?php echo esc_url( $this->args['href'] ); ?>"
 			class="<?php echo esc_attr( $class ); ?>"
 			<?php echo $data_attrs; ?>><?php 
@@ -107,11 +114,13 @@ class WPMDC_Button extends WPMDC_Component {
 		<?php } else {
 
 			$button_attrs = self::parse_attrs( array( 
-				'disabled'             => $this->args['disabled'],
-				'aria-disabled="true"' => $this->args['disabled'],
+				'disabled'                                       => $this->args['disabled'],
+				'aria-disabled="true"'                           => $this->args['disabled'],
+				'name="' . esc_attr( $this->args['name'] ) . '"' => ! empty( $this->args['name'] ), 
 			) ); ?> 
 
 			<button 
+			id="<?php echo esc_attr( $this->args['id'] ); ?>"
 			type="<?php echo esc_attr( $this->args['type'] ); ?>" 
 			class="<?php echo esc_attr( $class ); ?>"
 			<?php echo $button_attrs; ?>
