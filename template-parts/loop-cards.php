@@ -15,35 +15,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<section class="wpmdc-section wpmdc-section--pull-top"><?php 
+<section class="wpmdc-section"><?php 
 
-	if ( have_posts() ) { ?>
+	if ( have_posts() ) { 
 
-		<div class="mdc-layout-grid wpmdc-contain-desktop">
+		WPMDC_Layout_Grid::open_grid();
 
-			<div class="mdc-layout-grid__inner"><?php 
+			WPMDC_Layout_Grid::open_inner();
 
-				while ( have_posts() ) { the_post(); ?>
+				while ( have_posts() ) { the_post();
 
-					<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone"><?php
+					WPMDC_Layout_Grid::open_cell( array( 'desktop' => 4, 'tablet' => 4, 'phone' => 4 ) );
 
 						get_template_part( 'template-parts/content-card', get_post_type() );
 
-					?></div>
+					WPMDC_Layout_Grid::close_cell();
 
-				<?php } ?>
+				} 
 
-				<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone"><?php 
+				WPMDC_Layout_Grid::open_cell( array( 'desktop' => 12, 'tablet' => 8, 'phone' => 4 ) ); 
 
 					the_posts_pagination();
 
-				?></div>
+				WPMDC_Layout_Grid::close_cell();
 
-			</div>
+			WPMDC_Layout_Grid::close_inner();
 
-		</div>
+		WPMDC_Layout_Grid::close_grid();
 
-	<?php } else {
+	} else {
 
 		get_template_part( 'template-parts/content-none' );
 
