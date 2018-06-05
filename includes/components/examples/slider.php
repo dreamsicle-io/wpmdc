@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<?php 
 			WPMDC_Layout_Grid::close_cell();
-			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 4, 'tablet'  => 4, 'phone'  => 4 ) ); 
+			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 12, 'tablet'  => 8, 'phone'  => 4 ) ); 
 
 				wpmdc_component( new WPMDC_Slider() );
 				wpmdc_component( new WPMDC_Slider( array( 'mod' => 'discrete' ) ) );
