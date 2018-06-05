@@ -211,6 +211,74 @@ $text_field_helper_text = __( 'This is the helper text.', 'wpmdc' );
 				) ) ); 
 
 			WPMDC_Layout_Grid::close_cell();
+			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 6, 'tablet'  => 8, 'phone'  => 4 ) ); 
+
+				wpmdc_component( new WPMDC_Text_Field( array(
+					'type' => 'textarea', 
+				) ) ); 
+
+			WPMDC_Layout_Grid::close_cell();
+			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 6, 'tablet'  => 8, 'phone'  => 4 ) ); 
+
+				wpmdc_component( new WPMDC_Text_Field( array(
+					'type'  => 'textarea', 
+					'dense' => true, 
+				) ) ); 
+
+			WPMDC_Layout_Grid::close_cell();
+			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 6, 'tablet'  => 8, 'phone'  => 4 ) ); 
+
+				wpmdc_component( new WPMDC_Text_Field( array(
+					'type'     => 'textarea', 
+					'disabled' => true, 
+				) ) ); 
+
+			WPMDC_Layout_Grid::close_cell();
+			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 6, 'tablet'  => 8, 'phone'  => 4 ) ); 
+
+				wpmdc_component( new WPMDC_Text_Field( array(
+					'type'     => 'textarea', 
+					'dense'    => true, 
+					'disabled' => true, 
+				) ) ); 
+
+			WPMDC_Layout_Grid::close_cell();
+			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 12, 'tablet'  => 8, 'phone'  => 4 ) ); 
+
+				wpmdc_component( new WPMDC_Text_Field( array(
+					'type' => 'textarea', 
+					'mod'  => 'fullwidth', 
+				) ) ); 
+
+			WPMDC_Layout_Grid::close_cell();
+			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 12, 'tablet'  => 8, 'phone'  => 4 ) ); 
+
+				wpmdc_component( new WPMDC_Text_Field( array(
+					'type'     => 'textarea', 
+					'mod'      => 'fullwidth', 
+					'disabled' => true, 
+				) ) ); 
+
+			WPMDC_Layout_Grid::close_cell();
+			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 12, 'tablet'  => 8, 'phone'  => 4 ) ); 
+
+				wpmdc_component( new WPMDC_Text_Field( array(
+					'type'  => 'textarea', 
+					'mod'   => 'fullwidth', 
+					'dense' => true, 
+				) ) ); 
+
+			WPMDC_Layout_Grid::close_cell();
+			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 12, 'tablet'  => 8, 'phone'  => 4 ) ); 
+
+				wpmdc_component( new WPMDC_Text_Field( array(
+					'type'     => 'textarea', 
+					'mod'      => 'fullwidth', 
+					'dense'    => true, 
+					'disabled' => true, 
+				) ) ); 
+
+			WPMDC_Layout_Grid::close_cell();
 		WPMDC_Layout_grid::close_inner();
 	WPMDC_Layout_grid::close_grid(); ?>
 

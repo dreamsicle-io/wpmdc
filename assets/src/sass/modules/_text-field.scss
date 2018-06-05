@@ -1,5 +1,9 @@
 .wpmdc-text-field {
 
+	&.mdc-text-field--textarea {
+		max-width: 100%;
+	}
+
 	&.mdc-text-field--fullwidth {
 
 		&.mdc-text-field--with-leading-icon {
