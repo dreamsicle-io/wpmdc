@@ -37,7 +37,7 @@ class WPMDC_Top_App_Bar {
 			'mdc-top-app-bar'   => true, 
 		) );
 		
-		$output = '<header id="' . esc_attr( $args['id'] ) . '" class="' . esc_attr( $class ) . '">';
+		$output = '<header role="toolbar" id="' . esc_attr( $args['id'] ) . '" class="' . esc_attr( $class ) . '">';
 
 		if ( $args['echo'] ) {
 
@@ -147,7 +147,7 @@ class WPMDC_Top_App_Bar {
 		$errors = WPMDC_Component::check_arg_types( $args, array(
 			'echo'        => 'boolean', 
 			'align'       => array( '', 'start', 'end' ), 
-			'menu_anchor' => 'boolean', 
+			'menu_anchor' => 'boolean',  
 		) );
 
 		WPMDC_Component::render_errors( $errors );
@@ -223,6 +223,60 @@ class WPMDC_Top_App_Bar {
 			'data-for-drawer="' . esc_attr( $args['drawer'] ) . '"' => ! empty( $args['drawer'] ), 
 			'aria-label="' . esc_attr( $args['label'] ) . '"'       => ! empty( $args['label'] ), 
 			'title="' . esc_attr( $args['label'] ) . '"'            => ! empty( $args['label'] ), 
+		) );
+
+		WPMDC_Component::render_errors( $errors );
+
+		ob_start(); ?>
+
+		<button 
+		type="button"
+		class="<?php echo esc_attr( $class ); ?>"
+		<?php echo $attrs; ?>><?php 
+
+			echo esc_html( $args['icon'] );
+
+		?></button>
+		
+		<?php 
+		$output = ob_get_clean();
+
+		if ( $args['echo'] ) {
+
+			echo $output;
+
+		} else {
+
+			return $output;
+			
+		}
+	}
+
+	public static function action_item( $args = array() ) {
+
+		$args = wp_parse_args( $args, array(
+			'echo'   => true, 
+			'menu'   => '', 
+			'icon'   => 'more_vert', 
+			'label'  => _x( 'Toggle Menu', 'top app bar component default action item label', 'wpmdc' ), 
+		) );
+
+		$errors = WPMDC_Component::check_arg_types( $args, array(
+			'echo'   => 'boolean', 
+			'menu'   => 'string', 
+			'label'  => 'string', 
+			'icon'   => 'string', 
+		) );
+
+		$class = WPMDC_Component::parse_classes( array(
+			'mdc-top-app-bar__action-item' => true, 
+			'material-icons'               => true, 
+		) );
+
+		$attrs = WPMDC_Component::parse_attrs( array(
+			'data-for-menu="' . esc_attr( $args['menu'] ) . '"' => ! empty( $args['menu'] ), 
+			'aria-label="' . esc_attr( $args['label'] ) . '"'   => ! empty( $args['label'] ), 
+			'title="' . esc_attr( $args['label'] ) . '"'        => ! empty( $args['label'] ), 
 		) );
 
 		WPMDC_Component::render_errors( $errors );
