@@ -33,7 +33,7 @@ class WPMDC_Text_Field extends WPMDC_Component {
 			'dense'         => 'boolean', 
 			'icon'          => 'string', 
 			'icon_position' => array( 'leading', 'trailing' ), 
-			'type'          => array( 'text', 'number', 'url', 'password', 'email', 'search', 'tel', 'date', 'datetime-local', 'month', 'week', 'time', 'color' ), 
+			'type'          => array( 'textarea', 'text', 'number', 'url', 'password', 'email', 'search', 'tel', 'date', 'datetime-local', 'month', 'week', 'time', 'color' ), 
 			'name'          => 'string', 
 			'id'            => 'string', 
 			'value'         => 'string', 
@@ -74,11 +74,12 @@ class WPMDC_Text_Field extends WPMDC_Component {
 		$container_class = self::parse_classes( array(
 			'wpmdc-text-field'                      => true, 
 			'mdc-text-field'                        => true, 
+			'mdc-text-field--textarea'              => ( $this->args['type'] === 'textarea' ), 
 			'mdc-text-field--' . $this->args['mod'] => ! empty( $this->args['mod'] ), 
 			'mdc-text-field--dense'                 => $this->args['dense'], 
 			'mdc-text-field--disabled'              => $this->args['disabled'], 
-			'mdc-text-field--with-leading-icon'     => $has_icon && ( $this->args['icon_position'] === 'leading' ),
-			'mdc-text-field--with-trailing-icon'    => $has_icon && ( $this->args['icon_position'] === 'trailing' ),
+			'mdc-text-field--with-leading-icon'     => $has_icon && ( ( $this->args['type'] !== 'textarea' ) && ( $this->args['icon_position'] === 'leading' ) ),
+			'mdc-text-field--with-trailing-icon'    => $has_icon && ( ( $this->args['type'] !== 'textarea' ) && ( $this->args['icon_position'] === 'trailing' ) ),
 			'mdc-text-field--upgraded'              => ! empty( $args['value'] ), 
 		) );
 
@@ -88,9 +89,7 @@ class WPMDC_Text_Field extends WPMDC_Component {
 		) ); 
 
 		$input_attrs = self::parse_attrs( array( 
-			'placeholder="' . esc_attr( $this->args['label'] ) . '"'               => ( $this->args['mod'] === 'fullwidth' ),
-			'checked'                                                              => $this->args['checked'],
-			'aria-checked="true"'                                                  => $this->args['checked'],
+			'placeholder="' . esc_attr( $this->args['label'] ) . '"'               => ( ( $this->args['mod'] === 'fullwidth' ) && ( $this->args['type'] !== 'textarea' ) && ! empty( $this->args['label'] ) ),
 			'required'                                                             => $this->args['required'],
 			'aria-required="true"'                                                 => $this->args['required'],
 			'disabled'                                                             => $this->args['disabled'],
@@ -103,7 +102,7 @@ class WPMDC_Text_Field extends WPMDC_Component {
 		id="<?php echo esc_attr( $this->args['id'] ); ?>"
 		class="<?php echo esc_attr( $container_class ); ?>">
 
-			<?php if ( $has_icon && ( $this->args['icon_position'] === 'leading' ) ) { ?>
+			<?php if ( $has_icon && ( $this->args['icon_position'] === 'leading' ) && ( $this->args['type'] !== 'textarea' ) ) { ?>
 
 				<i class="material-icons mdc-text-field__icon"><?php 
 
@@ -113,15 +112,35 @@ class WPMDC_Text_Field extends WPMDC_Component {
 
 			<?php } ?>
 
-			<input 
-			type="<?php echo esc_attr( $this->args['type'] ); ?>" 
-			name="<?php echo esc_attr( $this->args['name'] ); ?>" 
-			id="<?php echo esc_attr( $this->args['id'] . '_input' ); ?>" 
-			value="<?php echo esc_attr( $this->args['value'] ); ?>" 
-			class="mdc-text-field__input"
-			<?php echo $input_attrs; ?> />
+			<?php if ( $this->args['type'] === 'textarea' ) {
 
-			<?php if ( $this->args['mod'] !== 'fullwidth' ) { ?>
+				$rows = $this->args['dense'] ? 4 : 8;
+				$columns = $this->args['dense'] ? 24 : 40; ?>
+
+				<textarea 
+				id="<?php echo esc_attr( $this->args['id'] . '_input' ); ?>" 
+				name="<?php echo esc_attr( $this->args['name'] ); ?>" 
+				class="mdc-text-field__input" 
+				rows="<?php echo esc_attr( $rows ); ?>" 
+				cols="<?php echo esc_attr( $columns ); ?>"><?php 
+
+					echo esc_textarea( $this->args['value'] ); 
+
+				?></textarea>
+
+			<?php } else { ?>
+
+				<input 
+				type="<?php echo esc_attr( $this->args['type'] ); ?>" 
+				name="<?php echo esc_attr( $this->args['name'] ); ?>" 
+				id="<?php echo esc_attr( $this->args['id'] . '_input' ); ?>" 
+				value="<?php echo esc_attr( $this->args['value'] ); ?>" 
+				class="mdc-text-field__input"
+				<?php echo $input_attrs; ?> />
+
+			<?php } ?>
+
+			<?php if ( ( $this->args['mod'] !== 'fullwidth' ) || ( $this->args['type'] === 'textarea' ) ) { ?>
 
 				<label 
 				for="<?php echo esc_attr( $this->args['id'] . '_input' ); ?>"
@@ -133,7 +152,7 @@ class WPMDC_Text_Field extends WPMDC_Component {
 
 			<?php } ?>
 
-			<?php if ( $has_icon && ( $this->args['icon_position'] === 'trailing' ) ) { ?>
+			<?php if ( $has_icon && ( $this->args['icon_position'] === 'trailing' ) && ( $this->args['type'] !== 'textarea' ) ) { ?>
 
 				<i class="material-icons mdc-text-field__icon"><?php 
 
@@ -144,7 +163,7 @@ class WPMDC_Text_Field extends WPMDC_Component {
 			<?php } ?>
 
 			<?php 
-			if ( $this->args['mod'] !== 'fullwidth' ) { 
+			if ( ( $this->args['mod'] !== 'fullwidth' ) && ( $this->args['type'] !== 'textarea' ) ) { 
 
 				if ( $this->args['mod'] === 'outlined' ) { ?>
 
