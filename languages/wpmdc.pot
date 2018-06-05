@@ -211,6 +211,10 @@ msgstr ""
 msgid "Button"
 msgstr ""
 
+#: includes/components/examples/card.php:24
+msgid "Card"
+msgstr ""
+
 #: includes/components/examples/checkbox.php:24
 msgid "Checkbox"
 msgstr ""
