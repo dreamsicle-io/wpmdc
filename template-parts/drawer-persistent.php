@@ -1,6 +1,6 @@
 <?php
 /**
- * The Temporary Drawer.
+ * The Persistent Drawer.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; 
 }
 
-WPMDC_Drawer::open_drawer( array( 'id' => 'drawer_temporary', 'mod' => 'temporary' ) );  
+WPMDC_Drawer::open_drawer( array( 'id' => 'drawer_persistent', 'mod' => 'persistent' ) );  
 
 	WPMDC_Drawer::open_surface();
 
