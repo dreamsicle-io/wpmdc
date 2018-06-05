@@ -70,6 +70,8 @@ class WPMDC_Text_Field extends WPMDC_Component {
 		}
 
 		$has_icon = ( ! empty( $this->args['icon'] ) && in_array( $this->args['mod'], array( 'outlined', 'box', 'fullwidth' ) ) );
+		// asterisk must only applied to placeholder, MDC handles this on floating labels.
+		$asterisk = $this->args['required'] ? ' *' : ''; 
 
 		$container_class = self::parse_classes( array(
 			'wpmdc-text-field'                      => true, 
@@ -89,7 +91,7 @@ class WPMDC_Text_Field extends WPMDC_Component {
 		) ); 
 
 		$input_attrs = self::parse_attrs( array( 
-			'placeholder="' . esc_attr( $this->args['label'] ) . '"'               => ( ( $this->args['mod'] === 'fullwidth' ) && ( $this->args['type'] !== 'textarea' ) && ! empty( $this->args['label'] ) ),
+			'placeholder="' . esc_attr( $this->args['label'] . $asterisk ) . '"'   => ( ( $this->args['mod'] === 'fullwidth' ) && ( $this->args['type'] !== 'textarea' ) && ! empty( $this->args['label'] ) ),
 			'required'                                                             => $this->args['required'],
 			'aria-required="true"'                                                 => $this->args['required'],
 			'disabled'                                                             => $this->args['disabled'],
@@ -122,7 +124,8 @@ class WPMDC_Text_Field extends WPMDC_Component {
 				name="<?php echo esc_attr( $this->args['name'] ); ?>" 
 				class="mdc-text-field__input" 
 				rows="<?php echo esc_attr( $rows ); ?>" 
-				cols="<?php echo esc_attr( $columns ); ?>"><?php 
+				cols="<?php echo esc_attr( $columns ); ?>"
+				<?php echo $input_attrs; ?>><?php 
 
 					echo esc_textarea( $this->args['value'] ); 
 
