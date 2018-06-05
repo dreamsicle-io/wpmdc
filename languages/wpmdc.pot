@@ -182,9 +182,14 @@ msgctxt "text field component default label"
 msgid "Text Field"
 msgstr ""
 
-#: includes/components/class-wpmdc-top-app-bar.php:207
+#: includes/components/class-wpmdc-top-app-bar.php:239
 msgctxt "top app bar component default navigation icon label"
 msgid "Toggle Drawer"
+msgstr ""
+
+#: includes/components/class-wpmdc-top-app-bar.php:293
+msgctxt "top app bar component default action item label"
+msgid "Toggle Menu"
 msgstr ""
 
 #: includes/components/examples/button.php:24
