@@ -2,6 +2,10 @@
 
 	&.mdc-text-field--textarea {
 		max-width: 100%;
+
+		.mdc-floating-label {
+			background-color: transparent;
+		}
 	}
 
 	&.mdc-text-field--fullwidth {
