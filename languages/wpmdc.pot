@@ -13,34 +13,49 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: includes/class-wpmdc-comments.php:61
+#: includes/class-wpmdc-comments.php:63
 msgctxt "comment author field label"
 msgid "Name"
 msgstr ""
 
-#: includes/class-wpmdc-comments.php:62
+#: includes/class-wpmdc-comments.php:64
 msgctxt "comment author field helper text"
 msgid "A name is required."
 msgstr ""
 
-#: includes/class-wpmdc-comments.php:73
+#: includes/class-wpmdc-comments.php:75
 msgctxt "comment email field label"
 msgid "Email"
 msgstr ""
 
-#: includes/class-wpmdc-comments.php:74
+#: includes/class-wpmdc-comments.php:76
 msgctxt "comment email field helper text"
 msgid "A valid email address is required. This will never be published."
 msgstr ""
 
-#: includes/class-wpmdc-comments.php:85
+#: includes/class-wpmdc-comments.php:87
 msgctxt "comment url field label"
 msgid "Website / Profile"
 msgstr ""
 
-#: includes/class-wpmdc-comments.php:86
+#: includes/class-wpmdc-comments.php:88
 msgctxt "comment url field helper text"
 msgid "Enter an optional website or social profile url. This will be published."
+msgstr ""
+
+#: includes/class-wpmdc-comments.php:99
+msgctxt "comment field label"
+msgid "Comment"
+msgstr ""
+
+#: includes/class-wpmdc-comments.php:100
+msgctxt "comment field helper text"
+msgid "Enter a comment and join the conversation. This will be published."
+msgstr ""
+
+#: includes/class-wpmdc-comments.php:108
+msgctxt "comment cookies field label"
+msgid "Save my name, email, and website in this browser for the next time I comment."
 msgstr ""
 
 #. translators: 1: argument value, 2: argument key, 3: CSV of allowed values.
@@ -69,7 +84,7 @@ msgstr ""
 msgid "Widgets added here will appear in the footer."
 msgstr ""
 
-#: includes/components/class-wpmdc-button.php:46
+#: includes/components/class-wpmdc-button.php:52
 msgctxt "button component default button text"
 msgid "Button"
 msgstr ""
