@@ -198,6 +198,38 @@ class WPMDC_Top_App_Bar {
 
 	}
 
+	public static function title( $args = array() ) {
+		
+		$args = wp_parse_args( $args, array(
+			'echo' => true, 
+			'text' => '', 
+		) );
+
+		$errors = WPMDC_Component::check_arg_types( $args, array(
+			'echo' => 'boolean', 
+			'text' => 'string', 
+		) );
+
+		WPMDC_Component::render_errors( $errors );
+
+		if ( empty( $args['text'] ) ) {
+			return;
+		}
+		
+		$output = '<h4 class="mdc-toolbar__title">' . esc_html( $args['text'] ) . '</h4>';
+
+		if ( $args['echo'] ) {
+
+			echo $output;
+
+		} else {
+
+			return $output;
+			
+		}
+
+	}
+
 	public static function navigation_icon( $args = array() ) {
 
 		$args = wp_parse_args( $args, array(
