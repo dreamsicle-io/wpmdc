@@ -13,26 +13,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; 
 }
 
-$drawer_toggle_label = _x( 'Toggle Drawer', 'top app bar drawer toggle label', 'wpmdc' );
 $actions_toggle_label = _x( 'Toggle Actions', 'top app bar actions toggle label', 'wpmdc' );
 
-?>
+WPMDC_Top_App_Bar::open_app_bar();
 
-<header class="wpmdc-top-app-bar mdc-top-app-bar">
+	WPMDC_Top_App_Bar::open_row();
 
-	<div class="mdc-top-app-bar__row">
+		WPMDC_Top_App_Bar::open_section( array( 'align' => 'start' ) ); 
 
-		<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+			WPMDC_Top_App_Bar::navigation_icon( array( 
+				'drawer' => 'drawer_temporary', 
+				'label'  => _x( 'Toggle Drawer', 'top app bar drawer toggle label', 'wpmdc' )
+			) ); 
 
-			<button 
-			type="button"
-			data-for-drawer="drawer_temporary"
-			class="material-icons mdc-top-app-bar__navigation-icon"
-			title="<?php echo esc_attr( $drawer_toggle_label ); ?>" 
-			alt="<?php echo esc_attr( $drawer_toggle_label ); ?>"
-			aria-label="<?php echo esc_attr( $drawer_toggle_label ); ?>">menu</button>
-
-			<?php 
 			if ( is_author() ) {
 
 				$author = get_queried_object();
@@ -49,15 +42,13 @@ $actions_toggle_label = _x( 'Toggle Actions', 'top app bar actions toggle label'
 					) 
 				);
 
-			} ?>
+			}
 
-			<?php wpmdc_top_app_bar_title( '<h4 class="mdc-top-app-bar__title">', '</h4>'); ?>
+			wpmdc_top_app_bar_title( '<h4 class="mdc-top-app-bar__title">', '</h4>');
 
-		</section>
+		WPMDC_Top_App_Bar::close_section();
 
-		<section 
-		class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" 
-		role="toolbar">
+		WPMDC_Top_App_Bar::open_section( array( 'align' => 'end', 'menu_anchor' => true ) ); ?>
 					
 			<button 
 			class="material-icons mdc-top-app-bar__action-item" 
@@ -65,8 +56,9 @@ $actions_toggle_label = _x( 'Toggle Actions', 'top app bar actions toggle label'
 			alt="<?php echo esc_attr( $actions_toggle_label ); ?>"
 			aria-label="<?php echo esc_attr( $actions_toggle_label ); ?>">more_vert</button>
 
-		</section>
+		<?php 
+		WPMDC_Top_App_Bar::close_section();
 	
-	</div>
+	WPMDC_Top_App_Bar::close_row();
 
-</header>
+WPMDC_Top_App_Bar::close_app_bar();
