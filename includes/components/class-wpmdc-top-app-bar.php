@@ -288,6 +288,7 @@ class WPMDC_Top_App_Bar {
 
 		$args = wp_parse_args( $args, array(
 			'echo'   => true, 
+			'href'   => '', 
 			'menu'   => '', 
 			'icon'   => 'more_vert', 
 			'label'  => _x( 'Toggle Menu', 'top app bar component default action item label', 'wpmdc' ), 
@@ -295,6 +296,7 @@ class WPMDC_Top_App_Bar {
 
 		$errors = WPMDC_Component::check_arg_types( $args, array(
 			'echo'   => 'boolean', 
+			'href'   => 'string', 
 			'menu'   => 'string', 
 			'label'  => 'string', 
 			'icon'   => 'string', 
@@ -306,25 +308,43 @@ class WPMDC_Top_App_Bar {
 		) );
 
 		$attrs = WPMDC_Component::parse_attrs( array(
-			'data-for-menu="' . esc_attr( $args['menu'] ) . '"' => ! empty( $args['menu'] ), 
 			'aria-label="' . esc_attr( $args['label'] ) . '"'   => ! empty( $args['label'] ), 
 			'title="' . esc_attr( $args['label'] ) . '"'        => ! empty( $args['label'] ), 
 		) );
 
 		WPMDC_Component::render_errors( $errors );
 
-		ob_start(); ?>
+		ob_start(); 
 
-		<button 
-		type="button"
-		class="<?php echo esc_attr( $class ); ?>"
-		<?php echo $attrs; ?>><?php 
+		if ( ! empty( $args['href'] ) ) { ?>
 
-			echo esc_html( $args['icon'] );
+			<a 
+			href="<?php echo esc_url( $args['href'] ); ?>"
+			class="<?php echo esc_attr( $class ); ?>"
+			<?php echo $attrs; ?>><?php 
 
-		?></button>
-		
-		<?php 
+				echo esc_html( $args['icon'] );
+
+			?></a>
+
+		<?php } else {
+
+			$button_attrs = WPMDC_Component::parse_attrs( array(
+				'data-for-menu="' . esc_attr( $args['menu'] ) . '"' => ! empty( $args['menu'] ), 
+			) ); ?> 
+
+			<button 
+			type="button"
+			class="<?php echo esc_attr( $class ); ?>"
+			<?php echo $attrs; ?>
+			<?php echo $button_attrs; ?>><?php 
+
+				echo esc_html( $args['icon'] );
+
+			?></button>
+
+		<?php }
+
 		$output = ob_get_clean();
 
 		if ( $args['echo'] ) {
