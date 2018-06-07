@@ -51,53 +51,53 @@ class WPMDC_Card extends WPMDC_Component {
 			return; 
 		}
 
-		WPMDC_Card::open_card( array( 'mod' => $this->args['mod'] ) );
+		self::open_card( array( 'mod' => $this->args['mod'] ) );
 
 			if ( ! empty( $this->args['href'] ) ) {
 
-				WPMDC_Card::open_primary_action( array( 'href' => $this->args['href'] ) );
+				self::open_primary_action( array( 'href' => $this->args['href'] ) );
 
 			}
 
 				if ( ! empty( $this->args['image'] ) ) {
 
-					WPMDC_Card::media( array( 'image' => $this->args['image'] ) );
+					self::media( array( 'image' => $this->args['image'] ) );
 
 				}
 
 				if ( ! empty( $this->args['primary'] ) ) { 
 					
-					WPMDC_Card::open_primary();
+					self::open_primary();
 
 						echo wp_kses_post( $this->args['primary'] );
 
-					WPMDC_Card::close_primary(); 
+					self::close_primary(); 
 
 				}  
 
 				if ( ! empty( $this->args['secondary'] ) ) { 
 					
-					WPMDC_Card::open_secondary();
+					self::open_secondary();
 
 						echo wp_kses_post( $this->args['secondary'] );
 
-					WPMDC_Card::close_secondary(); 
+					self::close_secondary(); 
 
 				} 
 
 			if ( ! empty( $this->args['href'] ) ) {
 
-				WPMDC_Card::close_primary_action();
+				self::close_primary_action( array( 'href' => true ) );
 
 			}
 
 			if ( ! empty( $this->args['action_buttons'] ) || ! empty( $this->args['action_icons'] ) ) {
 
-				WPMDC_Card::open_actions();
+				self::open_actions();
 
 					if ( ! empty( $this->args['action_buttons'] ) ) {
 
-						WPMDC_Card::open_action_buttons();
+						self::open_action_buttons();
 
 							foreach ( $this->args['action_buttons'] as $button_args ) {
 
@@ -109,33 +109,33 @@ class WPMDC_Card extends WPMDC_Component {
 
 							}
 
-						WPMDC_Card::close_action_buttons();
+						self::close_action_buttons();
 
 					}
 
 					if ( ! empty( $this->args['action_icons'] ) ) {
 
-						WPMDC_Card::open_action_icons();
+						self::open_action_icons();
 
 							foreach ( $this->args['action_icons'] as $icon_args ) {
 
 								if ( is_array( $icon_args ) && ! empty( $icon_args ) ) {
 
-									WPMDC_Card::action_icon( $icon_args );
+									self::action_icon( $icon_args );
 
 								}
 
 							}
 
-						WPMDC_Card::close_action_icons();
+						self::close_action_icons();
 
 					}
 
-				WPMDC_Card::close_actions();
+				self::close_actions();
 
 			}
 
-		WPMDC_Card::close_card();
+		self::close_card();
 
 	}
 

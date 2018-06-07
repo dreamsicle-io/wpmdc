@@ -29,7 +29,7 @@ $primary .= WPMDC_Typography::subtitle1( array(
 
 $secondary = WPMDC_Typography::body2( array(
 	'echo' => false, 
-	'text' => '', 
+	'text' => wp_trim_words( WPMDCLOREM, 35 ), 
 ) );
 
 $action_buttons = array( 
@@ -81,6 +81,29 @@ $action_icons = array(
 			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 6, 'tablet'  => 4, 'phone'  => 4 ) ); 
 
 				wpmdc_component( new WPMDC_Card( array(
+					'mod'            => 'outlined', 
+					'primary'        => $primary, 
+					'secondary'      => $secondary, 
+					'action_buttons' => $action_buttons, 
+					'action_icons'   => $action_icons, 
+				) ) );
+			
+			WPMDC_Layout_Grid::close_cell();
+			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 6, 'tablet'  => 4, 'phone'  => 4 ) ); 
+
+				wpmdc_component( new WPMDC_Card( array(
+					'href'           => '#', 
+					'primary'        => $primary, 
+					'secondary'      => $secondary, 
+					'action_buttons' => $action_buttons, 
+					'action_icons'   => $action_icons,  
+				) ) );
+			
+			WPMDC_Layout_Grid::close_cell();
+			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 6, 'tablet'  => 4, 'phone'  => 4 ) ); 
+
+				wpmdc_component( new WPMDC_Card( array(
+					'href'           => '#', 
 					'mod'            => 'outlined', 
 					'primary'        => $primary, 
 					'secondary'      => $secondary, 
