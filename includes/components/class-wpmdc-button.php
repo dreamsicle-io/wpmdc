@@ -29,29 +29,31 @@ class WPMDC_Button extends WPMDC_Component {
 		$uniqid = $this->get_uniqid();
 
 		$this->arg_types = array(
-			'mod'      => array( '', 'outlined', 'raised', 'unelevated' ), 
-			'type'     => array( 'button', 'submit', 'reset' ), 
-			'id'       => $uniqid, 
-			'name'     => $uniqid, 
-			'href'     => 'string', 
-			'dense'    => 'boolean', 
-			'icon'     => 'string', 
-			'text'     => 'string', 
-			'disabled' => 'boolean', 
-			'data'     => 'array', 
+			'mod'         => array( '', 'outlined', 'raised', 'unelevated' ), 
+			'type'        => array( 'button', 'submit', 'reset' ), 
+			'id'          => 'string', 
+			'name'        => 'string', 
+			'href'        => 'string', 
+			'dense'       => 'boolean', 
+			'icon'        => 'string', 
+			'text'        => 'string', 
+			'disabled'    => 'boolean', 
+			'card_action' => 'boolean', 
+			'data'        => 'array', 
 		);
 
 		$this->default_args = array(
-			'mod'      => '', 
-			'type'     => 'button', 
-			'id'       => '', 
-			'name'     => '', 
-			'href'     => '', 
-			'dense'    => false, 
-			'icon'     => '', 
-			'text'     => _x( 'Button', 'button component default button text', 'wpmdc' ), 
-			'disabled' => false, 
-			'data'     => array(), 
+			'mod'         => '', 
+			'type'        => 'button', 
+			'id'          => $uniqid, 
+			'name'        => '', 
+			'href'        => '', 
+			'dense'       => false, 
+			'icon'        => '', 
+			'text'        => _x( 'Button', 'button component default button text', 'wpmdc' ), 
+			'disabled'    => false, 
+			'card_action' => false, 
+			'data'        => array(), 
 		);
 
 		parent::__construct( $args );
@@ -95,6 +97,8 @@ class WPMDC_Button extends WPMDC_Component {
 			'mdc-ripple-surface'                            => true, 
 			'mdc-button--' . esc_attr( $this->args['mod'] ) => ! empty( $this->args['mod'] ), 
 			'mdc-button--dense'                             => $this->args['dense'], 
+			'mdc-card__action'                              => $this->args['card_action'], 
+			'mdc-card__action--button'                      => $this->args['card_action'], 
 		) ); 
 
 		$data_attrs = self::parse_data_attrs( $this->args['data'] );
