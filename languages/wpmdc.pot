@@ -234,11 +234,11 @@ msgstr ""
 msgid "Card Subtitle"
 msgstr ""
 
-#: includes/components/examples/card.php:47, includes/components/examples/card.php:135, includes/components/examples/card.php:167
+#: includes/components/examples/card.php:47, includes/components/examples/card.php:158, includes/components/examples/card.php:190
 msgid "Add to Favorites"
 msgstr ""
 
-#: includes/components/examples/card.php:51, includes/components/examples/card.php:139, includes/components/examples/card.php:171
+#: includes/components/examples/card.php:51, includes/components/examples/card.php:162, includes/components/examples/card.php:194
 msgid "Share"
 msgstr ""
 
