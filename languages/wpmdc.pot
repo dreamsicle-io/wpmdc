@@ -13,6 +13,11 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: functions.php:14
+msgctxt "lorem ipsum demo text."
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+msgstr ""
+
 #: includes/class-wpmdc-comments.php:63
 msgctxt "comment author field label"
 msgid "Name"
@@ -84,9 +89,14 @@ msgstr ""
 msgid "Widgets added here will appear in the footer."
 msgstr ""
 
-#: includes/components/class-wpmdc-button.php:52
+#: includes/components/class-wpmdc-button.php:53
 msgctxt "button component default button text"
 msgid "Button"
+msgstr ""
+
+#: includes/components/class-wpmdc-card.php:659
+msgctxt "card component default action item label"
+msgid "Toggle Menu"
 msgstr ""
 
 #: includes/components/class-wpmdc-checkbox.php:47
@@ -202,16 +212,41 @@ msgctxt "top app bar component default navigation icon label"
 msgid "Toggle Drawer"
 msgstr ""
 
-#: includes/components/class-wpmdc-top-app-bar.php:293
+#: includes/components/class-wpmdc-top-app-bar.php:294
 msgctxt "top app bar component default action item label"
 msgid "Toggle Menu"
+msgstr ""
+
+#: includes/components/class-wpmdc-typography.php:40
+msgctxt "typography component body 1 default text"
+msgid "Lorem ipsum dolor sit amet."
 msgstr ""
 
 #: includes/components/examples/button.php:24
 msgid "Button"
 msgstr ""
 
-#: includes/components/examples/card.php:24
+#: includes/components/examples/card.php:21
+msgid "Card Title"
+msgstr ""
+
+#: includes/components/examples/card.php:27
+msgid "Card Subtitle"
+msgstr ""
+
+#: includes/components/examples/card.php:47, includes/components/examples/card.php:135, includes/components/examples/card.php:167
+msgid "Add to Favorites"
+msgstr ""
+
+#: includes/components/examples/card.php:51, includes/components/examples/card.php:139, includes/components/examples/card.php:171
+msgid "Share"
+msgstr ""
+
+#: includes/components/examples/card.php:55
+msgid "Toggle Menu"
+msgstr ""
+
+#: includes/components/examples/card.php:67
 msgid "Card"
 msgstr ""
 
@@ -312,6 +347,10 @@ msgstr ""
 
 #: includes/components/examples/text-field.php:26
 msgid "Text Field"
+msgstr ""
+
+#: includes/components/examples/typography.php:24
+msgid "Typography"
 msgstr ""
 
 #: includes/tags/hero.php:53, includes/widgets/class-wpmdc-widget-archives.php:40, includes/widgets/class-wpmdc-widget-archives.php:63

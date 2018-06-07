@@ -16,6 +16,12 @@
 	margin-right: auto;
 }
 
+@mixin wpmdc-normalize-button {
+	appearance: none;
+	background-color: transparent;
+	border: 0;
+}
+
 @mixin wpmdc-float($direction: left, $clear: true) {
 	@if ($clear) {
 		clear: $direction;
