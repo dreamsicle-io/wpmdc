@@ -26,26 +26,34 @@ class WPMDC_Button extends WPMDC_Component {
 	 */
 	function __construct( $args = array() ) {
 
+		$uniqid = $this->get_uniqid();
+
 		$this->arg_types = array(
-			'mod'      => array( '', 'outlined', 'raised', 'unelevated' ), 
-			'type'     => array( 'button', 'submit', 'reset' ), 
-			'href'     => 'string', 
-			'dense'    => 'boolean', 
-			'icon'     => 'string', 
-			'text'     => 'string', 
-			'disabled' => 'boolean', 
-			'data'     => 'array', 
+			'mod'         => array( '', 'outlined', 'raised', 'unelevated' ), 
+			'type'        => array( 'button', 'submit', 'reset' ), 
+			'id'          => 'string', 
+			'name'        => 'string', 
+			'href'        => 'string', 
+			'dense'       => 'boolean', 
+			'icon'        => 'string', 
+			'text'        => 'string', 
+			'disabled'    => 'boolean', 
+			'card_action' => 'boolean', 
+			'data'        => 'array', 
 		);
 
 		$this->default_args = array(
-			'mod'      => '', 
-			'type'     => 'button', 
-			'href'     => '', 
-			'dense'    => false, 
-			'icon'     => '', 
-			'text'     => _x( 'Button', 'button component default button text', 'wpmdc' ), 
-			'disabled' => false, 
-			'data'     => array(), 
+			'mod'         => '', 
+			'type'        => 'button', 
+			'id'          => $uniqid, 
+			'name'        => '', 
+			'href'        => '', 
+			'dense'       => false, 
+			'icon'        => '', 
+			'text'        => _x( 'Button', 'button component default button text', 'wpmdc' ), 
+			'disabled'    => false, 
+			'card_action' => false, 
+			'data'        => array(), 
 		);
 
 		parent::__construct( $args );
@@ -89,6 +97,8 @@ class WPMDC_Button extends WPMDC_Component {
 			'mdc-ripple-surface'                            => true, 
 			'mdc-button--' . esc_attr( $this->args['mod'] ) => ! empty( $this->args['mod'] ), 
 			'mdc-button--dense'                             => $this->args['dense'], 
+			'mdc-card__action'                              => $this->args['card_action'], 
+			'mdc-card__action--button'                      => $this->args['card_action'], 
 		) ); 
 
 		$data_attrs = self::parse_data_attrs( $this->args['data'] );
@@ -96,6 +106,7 @@ class WPMDC_Button extends WPMDC_Component {
 		if ( ! empty( $this->args['href'] ) ) { ?>
 
 			<a 
+			id="<?php echo esc_attr( $this->args['id'] ); ?>"
 			href="<?php echo esc_url( $this->args['href'] ); ?>"
 			class="<?php echo esc_attr( $class ); ?>"
 			<?php echo $data_attrs; ?>><?php 
@@ -107,11 +118,13 @@ class WPMDC_Button extends WPMDC_Component {
 		<?php } else {
 
 			$button_attrs = self::parse_attrs( array( 
-				'disabled'             => $this->args['disabled'],
-				'aria-disabled="true"' => $this->args['disabled'],
+				'disabled'                                       => $this->args['disabled'],
+				'aria-disabled="true"'                           => $this->args['disabled'],
+				'name="' . esc_attr( $this->args['name'] ) . '"' => ! empty( $this->args['name'] ), 
 			) ); ?> 
 
 			<button 
+			id="<?php echo esc_attr( $this->args['id'] ); ?>"
 			type="<?php echo esc_attr( $this->args['type'] ); ?>" 
 			class="<?php echo esc_attr( $class ); ?>"
 			<?php echo $button_attrs; ?>

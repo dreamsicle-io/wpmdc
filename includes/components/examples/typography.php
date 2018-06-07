@@ -1,6 +1,6 @@
-<?php
+<?php 
 /**
- * The Slider Examples.
+ * The Typography Examples.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -21,27 +21,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 		WPMDC_Layout_Grid::open_inner();
 			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 12, 'tablet'  => 8, 'phone'  => 4 ) ); ?>
 
-				<h3><?php esc_html_e( 'Slider', 'wpmdc' ); ?></h3>
+				<h3><?php esc_html_e( 'Typography', 'wpmdc' ); ?></h3>
 
 			<?php 
 			WPMDC_Layout_Grid::close_cell();
 			WPMDC_Layout_Grid::open_cell( array( 'desktop' => 12, 'tablet'  => 8, 'phone'  => 4 ) ); 
 
-				wpmdc_component( new WPMDC_Slider() );
-				wpmdc_component( new WPMDC_Slider( array( 'mod' => 'discrete' ) ) );
-				wpmdc_component( new WPMDC_Slider( array( 
-					'mod'     => 'discrete', 
-					'markers' => true, 
-				) ) );
-				wpmdc_component( new WPMDC_Slider( array( 
-					'mod'     => 'discrete', 
-					'min'     => 0, 
-					'max'     => 20, 
-					'step'    => 1, 
-					'markers' => true, 
-				) ) );
-				wpmdc_component( new WPMDC_Slider( array( 'disabled' => true ) ) );
-
+				WPMDC_Typography::body1();
+				WPMDC_Typography::body2();
+				WPMDC_Typography::headline1();
+				WPMDC_Typography::headline2();
+				WPMDC_Typography::headline3();
+				WPMDC_Typography::headline4();
+				WPMDC_Typography::headline5();
+				WPMDC_Typography::headline6();
+				WPMDC_Typography::button();
+				WPMDC_Typography::overline();
+				WPMDC_Typography::subtitle1();
+				WPMDC_Typography::subtitle2();
+				WPMDC_Typography::caption();
+			
 			WPMDC_Layout_Grid::close_cell();
 		WPMDC_Layout_grid::close_inner();
 	WPMDC_Layout_grid::close_grid(); ?>

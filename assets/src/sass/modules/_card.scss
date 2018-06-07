@@ -1,18 +1,47 @@
 .wpmdc-card {
 
-	&__content {
+	&__primary {
 		@include wpmdc-adjust-children;
-		flex-grow: 1;
-		padding: 20px;
+		padding: 16px;
+
+		.mdc-typography--headline1,
+		.mdc-typography--headline2,
+		.mdc-typography--headline3,
+		.mdc-typography--headline4,
+		.mdc-typography--headline5,
+		.mdc-typography--headline6,
+		.mdc-typography--subtitle1,
+		.mdc-typography--subtitle2 {
+			margin-bottom: 0;
+			margin-top: 0;
+		}
 	}
 
-	&__title,
-	&__subtitle {
-		margin: 0 0 12px;
+	&__secondary {
+		@include wpmdc-adjust-children;
+		padding: 0 16px 16px;
 	}
 
 	.mdc-card__primary-action {
 		flex-grow: 1;
+	}
+
+	.mdc-card__media {
+		@include mdc-theme-prop(background-color, 'primary');
+		@include mdc-theme-prop(color, 'on-primary');
+	}
+
+	.mdc-card__media-content {
+		@include wpmdc-flex(column, flex-start, flex-end);
+		padding: 12px;
+	}
+
+	.mdc-card__action {
+		@include wpmdc-inherit-ripple-color;
+
+		&--icon {
+			@include wpmdc-normalize-button;
+		}
 	}
 }
 

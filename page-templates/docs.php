@@ -27,6 +27,7 @@ get_template_part( 'template-parts/drawer', 'permanent' ); ?>
 		<h2><?php esc_html_e( 'Components', 'wpmdc' ); ?></h2>
 
 		<?php
+		get_template_part( 'includes/components/examples/card' ); 
 		get_template_part( 'includes/components/examples/list' ); 
 		get_template_part( 'includes/components/examples/menu' ); 
 		get_template_part( 'includes/components/examples/text-field' ); 
@@ -40,6 +41,7 @@ get_template_part( 'template-parts/drawer', 'permanent' ); ?>
 		get_template_part( 'includes/components/examples/slider' );
 		get_template_part( 'includes/components/examples/icon-toggle' );
 		get_template_part( 'includes/components/examples/dialog' );
+		get_template_part( 'includes/components/examples/typography' );
 		// get_template_part( 'includes/components/examples/icon-button' ); ?>
 
 	</main>

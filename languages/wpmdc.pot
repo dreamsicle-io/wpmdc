@@ -13,34 +13,54 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: includes/class-wpmdc-comments.php:61
+#: functions.php:14
+msgctxt "lorem ipsum demo text."
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+msgstr ""
+
+#: includes/class-wpmdc-comments.php:63
 msgctxt "comment author field label"
 msgid "Name"
 msgstr ""
 
-#: includes/class-wpmdc-comments.php:62
+#: includes/class-wpmdc-comments.php:64
 msgctxt "comment author field helper text"
 msgid "A name is required."
 msgstr ""
 
-#: includes/class-wpmdc-comments.php:73
+#: includes/class-wpmdc-comments.php:75
 msgctxt "comment email field label"
 msgid "Email"
 msgstr ""
 
-#: includes/class-wpmdc-comments.php:74
+#: includes/class-wpmdc-comments.php:76
 msgctxt "comment email field helper text"
 msgid "A valid email address is required. This will never be published."
 msgstr ""
 
-#: includes/class-wpmdc-comments.php:85
+#: includes/class-wpmdc-comments.php:87
 msgctxt "comment url field label"
 msgid "Website / Profile"
 msgstr ""
 
-#: includes/class-wpmdc-comments.php:86
+#: includes/class-wpmdc-comments.php:88
 msgctxt "comment url field helper text"
 msgid "Enter an optional website or social profile url. This will be published."
+msgstr ""
+
+#: includes/class-wpmdc-comments.php:99
+msgctxt "comment field label"
+msgid "Comment"
+msgstr ""
+
+#: includes/class-wpmdc-comments.php:100
+msgctxt "comment field helper text"
+msgid "Enter a comment and join the conversation. This will be published."
+msgstr ""
+
+#: includes/class-wpmdc-comments.php:108
+msgctxt "comment cookies field label"
+msgid "Save my name, email, and website in this browser for the next time I comment."
 msgstr ""
 
 #. translators: 1: argument value, 2: argument key, 3: CSV of allowed values.
@@ -69,9 +89,14 @@ msgstr ""
 msgid "Widgets added here will appear in the footer."
 msgstr ""
 
-#: includes/components/class-wpmdc-button.php:46
+#: includes/components/class-wpmdc-button.php:53
 msgctxt "button component default button text"
 msgid "Button"
+msgstr ""
+
+#: includes/components/class-wpmdc-card.php:659
+msgctxt "card component default action item label"
+msgid "Toggle Menu"
 msgstr ""
 
 #: includes/components/class-wpmdc-checkbox.php:47
@@ -182,13 +207,47 @@ msgctxt "text field component default label"
 msgid "Text Field"
 msgstr ""
 
-#: includes/components/class-wpmdc-top-app-bar.php:207
+#: includes/components/class-wpmdc-top-app-bar.php:239
 msgctxt "top app bar component default navigation icon label"
 msgid "Toggle Drawer"
 msgstr ""
 
+#: includes/components/class-wpmdc-top-app-bar.php:294
+msgctxt "top app bar component default action item label"
+msgid "Toggle Menu"
+msgstr ""
+
+#: includes/components/class-wpmdc-typography.php:40
+msgctxt "typography component body 1 default text"
+msgid "Lorem ipsum dolor sit amet."
+msgstr ""
+
 #: includes/components/examples/button.php:24
 msgid "Button"
+msgstr ""
+
+#: includes/components/examples/card.php:21
+msgid "Card Title"
+msgstr ""
+
+#: includes/components/examples/card.php:27
+msgid "Card Subtitle"
+msgstr ""
+
+#: includes/components/examples/card.php:47, includes/components/examples/card.php:135, includes/components/examples/card.php:167
+msgid "Add to Favorites"
+msgstr ""
+
+#: includes/components/examples/card.php:51, includes/components/examples/card.php:139, includes/components/examples/card.php:171
+msgid "Share"
+msgstr ""
+
+#: includes/components/examples/card.php:55
+msgid "Toggle Menu"
+msgstr ""
+
+#: includes/components/examples/card.php:67
+msgid "Card"
 msgstr ""
 
 #: includes/components/examples/checkbox.php:24
@@ -288,6 +347,10 @@ msgstr ""
 
 #: includes/components/examples/text-field.php:26
 msgid "Text Field"
+msgstr ""
+
+#: includes/components/examples/typography.php:24
+msgid "Typography"
 msgstr ""
 
 #: includes/tags/hero.php:53, includes/widgets/class-wpmdc-widget-archives.php:40, includes/widgets/class-wpmdc-widget-archives.php:63

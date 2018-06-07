@@ -11,6 +11,7 @@
  * Define path constants.
  */
 define( 'WPMDCINC', get_template_directory() . '/includes' );
+define( 'WPMDCLOREM', _x( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'lorem ipsum demo text.', 'wpmdc' ) );
 
 /**
  * Require all files.
@@ -24,6 +25,7 @@ require WPMDCINC . '/class-wpmdc-customizer.php';
 require WPMDCINC . '/class-wpmdc-component.php';
 require WPMDCINC . '/components/class-wpmdc-layout-grid.php';
 require WPMDCINC . '/components/class-wpmdc-top-app-bar.php';
+require WPMDCINC . '/components/class-wpmdc-card.php';
 require WPMDCINC . '/components/class-wpmdc-drawer.php';
 require WPMDCINC . '/components/class-wpmdc-list-item.php';
 require WPMDCINC . '/components/class-wpmdc-text-field.php';
@@ -39,6 +41,7 @@ require WPMDCINC . '/components/class-wpmdc-tab.php';
 require WPMDCINC . '/components/class-wpmdc-chip.php';
 require WPMDCINC . '/components/class-wpmdc-dialog.php';
 require WPMDCINC . '/components/class-wpmdc-menu.php';
+require WPMDCINC . '/components/class-wpmdc-typography.php';
 require WPMDCINC . '/widgets/class-wpmdc-widget-nav-menu.php';
 require WPMDCINC . '/widgets/class-wpmdc-widget-pages.php';
 require WPMDCINC . '/widgets/class-wpmdc-widget-posts.php';

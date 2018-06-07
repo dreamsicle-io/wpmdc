@@ -68,3 +68,49 @@ if ( ! function_exists( 'wpmdc_top_app_bar_title' ) ) {
 	}
 
 }
+
+if ( ! function_exists( 'wpmdc_get_top_app_bar_graphic' ) ) {
+
+	function wpmdc_get_top_app_bar_graphic() {
+
+		$graphic = '';
+
+		if ( is_author() ) {
+
+			$author = get_queried_object();
+
+			$graphic = get_avatar( 
+				sanitize_email( $author->user_email ), 
+				112, 
+				'', 
+				esc_attr( $author->display_name ), 
+				array(
+					'height' => 40, 
+					'width'  => 40, 
+					'class'  => array( 'mdc-elevation--z2', 'wpmdc-top-app-bar__graphic' ), 
+				) 
+			);
+
+		}
+
+		return apply_filters( 'wpmdc_top_app_bar_graphic', $graphic );
+
+	}
+
+}
+
+if ( ! function_exists( 'wpmdc_top_app_bar_graphic' ) ) {
+
+	function wpmdc_top_app_bar_graphic( $before = '', $after = '' ) {
+
+		$graphic = wpmdc_get_top_app_bar_graphic();
+
+		if ( ! empty( $graphic ) ) {
+
+			echo $before . wp_kses_post( $graphic ) . $after;
+
+		}
+
+	}
+
+}
