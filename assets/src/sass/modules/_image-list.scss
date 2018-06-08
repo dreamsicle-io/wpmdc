@@ -1,0 +1,31 @@
+.wpmdc-image-list {
+
+	@for $columns from 1 through 6 {
+
+		&--columns-#{$columns} {
+
+			&:not(.mdc-image-list--masonry) {
+				@include mdc-image-list-standard-columns($columns);
+			}
+
+			&.mdc-image-list--masonry {
+				@include mdc-image-list-masonry-columns($columns);
+			}
+		}
+	}
+
+	&--aspect-3-2 {
+		@include mdc-image-list-aspect(1.5);
+	}
+}
+
+.wpmdc-image-list-item {
+
+	&--aspect-square {
+		@include mdc-image-list-aspect(1);
+	}
+
+	&--aspect-3-2 {
+		@include mdc-image-list-aspect(1.5);
+	}
+}
