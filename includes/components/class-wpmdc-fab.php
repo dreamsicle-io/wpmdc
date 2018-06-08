@@ -34,6 +34,7 @@ class WPMDC_Fab extends WPMDC_Component {
 			'label'    => 'string', 
 			'disabled' => 'boolean', 
 			'exited'   => 'boolean', 
+			'class'    => 'string', 
 		);
 
 		$this->default_args = array(
@@ -44,6 +45,7 @@ class WPMDC_Fab extends WPMDC_Component {
 			'label'    => _x( 'Fab', 'fab component default button text', 'wpmdc' ), 
 			'disabled' => false, 
 			'exited'   => false, 
+			'class'    => ''
 		);
 
 		parent::__construct( $args );
@@ -77,6 +79,7 @@ class WPMDC_Fab extends WPMDC_Component {
 			'mdc-ripple-surface'                         => true, 
 			'mdc-fab--' . esc_attr( $this->args['mod'] ) => ! empty( $this->args['mod'] ), 
 			'mdc-fab--exited'                            => $this->args['exited'], 
+			esc_attr( $this->args['class'] )             => ! empty( $this->args['class'] ), 
 		) );
 
 		$attrs = self::parse_attrs( array(

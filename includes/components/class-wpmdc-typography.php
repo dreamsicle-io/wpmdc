@@ -29,15 +29,17 @@ class WPMDC_Typography extends WPMDC_Component {
 		$uniqid = $this->get_uniqid();
 
 		$this->arg_types = array(
-			'mod'       => array( 'body1', 'body2', 'headline1', 'headline2', 'headline3', 'headline4', 'headline5', 'headline6', 'button', 'overline', 'subtitle1', 'subtitle2', 'caption' ), 
 			'container' => array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span' ), 
+			'mod'       => array( 'body1', 'body2', 'headline1', 'headline2', 'headline3', 'headline4', 'headline5', 'headline6', 'button', 'overline', 'subtitle1', 'subtitle2', 'caption' ), 
 			'text'      => 'string', 
+			'class'     => 'string', 
 		);
 
 		$this->default_args = array(
 			'container' => 'span', 
 			'mod'       => 'body1', 
 			'text'      => _x( 'Lorem ipsum dolor sit amet.', 'typography component body 1 default text', 'wpmdc' ), 
+			'class'     => '', 
 		);
 
 		parent::__construct( $args );
@@ -59,6 +61,7 @@ class WPMDC_Typography extends WPMDC_Component {
 
 		$class = self::parse_classes( array(
 			'mdc-typography--' . esc_attr( $this->args['mod'] ) => ! empty( $this->args['mod'] ), 
+			esc_attr( $this->args['class'] )                    => ! empty( $this->args['class'] ), 
 		) ); 
 
 		if ( empty( $this->args['text'] ) ) {

@@ -36,6 +36,7 @@ class WPMDC_Image_List_Item extends WPMDC_Component {
 			'target' => 'string', 
 			'rel'    => 'string', 
 			'aspect' => array( '', 'square', '3-2' ), 
+			'class'  => 'string', 
 		);
 
 		$this->default_args = array(
@@ -46,6 +47,7 @@ class WPMDC_Image_List_Item extends WPMDC_Component {
 			'target' => '', 
 			'rel'    => '', 
 			'aspect' => '', 
+			'class'  => '', 
 		);
 
 		parent::__construct( $args );
@@ -111,10 +113,11 @@ class WPMDC_Image_List_Item extends WPMDC_Component {
 			return; 
 		}
 
-		$container_class = self::parse_classes( array(
+		$class = self::parse_classes( array(
 			'wpmdc-image-list-item'                                              => true, 
 			'mdc-image-list__item'                                               => true, 
 			'wpmdc-image-list-item--aspect-' . esc_attr( $this->args['aspect'] ) => ! empty( $this->args['aspect'] ), 
+			esc_attr( $this->args['class'] )                                     => ! empty( $this->args['class'] ), 
 		) );
 
 		if ( ! empty( $this->args['href'] ) ) {
@@ -127,7 +130,7 @@ class WPMDC_Image_List_Item extends WPMDC_Component {
 			<a 
 			href="<?php echo esc_url( $this->args['href'] ); ?>"
 			id="<?php echo esc_attr( $this->args['id'] ); ?>"
-			class="<?php echo esc_attr( $container_class ); ?>"
+			class="<?php echo esc_attr( $class ); ?>"
 			<?php echo $link_attrs; ?>><?php 
 
 				$this->render_internal_elements();
@@ -138,7 +141,7 @@ class WPMDC_Image_List_Item extends WPMDC_Component {
 
 			<li 
 			id="<?php echo esc_attr( $this->args['id'] ); ?>"
-			class="<?php echo esc_attr( $container_class ); ?>"><?php 
+			class="<?php echo esc_attr( $class ); ?>"><?php 
 
 				$this->render_internal_elements();
 

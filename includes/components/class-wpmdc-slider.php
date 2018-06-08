@@ -39,6 +39,7 @@ class WPMDC_Slider extends WPMDC_Component {
 			'markers'       => 'boolean', 
 			'label'         => 'string', 
 			'disabled'      => 'boolean', 
+			'class'         => 'string', 
 		);
 
 		$this->default_args = array(
@@ -52,6 +53,7 @@ class WPMDC_Slider extends WPMDC_Component {
 			'markers'  => false, 
 			'label'    => _x( 'Slider', 'slider component default label', 'wpmdc' ), 
 			'disabled' => false, 
+			'class'    => '', 
 		);
 
 		parent::__construct( $args );
@@ -67,12 +69,13 @@ class WPMDC_Slider extends WPMDC_Component {
 
 		$tabindex = $this->args['disabled'] ? '-1' : '0';
 
-		$container_class = self::parse_classes( array(
+		$class = self::parse_classes( array(
 			'wpmdc-slider'                      => true, 
 			'mdc-slider'                        => true, 
 			'mdc-slider--' . $this->args['mod'] => ! empty( $this->args['mod'] ), 
 			'mdc-slider--display-markers'       => $this->args['markers'], 
 			'mdc-slider--disabled'              => $this->args['disabled'], 
+			esc_attr( $this->args['class'] )    => ! empty( $this->args['class'] ), 
 		) );
 
 		$container_attrs = self::parse_attrs( array( 
@@ -85,7 +88,7 @@ class WPMDC_Slider extends WPMDC_Component {
 		<div 
 		role="slider"
 		id="<?php echo esc_attr( $this->args['id'] ); ?>"
-		class="<?php echo esc_attr( $container_class ); ?>" 
+		class="<?php echo esc_attr( $class ); ?>" 
 		aria-valuemin="<?php echo esc_attr( $this->args['min'] ); ?>" 
 		aria-valuemax="<?php echo esc_attr( $this->args['max'] ); ?>" 
 		aria-valuenow="<?php echo esc_attr( $this->args['value'] ); ?>"

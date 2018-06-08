@@ -27,29 +27,31 @@ class WPMDC_Icon_Button extends WPMDC_Component {
 	function __construct( $args = array() ) {
 
 		$this->arg_types = array(
-			'option_name'   => 'string', 
-			'id'            => 'string', 
-			'type'          => array( 'button', 'submit', 'reset' ), 
-			'label'         => 'string', 
-			'on'            => 'boolean', 
-			'disabled'      => 'boolean', 
-			'on_content'    => 'string', 
-			'on_label'      => 'string', 
-			'off_content'   => 'string', 
-			'off_label'     => 'string', 
+			'option_name' => 'string', 
+			'id'          => 'string', 
+			'type'        => array( 'button', 'submit', 'reset' ), 
+			'label'       => 'string', 
+			'on'          => 'boolean', 
+			'disabled'    => 'boolean', 
+			'on_content'  => 'string', 
+			'on_label'    => 'string', 
+			'off_content' => 'string', 
+			'off_label'   => 'string', 
+			'class'       => 'string', 
 		);
 
 		$this->default_args = array(
-			'option_name'   => '', 
-			'id'            => $this->get_uniqid(), 
-			'type'          => 'button', 
-			'label'         => _x( 'Icon Button', 'icon button component default label', 'wpmdc' ), 
-			'on'            => false, 
-			'disabled'      => false, 
-			'on_content'    => 'favorite', 
-			'on_label'      => _x( 'On', 'icon button component default "on" label', 'wpmdc' ), 
-			'off_content'   => 'favorite_border', 
-			'off_label'     => _x( 'Off', 'icon button component default "off" label', 'wpmdc' ), 
+			'option_name' => '', 
+			'id'          => $this->get_uniqid(), 
+			'type'        => 'button', 
+			'label'       => _x( 'Icon Button', 'icon button component default label', 'wpmdc' ), 
+			'on'          => false, 
+			'disabled'    => false, 
+			'on_content'  => 'favorite', 
+			'on_label'    => _x( 'On', 'icon button component default "on" label', 'wpmdc' ), 
+			'off_content' => 'favorite_border', 
+			'off_label'   => _x( 'Off', 'icon button component default "off" label', 'wpmdc' ), 
+			'class'       => ''
 		);
 
 		parent::__construct( $args );
@@ -65,11 +67,12 @@ class WPMDC_Icon_Button extends WPMDC_Component {
 
 		$tabindex = $this->args['disabled'] ? '-1' : '0';
 
-		$container_class = self::parse_classes( array(
-			'wpmdc-icon-button'         => true, 
-			'mdc-icon-button'           => true, 
-			'material-icons'            => true, 
-			'mdc-icon-button--disabled' => $this->args['disabled'], 
+		$class = self::parse_classes( array(
+			'wpmdc-icon-button'              => true, 
+			'mdc-icon-button'                => true, 
+			'material-icons'                 => true, 
+			'mdc-icon-button--disabled'      => $this->args['disabled'], 
+			esc_attr( $this->args['class'] ) => ! empty( $this->args['class'] ), 
 		) );
 
 		$attrs = self::parse_attrs( array( 
@@ -80,7 +83,7 @@ class WPMDC_Icon_Button extends WPMDC_Component {
 		<button 
 		type="button" 
 		id="<?php echo esc_attr( $this->args['id'] ); ?>"
-		class="<?php echo esc_attr( $container_class ); ?>"
+		class="<?php echo esc_attr( $class ); ?>"
 		aria-label="<?php echo esc_attr( $this->args['label'] ); ?>" 
 		aria-pressed="<?php echo $this->args['on'] ? 'true' : 'false'; ?>"
 		data-toggle-on-content="<?php echo esc_attr( $this->args['on_content'] ); ?>"

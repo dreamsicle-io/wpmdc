@@ -39,6 +39,7 @@ class WPMDC_Button extends WPMDC_Component {
 			'text'        => 'string', 
 			'disabled'    => 'boolean', 
 			'card_action' => 'boolean', 
+			'class'       => 'string', 
 			'data'        => 'array', 
 		);
 
@@ -46,13 +47,14 @@ class WPMDC_Button extends WPMDC_Component {
 			'mod'         => '', 
 			'type'        => 'button', 
 			'id'          => $uniqid, 
-			'name'        => '', 
+			'name'        => $uniqid, 
 			'href'        => '', 
 			'dense'       => false, 
 			'icon'        => '', 
 			'text'        => _x( 'Button', 'button component default button text', 'wpmdc' ), 
 			'disabled'    => false, 
 			'card_action' => false, 
+			'class'       => '', 
 			'data'        => array(), 
 		);
 
@@ -99,6 +101,7 @@ class WPMDC_Button extends WPMDC_Component {
 			'mdc-button--dense'                             => $this->args['dense'], 
 			'mdc-card__action'                              => $this->args['card_action'], 
 			'mdc-card__action--button'                      => $this->args['card_action'], 
+			esc_attr( $this->args['class'] )                => ! empty( $this->args['class'] ), 
 		) ); 
 
 		$data_attrs = self::parse_data_attrs( $this->args['data'] );

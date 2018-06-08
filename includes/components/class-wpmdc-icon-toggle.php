@@ -34,15 +34,16 @@ class WPMDC_Icon_Toggle extends WPMDC_Component {
 			'disabled'      => 'boolean', 
 			'data_on'       => 'array', 
 			'data_off'      => 'array', 
+			'class'         => 'string', 
 		);
 
 		$this->default_args = array(
-			'option_name'   => '', 
-			'id'            => $this->get_uniqid(), 
-			'label'         => _x( 'Icon Toggle', 'icon toggle component default label', 'wpmdc' ), 
-			'on'            => false, 
-			'disabled'      => false, 
-			'data_on'       => array(
+			'option_name' => '', 
+			'id'          => $this->get_uniqid(), 
+			'label'       => _x( 'Icon Toggle', 'icon toggle component default label', 'wpmdc' ), 
+			'on'          => false, 
+			'disabled'    => false, 
+			'data_on'     => array(
 				'content'  => 'favorite', 
 				'label'    => _x( 'On', 'icon toggle component default "on" label', 'wpmdc' ), 
 			), 
@@ -50,6 +51,7 @@ class WPMDC_Icon_Toggle extends WPMDC_Component {
 				'content'  => 'favorite_border', 
 				'label'    => _x( 'Off', 'icon toggle component default "off" label', 'wpmdc' ), 
 			), 
+			'class'       => '', 
 		);
 
 		parent::__construct( $args );
@@ -91,11 +93,12 @@ class WPMDC_Icon_Toggle extends WPMDC_Component {
 		$tabindex = $this->args['disabled'] ? '-1' : '0';
 		$pressed = $this->args['on'] ? 'true' : 'false';
 
-		$container_class = self::parse_classes( array(
-			'wpmdc-icon-toggle'         => true, 
-			'mdc-icon-toggle'           => true, 
-			'material-icons'            => true, 
-			'mdc-icon-toggle--disabled' => $this->args['disabled'], 
+		$class = self::parse_classes( array(
+			'wpmdc-icon-toggle'              => true, 
+			'mdc-icon-toggle'                => true, 
+			'material-icons'                 => true, 
+			'mdc-icon-toggle--disabled'      => $this->args['disabled'], 
+			esc_attr( $this->args['class'] ) => ! empty( $this->args['class'] ), 
 		) );
 
 		$attrs = self::parse_attrs( array( 
@@ -108,7 +111,7 @@ class WPMDC_Icon_Toggle extends WPMDC_Component {
 		<i 
 		role="button" 
 		id="<?php echo esc_attr( $this->args['id'] ); ?>"
-		class="<?php echo esc_attr( $container_class ); ?>"
+		class="<?php echo esc_attr( $class ); ?>"
 		aria-label="<?php echo esc_attr( $this->args['label'] ); ?>" 
 		data-toggle-on='<?php echo json_encode( $this->args['data_on'] ); ?>'
 		data-toggle-off='<?php echo json_encode( $this->args['data_off'] ); ?>'

@@ -22,10 +22,14 @@ class WPMDC_Component_Template_Static {
 
 		$args = wp_parse_args( $args, array(
 			'echo'  => true, 
+			'id'    => uniqid( get_called_class() . '_' ), 
+			'class' => '', 
 		) );
 
 		$errors = WPMDC_Component::check_arg_types( $args, array(
 			'echo'  => 'boolean', 
+			'id'    => 'string', 
+			'class' => 'string', 
 		) );
 
 		WPMDC_Component::render_errors( $errors );
@@ -33,9 +37,10 @@ class WPMDC_Component_Template_Static {
 		$class = WPMDC_Component::parse_classes( array( 
 			'wpmdc-component-static-class' => true, 
 			'mdc-component-static-class'   => true, 
+			esc_attr( $args['class'] )     => ! empty( $args['class'] ), 
 		) );
 		
-		$output = '<div class="' . esc_attr( $class ) . '">';
+		$output = '<div id="' . esc_attr( $args['id'] ) . '" class="' . esc_attr( $class ) . '">';
 
 		if ( $args['echo'] ) {
 

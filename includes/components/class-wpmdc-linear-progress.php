@@ -35,6 +35,7 @@ class WPMDC_Linear_Progress extends WPMDC_Component {
 			'closed'        => 'boolean', 
 			'progress'      => 'float', 
 			'buffer'        => 'float', 
+			'class'         => 'string', 
 		);
 
 		$this->default_args = array(
@@ -44,6 +45,7 @@ class WPMDC_Linear_Progress extends WPMDC_Component {
 			'closed'        => false, 
 			'progress'      => 0, 
 			'buffer'        => 1, 
+			'class'         => '', 
 		);
 
 		parent::__construct( $args );
@@ -69,6 +71,7 @@ class WPMDC_Linear_Progress extends WPMDC_Component {
 			'mdc-linear-progress--indeterminate' => $this->args['indeterminate'], 
 			'mdc-linear-progress--reversed'      => $this->args['reversed'], 
 			'mdc-linear-progress--closed'        => $this->args['closed'], 
+			esc_attr( $this->args['class'] )     => ! empty( $this->args['class'] ), 
 		) );
 
 		$attrs = self::parse_attrs( array(
