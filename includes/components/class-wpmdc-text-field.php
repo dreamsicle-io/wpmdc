@@ -41,6 +41,7 @@ class WPMDC_Text_Field extends WPMDC_Component {
 			'helper_text'   => 'string', 
 			'required'      => 'boolean', 
 			'disabled'      => 'boolean', 
+			'class'         => 'string', 
 		);
 
 		$this->default_args = array(
@@ -56,6 +57,7 @@ class WPMDC_Text_Field extends WPMDC_Component {
 			'helper_text'   => '', 
 			'required'      => false, 
 			'disabled'      => false, 
+			'class'         => '', 
 		);
 
 		parent::__construct( $args );
@@ -73,7 +75,7 @@ class WPMDC_Text_Field extends WPMDC_Component {
 		// asterisk must only applied to placeholder, MDC handles this on floating labels.
 		$asterisk = $this->args['required'] ? ' *' : ''; 
 
-		$container_class = self::parse_classes( array(
+		$class = self::parse_classes( array(
 			'wpmdc-text-field'                      => true, 
 			'mdc-text-field'                        => true, 
 			'mdc-text-field--textarea'              => ( $this->args['type'] === 'textarea' ), 
@@ -83,6 +85,7 @@ class WPMDC_Text_Field extends WPMDC_Component {
 			'mdc-text-field--with-leading-icon'     => $has_icon && ( ( $this->args['type'] !== 'textarea' ) && ( $this->args['icon_position'] === 'leading' ) ),
 			'mdc-text-field--with-trailing-icon'    => $has_icon && ( ( $this->args['type'] !== 'textarea' ) && ( $this->args['icon_position'] === 'trailing' ) ),
 			'mdc-text-field--upgraded'              => ! empty( $args['value'] ), 
+			esc_attr( $this->args['class'] )        => ! empty( $this->args['class'] ), 
 		) );
 
 		$label_class = self::parse_classes( array(
@@ -102,7 +105,7 @@ class WPMDC_Text_Field extends WPMDC_Component {
 
 		<div 
 		id="<?php echo esc_attr( $this->args['id'] ); ?>"
-		class="<?php echo esc_attr( $container_class ); ?>">
+		class="<?php echo esc_attr( $class ); ?>">
 
 			<?php if ( $has_icon && ( $this->args['icon_position'] === 'leading' ) && ( $this->args['type'] !== 'textarea' ) ) { ?>
 

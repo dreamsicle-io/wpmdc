@@ -21,15 +21,17 @@ class WPMDC_Drawer {
 	public static function open_drawer( $args = array() ) {
 
 		$args = wp_parse_args( $args, array(
-			'echo' => true, 
-			'id'   => uniqid( strtolower( get_called_class() ) . '_' ), 
-			'mod'  => 'permanent', 
+			'echo'  => true, 
+			'id'    => uniqid( strtolower( get_called_class() ) . '_' ), 
+			'mod'   => 'permanent', 
+			'class' => ''
 		) );
 
 		$errors = WPMDC_Component::check_arg_types( $args, array(
-			'echo' => 'boolean', 
-			'id'   => 'string', 
-			'mod'  => array( 'permanent', 'persistent', 'temporary' ), 
+			'echo'  => 'boolean', 
+			'id'    => 'string', 
+			'mod'   => array( 'permanent', 'persistent', 'temporary' ), 
+			'class' => 'string', 
 		) );
 
 		WPMDC_Component::render_errors( $errors );
@@ -38,6 +40,7 @@ class WPMDC_Drawer {
 			'wpmdc-drawer'                            => true, 
 			'mdc-drawer'                              => true, 
 			'mdc-drawer--' . esc_attr( $args['mod'] ) => ! empty( $args['mod'] ), 
+			esc_attr( $args['class'] )                => ! empty( $args['class'] ), 
 		) );
 		
 		$output = '<aside id="' . esc_attr( $args['id'] ) . '" class="' . esc_attr( $class ) . '">';

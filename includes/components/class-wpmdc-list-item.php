@@ -36,6 +36,7 @@ class WPMDC_List_Item extends WPMDC_Component {
 			'two_line'       => 'boolean', 
 			'avatar_list'    => 'boolean', 
 			'menu_item'      => 'boolean',
+			'class'          => 'string', 
 			'data'           => 'array', 
 		);
 
@@ -49,6 +50,7 @@ class WPMDC_List_Item extends WPMDC_Component {
 			'two_line'       => false, 
 			'avatar_list'    => false, 
 			'menu_item'      => false, 
+			'class'          => '', 
 			'data'           => array(), 
 		);
 
@@ -118,9 +120,10 @@ class WPMDC_List_Item extends WPMDC_Component {
 		$tabindex = $this->args['disabled'] ? '-1' : '0';
 
 		$class = self::parse_classes( array(
-			'wpmdc-list-item'    => true, 
-			'mdc-list-item'      => true, 
-			'mdc-ripple-surface' => true, 
+			'wpmdc-list-item'                => true, 
+			'mdc-list-item'                  => true, 
+			'mdc-ripple-surface'             => true, 
+			esc_attr( $this->args['class'] ) => ! empty( $this->args['class'] ), 
 		) ); 
 
 		$attrs = self::parse_attrs( array( 
@@ -167,6 +170,7 @@ class WPMDC_List_Item extends WPMDC_Component {
 			'dense'       => false, 
 			'menu_list'   => false, 
 			'container'   => 'ul', 
+			'class'       => '', 
 		) );
 
 		$errors = WPMDC_Component::check_arg_types( $args, array(
@@ -176,17 +180,19 @@ class WPMDC_List_Item extends WPMDC_Component {
 			'dense'       => 'boolean', 
 			'menu_list'   => 'boolean', 
 			'container'   => array( 'ul', 'div', 'nav' ), 
+			'class'       => 'string', 
 		) );
 
 		WPMDC_Component::render_errors( $errors );
 
 		$class = WPMDC_Component::parse_classes( array( 
-			'wpmdc-list'            => true, 
-			'mdc-list'              => true, 
-			'mdc-list--two-line'    => $args['two_line'], 
-			'mdc-list--avatar-list' => $args['avatar_list'], 
-			'mdc-list--dense'       => $args['dense'], 
-			'mdc-menu__items'       => $args['menu_list'], 
+			'wpmdc-list'               => true, 
+			'mdc-list'                 => true, 
+			'mdc-list--two-line'       => $args['two_line'], 
+			'mdc-list--avatar-list'    => $args['avatar_list'], 
+			'mdc-list--dense'          => $args['dense'], 
+			'mdc-menu__items'          => $args['menu_list'], 
+			esc_attr( $args['class'] ) => ! empty( $args['class'] ), 
 		) );
 
 		$attrs = WPMDC_Component::parse_attrs( array( 

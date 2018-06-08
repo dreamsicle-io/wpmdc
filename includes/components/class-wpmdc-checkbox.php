@@ -37,6 +37,7 @@ class WPMDC_Checkbox extends WPMDC_Component {
 			'checked'       => 'boolean', 
 			'required'      => 'boolean', 
 			'disabled'      => 'boolean', 
+			'class'         => 'string', 
 		);
 
 		$this->default_args = array(
@@ -48,6 +49,7 @@ class WPMDC_Checkbox extends WPMDC_Component {
 			'checked'       => false, 
 			'required'      => false, 
 			'disabled'      => false, 
+			'class'         => '', 
 		);
 
 		parent::__construct( $args );
@@ -61,11 +63,12 @@ class WPMDC_Checkbox extends WPMDC_Component {
 			return; 
 		}
 
-		$container_class = self::parse_classes( array(
+		$class = self::parse_classes( array(
 			'wpmdc-checkbox'                      => true, 
 			'mdc-checkbox'                        => true, 
 			'wpmdc-checkbox--start-indeterminate' => $this->args['indeterminate'], 
 			'mdc-checkbox--disabled'              => $this->args['disabled'], 
+			esc_attr( $this->args['class'] )      => ! empty( $this->args['class'] ), 
 		) );
 
 		$input_attrs = self::parse_attrs( array( 
@@ -81,7 +84,7 @@ class WPMDC_Checkbox extends WPMDC_Component {
 
 			<div 
 			id="<?php echo esc_attr( $this->args['id'] ); ?>"
-			class="<?php echo esc_attr( $container_class ); ?>">
+			class="<?php echo esc_attr( $class ); ?>">
 
 				<input 
 				type="checkbox"

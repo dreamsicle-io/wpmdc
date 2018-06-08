@@ -34,6 +34,7 @@ class WPMDC_Chip extends WPMDC_Component {
 			'selected'  => 'boolean',
 			'removable' => 'boolean', 
 			'disabled'  => 'boolean', 
+			'class'     => 'string', 
 		);
 
 		$this->default_args = array(
@@ -44,6 +45,7 @@ class WPMDC_Chip extends WPMDC_Component {
 			'selected'  => false, 
 			'removable' => false, 
 			'disabled'  => false, 
+			'class'     => '', 
 		);
 
 		parent::__construct( $args );
@@ -133,9 +135,10 @@ class WPMDC_Chip extends WPMDC_Component {
 		}
 
 		$class = self::parse_classes( array(
-			'wpmdc-chip'         => true, 
-			'mdc-chip'           => true, 
-			'mdc-chip--selected' => $this->args['selected'], 
+			'wpmdc-chip'                     => true, 
+			'mdc-chip'                       => true, 
+			'mdc-chip--selected'             => $this->args['selected'], 
+			esc_attr( $this->args['class'] ) => ! empty( $this->args['class'] ), 
 		) ); 
 
 		if ( ! empty( $this->args['href'] ) ) { ?>
@@ -171,21 +174,24 @@ class WPMDC_Chip extends WPMDC_Component {
 	public static function open_set( $args = array() ) {
 
 		$args = wp_parse_args( $args, array(
-			'echo' => true, 
-			'mod'  => array( '', 'input', 'choice', 'filter' ), 
+			'echo'  => true, 
+			'mod'   => '', 
+			'class' => '', 
 		) );
 
 		$errors = WPMDC_Component::check_arg_types( $args, array(
-			'echo' => 'boolean', 
-			'mod'  => '', 
+			'echo'  => 'boolean', 
+			'mod'   => array( '', 'input', 'choice', 'filter' ), 
+			'class' => 'string', 
 		) );
 
 		WPMDC_Component::render_errors( $errors );
 
 		$class = WPMDC_Component::parse_classes( array( 
-			'wpmdc-chip-set'                                  => true, 
-			'mdc-chip-set'                                    => true, 
+			'wpmdc-chip-set'                            => true, 
+			'mdc-chip-set'                              => true, 
 			'mdc-chip-set--' . esc_attr( $args['mod'] ) => ! empty( $args['mod'] ), 
+			esc_attr( $args['class'] )                  => ! empty( $args['class'] ), 
 		) );
 		
 		$output = '<div class="' . esc_attr( $class ) . '">';

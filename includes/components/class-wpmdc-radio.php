@@ -29,23 +29,25 @@ class WPMDC_Radio extends WPMDC_Component {
 		$uniqid = $this->get_uniqid();
 
 		$this->arg_types = array(
-			'id'            => 'string', 
-			'name'          => 'string', 
-			'label'         => 'string', 
-			'value'         => 'string', 
-			'checked'       => 'boolean', 
-			'required'      => 'boolean', 
-			'disabled'      => 'boolean', 
+			'id'       => 'string', 
+			'name'     => 'string', 
+			'label'    => 'string', 
+			'value'    => 'string', 
+			'checked'  => 'boolean', 
+			'required' => 'boolean', 
+			'disabled' => 'boolean', 
+			'class'    => 'string', 
 		);
 
 		$this->default_args = array(
-			'id'            => $uniqid, 
-			'name'          => $uniqid, 
-			'value'         => '1', 
-			'label'         => _x( 'Radio', 'radio component default label', 'wpmdc' ), 
-			'checked'       => false, 
-			'required'      => false, 
-			'disabled'      => false, 
+			'id'       => $uniqid, 
+			'name'     => $uniqid, 
+			'value'    => '1', 
+			'label'    => _x( 'Radio', 'radio component default label', 'wpmdc' ), 
+			'checked'  => false, 
+			'required' => false, 
+			'disabled' => false, 
+			'class'    => '', 
 		);
 
 		parent::__construct( $args );
@@ -59,10 +61,11 @@ class WPMDC_Radio extends WPMDC_Component {
 			return; 
 		}
 
-		$container_class = self::parse_classes( array(
-			'wpmdc-radio'         => true, 
-			'mdc-radio'           => true, 
-			'mdc-radio--disabled' => $this->args['disabled'], 
+		$class = self::parse_classes( array(
+			'wpmdc-radio'                    => true, 
+			'mdc-radio'                      => true, 
+			'mdc-radio--disabled'            => $this->args['disabled'], 
+			esc_attr( $this->args['class'] ) => ! empty( $this->args['class'] ), 
 		) );
 
 		$input_attrs = self::parse_attrs( array( 
@@ -78,7 +81,7 @@ class WPMDC_Radio extends WPMDC_Component {
 
 			<div 
 			id="<?php echo esc_attr( $this->args['id'] ); ?>"
-			class="<?php echo esc_attr( $container_class ); ?>">
+			class="<?php echo esc_attr( $class ); ?>">
 
 				<input 
 				type="radio"

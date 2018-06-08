@@ -26,8 +26,6 @@ class WPMDC_Dialog extends WPMDC_Component {
 	 */
 	function __construct( $args = array() ) {
 
-		$uniqid = $this->get_uniqid();
-
 		$this->arg_types = array(
 			'id'             => 'string', 
 			'title'          => 'string', 
@@ -36,15 +34,17 @@ class WPMDC_Dialog extends WPMDC_Component {
 			'accept_text'    => 'string', 
 			'footer_buttons' => 'array', 
 			'scrollable'     => 'boolean', 
+			'class'          => 'string', 
 		);
 
 		$this->default_args = array(
-			'id'             => $uniqid, 
+			'id'             => $this->get_uniqid(), 
 			'title'          => _x( 'Dialog', 'dialog component default title', 'wpmdc' ), 
 			'body'           => '', 
 			'cancel_text'    => _x( 'Cancel', 'dialog component default cancel text', 'wpmdc' ), 
 			'accept_text'    => _x( 'Accept', 'dialog component default accept text', 'wpmdc' ),
 			'scrollable'     => false, 
+			'class'          => '', 
 		);
 
 		parent::__construct( $args );
@@ -58,9 +58,10 @@ class WPMDC_Dialog extends WPMDC_Component {
 			return; 
 		}
 
-		$container_class = self::parse_classes( array(
-			'wpmdc-dialog' => true, 
-			'mdc-dialog'   => true, 
+		$class = self::parse_classes( array(
+			'wpmdc-dialog'                   => true, 
+			'mdc-dialog'                     => true, 
+			esc_attr( $this->args['class'] ) => ! empty( $this->args['class'] ), 
 		) );
 
 		$body_class = self::parse_classes( array(
@@ -71,7 +72,7 @@ class WPMDC_Dialog extends WPMDC_Component {
 		<aside 
 		role="alertdialog"
 		id="<?php echo esc_attr( $this->args['id'] ); ?>"
-		class="<?php echo esc_attr( $container_class ); ?>"role="alertdialog"
+		class="<?php echo esc_attr( $class ); ?>"role="alertdialog"
 		aria-labelledby="<?php echo esc_attr( $this->args['id'] ); ?>_title"
 		aria-describedby="<?php echo esc_attr( $this->args['id'] ); ?>_description">
 		

@@ -21,22 +21,25 @@ class WPMDC_Menu {
 	public static function open_menu( $args = array() ) {
 
 		$args = wp_parse_args( $args, array(
-			'echo'  => true, 
-			'id'    => uniqid( strtolower( get_called_class() ) . '_' ), 
+			'echo'   => true, 
+			'id'     => uniqid( strtolower( get_called_class() ) . '_' ), 
 			'anchor' => 'top-start', 
+			'class'  => '', 
 		) );
 
 		$errors = WPMDC_Component::check_arg_types( $args, array(
 			'echo'   => 'boolean', 
 			'id'     => 'string', 
 			'anchor' => array( 'top-start', 'top-end', 'bottom-start', 'bottom-end' ), 
+			'class'  => 'string', 
 		) );
 
 		WPMDC_Component::render_errors( $errors );
 
 		$class = WPMDC_Component::parse_classes( array( 
-			'wpmdc-menu' => true, 
-			'mdc-menu'   => true, 
+			'wpmdc-menu'               => true, 
+			'mdc-menu'                 => true, 
+			esc_attr( $args['class'] ) => ! empty( $args['class'] ), 
 		) );
 
 		$data_attrs = WPMDC_Component::parse_data_attrs( array(
@@ -96,8 +99,7 @@ class WPMDC_Menu {
 		WPMDC_Component::render_errors( $errors );
 
 		$class = WPMDC_Component::parse_classes( array( 
-			'wpmdc-menu-anchor' => true, 
-			'mdc-menu-anchor'   => true, 
+			'mdc-menu-anchor' => true, 
 		) );
 
 		$output = '<div class="' . esc_attr( $class ) . '">';

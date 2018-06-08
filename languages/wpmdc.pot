@@ -89,135 +89,135 @@ msgstr ""
 msgid "Widgets added here will appear in the footer."
 msgstr ""
 
-#: includes/components/class-wpmdc-button.php:53
+#: includes/components/class-wpmdc-button.php:54
 msgctxt "button component default button text"
 msgid "Button"
 msgstr ""
 
-#: includes/components/class-wpmdc-card.php:659
+#: includes/components/class-wpmdc-card.php:666
 msgctxt "card component default action item label"
 msgid "Toggle Menu"
 msgstr ""
 
-#: includes/components/class-wpmdc-checkbox.php:47
+#: includes/components/class-wpmdc-checkbox.php:48
 msgctxt "checkbox component default label"
 msgid "Checkbox"
 msgstr ""
 
-#: includes/components/class-wpmdc-chip.php:43
+#: includes/components/class-wpmdc-chip.php:44
 msgctxt "chip component default button text"
 msgid "Chip"
 msgstr ""
 
-#: includes/components/class-wpmdc-dialog.php:43
+#: includes/components/class-wpmdc-dialog.php:42
 msgctxt "dialog component default title"
 msgid "Dialog"
 msgstr ""
 
-#: includes/components/class-wpmdc-dialog.php:45
+#: includes/components/class-wpmdc-dialog.php:44
 msgctxt "dialog component default cancel text"
 msgid "Cancel"
 msgstr ""
 
-#: includes/components/class-wpmdc-dialog.php:46
+#: includes/components/class-wpmdc-dialog.php:45
 msgctxt "dialog component default accept text"
 msgid "Accept"
 msgstr ""
 
-#: includes/components/class-wpmdc-fab.php:44
+#: includes/components/class-wpmdc-fab.php:45
 msgctxt "fab component default button text"
 msgid "Fab"
 msgstr ""
 
-#: includes/components/class-wpmdc-icon-button.php:46
+#: includes/components/class-wpmdc-icon-button.php:47
 msgctxt "icon button component default label"
 msgid "Icon Button"
 msgstr ""
 
-#: includes/components/class-wpmdc-icon-button.php:50
+#: includes/components/class-wpmdc-icon-button.php:51
 msgctxt "icon button component default \"on\" label"
 msgid "On"
 msgstr ""
 
-#: includes/components/class-wpmdc-icon-button.php:52
+#: includes/components/class-wpmdc-icon-button.php:53
 msgctxt "icon button component default \"off\" label"
 msgid "Off"
 msgstr ""
 
-#: includes/components/class-wpmdc-icon-toggle.php:42
+#: includes/components/class-wpmdc-icon-toggle.php:43
 msgctxt "icon toggle component default label"
 msgid "Icon Toggle"
 msgstr ""
 
-#: includes/components/class-wpmdc-icon-toggle.php:47
+#: includes/components/class-wpmdc-icon-toggle.php:48
 msgctxt "icon toggle component default \"on\" label"
 msgid "On"
 msgstr ""
 
-#: includes/components/class-wpmdc-icon-toggle.php:51
+#: includes/components/class-wpmdc-icon-toggle.php:52
 msgctxt "icon toggle component default \"off\" label"
 msgid "Off"
 msgstr ""
 
 #. translators: 1: argument key, 2: CSV of expected values.
-#: includes/components/class-wpmdc-icon-toggle.php:77
+#: includes/components/class-wpmdc-icon-toggle.php:79
 msgid "The key \"%1$s\" expects an array with the keys [\"%2$s\"]."
 msgstr ""
 
-#: includes/components/class-wpmdc-list-item.php:46
+#: includes/components/class-wpmdc-list-item.php:47
 msgctxt "list item component default primary text"
 msgid "List Item"
 msgstr ""
 
-#: includes/components/class-wpmdc-list-item.php:47
+#: includes/components/class-wpmdc-list-item.php:48
 msgctxt "list item component default secondary text"
 msgid "List Item Secondary Text"
 msgstr ""
 
-#: includes/components/class-wpmdc-radio.php:45
+#: includes/components/class-wpmdc-radio.php:46
 msgctxt "radio component default label"
 msgid "Radio"
 msgstr ""
 
-#: includes/components/class-wpmdc-slider.php:53
+#: includes/components/class-wpmdc-slider.php:54
 msgctxt "slider component default label"
 msgid "Slider"
 msgstr ""
 
-#: includes/components/class-wpmdc-switch.php:45
+#: includes/components/class-wpmdc-switch.php:46
 msgctxt "switch component default label"
 msgid "Switch"
 msgstr ""
 
-#: includes/components/class-wpmdc-tab.php:46
+#: includes/components/class-wpmdc-tab.php:47
 msgctxt "tab component default button text"
 msgid "Tab"
 msgstr ""
 
-#: includes/components/class-wpmdc-tab.php:240
+#: includes/components/class-wpmdc-tab.php:246
 msgid "Back"
 msgstr ""
 
-#: includes/components/class-wpmdc-tab.php:282
+#: includes/components/class-wpmdc-tab.php:288
 msgid "Next"
 msgstr ""
 
-#: includes/components/class-wpmdc-text-field.php:55
+#: includes/components/class-wpmdc-text-field.php:56
 msgctxt "text field component default label"
 msgid "Text Field"
 msgstr ""
 
-#: includes/components/class-wpmdc-top-app-bar.php:239
+#: includes/components/class-wpmdc-top-app-bar.php:242
 msgctxt "top app bar component default navigation icon label"
 msgid "Toggle Drawer"
 msgstr ""
 
-#: includes/components/class-wpmdc-top-app-bar.php:294
+#: includes/components/class-wpmdc-top-app-bar.php:297
 msgctxt "top app bar component default action item label"
 msgid "Toggle Menu"
 msgstr ""
 
-#: includes/components/class-wpmdc-typography.php:40
+#: includes/components/class-wpmdc-typography.php:41
 msgctxt "typography component body 1 default text"
 msgid "Lorem ipsum dolor sit amet."
 msgstr ""

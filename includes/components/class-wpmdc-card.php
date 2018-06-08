@@ -22,22 +22,26 @@ class WPMDC_Card extends WPMDC_Component {
 
 		$this->arg_types = array(
 			'mod'            => array( '', 'outlined' ), 
+			'id'             => 'string', 
 			'href'           => 'string', 
 			'primary'        => 'string', 
 			'secondary'      => 'string', 
 			'image'          => 'string', 
 			'action_buttons' => 'array', 
 			'action_icons'   => 'array', 
+			'class'          => 'string', 
 		);
 
 		$this->default_args = array(
 			'mod'            => '', 
+			'id'             => $this->get_uniqid(), 
 			'href'           => '', 
 			'primary'        => '', 
 			'secondary'      => '', 
 			'image'          => '', 
 			'action_buttons' => array(), 
 			'action_icons'   => array(), 
+			'class'          => '', 
 		);
 
 		parent::__construct( $args );
@@ -51,7 +55,7 @@ class WPMDC_Card extends WPMDC_Component {
 			return; 
 		}
 
-		self::open_card( array( 'mod' => $this->args['mod'] ) );
+		self::open_card( array( 'mod' => $this->args['mod'], 'id' => $this->args['id'], 'class' => $this->args['class'] ) );
 
 			if ( ! empty( $this->args['href'] ) ) {
 
@@ -146,6 +150,7 @@ class WPMDC_Card extends WPMDC_Component {
 			'container' => 'div', 
 			'mod'       => '', 
 			'id'        => uniqid( strtolower( get_called_class() ) . '_' ), 
+			'class'     => '', 
 		) );
 
 		$errors = WPMDC_Component::check_arg_types( $args, array(
@@ -153,6 +158,7 @@ class WPMDC_Card extends WPMDC_Component {
 			'container' => array( 'article', 'div' ), 
 			'mod'       => array( '', 'outlined' ), 
 			'id'        => 'string', 
+			'class'     => 'string', 
 		) );
 
 		WPMDC_Component::render_errors( $errors );
@@ -161,6 +167,7 @@ class WPMDC_Card extends WPMDC_Component {
 			'wpmdc-card'                            => true, 
 			'mdc-card'                              => true, 
 			'mdc-card--' . esc_attr( $args['mod'] ) => ! empty( $args['mod'] ), 
+			esc_attr( $args['class'] )              => ! empty( $args['class'] ), 
 		) );
 		
 		$output = '<' . esc_attr( $args['container'] ) . ' id="' . esc_attr( $args['id'] ) . '" class="' . esc_attr( $class ) . '">';

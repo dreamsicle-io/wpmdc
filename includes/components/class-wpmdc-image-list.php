@@ -25,7 +25,8 @@ class WPMDC_Image_List {
 			'id'        => uniqid( strtolower( get_called_class() ) . '_' ), 
 			'container' => 'ul', 
 			'mod'       => '', 
-			'columns'   => 4, 
+			'columns'   => 5, 
+			'class'     => '', 
 		) );
 
 		$errors = WPMDC_Component::check_arg_types( $args, array(
@@ -34,6 +35,7 @@ class WPMDC_Image_List {
 			'container' => array( 'ul', 'div', 'nav' ), 
 			'mod'       => array( '', 'masonry' ), 
 			'columns'   => array( 1, 2, 3, 4, 5, 6 ), 
+			'class'     => 'string', 
 		) );
 
 		WPMDC_Component::render_errors( $errors );
@@ -44,6 +46,7 @@ class WPMDC_Image_List {
 			'mdc-image-list'                                            => true, 
 			'mdc-image-list--with-text-protection'                      => ( $args['mod'] !== 'masonry' ), 
 			'mdc-image-list--' . esc_attr( $args['mod'] )               => ! empty( $args['mod'] ), 
+			esc_attr( $args['class'] )                                  => ! empty( $args['class'] ), 
 		) );
 
 		$attrs = WPMDC_Component::parse_attrs( array(

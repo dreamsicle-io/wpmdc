@@ -35,6 +35,7 @@ class WPMDC_Tab extends WPMDC_Component {
 			'text'      => 'string', 
 			'disabled'  => 'boolean', 
 			'active'    => 'boolean', 
+			'class'     => 'string', 
 		);
 
 		$this->default_args = array(
@@ -46,6 +47,7 @@ class WPMDC_Tab extends WPMDC_Component {
 			'text'      => _x( 'Tab', 'tab component default button text', 'wpmdc' ), 
 			'disabled'  => false, 
 			'active'    => false, 
+			'class'     => '', 
 		);
 
 		parent::__construct( $args );
@@ -109,6 +111,7 @@ class WPMDC_Tab extends WPMDC_Component {
 			'mdc-tab'                        => true, 
 			'mdc-tab--active'                => $this->args['active'], 
 			'mdc-tab--' . $this->args['mod'] => ! empty( $this->args['mod'] ), 
+			esc_attr( $this->args['class'] ) => ! empty( $this->args['class'] ), 
 		) ); 
 
 		$attrs = self::parse_attrs( array( 
@@ -153,12 +156,14 @@ class WPMDC_Tab extends WPMDC_Component {
 			'mod'      => '', 
 			'echo'     => true, 
 			'scroller' => false, 
+			'class'    => '', 
 		) );
 
 		$errors = WPMDC_Component::check_arg_types( $args, array(
 			'mod'      => array( '', 'icon-tab-bar', 'icons-with-text' ),
 			'echo'     => 'boolean', 
 			'scroller' => 'boolean', 
+			'class'    => 'string', 
 		) );
 
 		WPMDC_Component::render_errors( $errors );
@@ -168,6 +173,7 @@ class WPMDC_Tab extends WPMDC_Component {
 			'mdc-tab-bar'                              => true, 
 			'mdc-tab-bar--' . esc_attr( $args['mod'] ) => ! empty( $args['mod'] ), 
 			'mdc-tab-bar-scroller__scroll-frame__tabs' => $args['scroller'],
+			esc_attr( $args['class'] )                 => ! empty( $args['class'] ), 
 		) );
 		
 		$output = '<div class="' . esc_attr( $class ) . '">';

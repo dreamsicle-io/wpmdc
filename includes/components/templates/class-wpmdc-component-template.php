@@ -26,14 +26,14 @@ class WPMDC_Component_Template extends WPMDC_Component {
 	 */
 	function __construct( $args = array() ) {
 
-		$uniqid = $this->get_uniqid();
-
 		$this->arg_types = array(
-			'id' => 'string', 
+			'id'    => 'string', 
+			'class' => 'string', 
 		);
 
 		$this->default_args = array(
-			'id' => $uniqid, 
+			'id'    => $this->get_uniqid(), 
+			'class' => '', 
 		);
 
 		parent::__construct( $args );
@@ -53,14 +53,15 @@ class WPMDC_Component_Template extends WPMDC_Component {
 			return; 
 		}
 
-		$container_class = self::parse_classes( array(
-			'wpmdc-component-class' => true, 
-			'mdc-component-class'   => true, 
+		$class = self::parse_classes( array(
+			'wpmdc-component-class'          => true, 
+			'mdc-component-class'            => true, 
+			esc_attr( $this->args['class'] ) => ! empty( $this->args['class'] ), 
 		) ); ?>
 
 		<div 
 		id="<?php echo esc_attr( $this->args['id'] ); ?>"
-		class="<?php echo esc_attr( $container_class ); ?>">
+		class="<?php echo esc_attr( $class ); ?>">
 
 		</div>
 

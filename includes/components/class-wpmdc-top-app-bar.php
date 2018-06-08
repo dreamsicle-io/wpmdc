@@ -21,20 +21,23 @@ class WPMDC_Top_App_Bar {
 	public static function open_app_bar( $args = array() ) {
 
 		$args = wp_parse_args( $args, array(
-			'echo' => true, 
-			'id'   => uniqid( strtolower( get_called_class() ) . '_' ), 
+			'echo'  => true, 
+			'id'    => uniqid( strtolower( get_called_class() ) . '_' ), 
+			'class' => '', 
 		) );
 
 		$errors = WPMDC_Component::check_arg_types( $args, array(
-			'echo' => 'boolean', 
-			'id'   => 'string', 
+			'echo'  => 'boolean', 
+			'id'    => 'string', 
+			'class' => 'string', 
 		) );
 
 		WPMDC_Component::render_errors( $errors );
 
 		$class = WPMDC_Component::parse_classes( array( 
-			'wpmdc-top-app-bar' => true, 
-			'mdc-top-app-bar'   => true, 
+			'wpmdc-top-app-bar'        => true, 
+			'mdc-top-app-bar'          => true, 
+			esc_attr( $args['class'] ) => ! empty( $args['class'] ), 
 		) );
 		
 		$output = '<header role="toolbar" id="' . esc_attr( $args['id'] ) . '" class="' . esc_attr( $class ) . '">';
