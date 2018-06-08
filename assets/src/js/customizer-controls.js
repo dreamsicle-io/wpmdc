@@ -1,7 +1,7 @@
 const { jQuery } = window;
 
-( function( $ ) {
+(function($) {
 
 	
 
-} )( jQuery );
+})(jQuery);

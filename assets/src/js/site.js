@@ -12,25 +12,34 @@ import { wpmdcMenus } from './modules/menu';
 import { wpmdcTabs, wpmdcTabBars, wpmdcTabBarScrollers } from './modules/tabs';
 import { wpmdcChips, wpmdcChipSets } from './modules/chips';
 import { wpmdcIconToggles } from './modules/icon-toggle';
+import { wpmdcLinearProgresses } from './modules/linear-progress';
 // import { wpmdcIconButtons } from './modules/icon-button';
 
-document.addEventListener('DOMContentLoaded', () => {
+(function() {
+
 	wpmdcMobileAdminBarFix();
-	wpmdcTopAppBars();
-	wpmdcTemporaryDrawers();
-	wpmdcTextFields();
-	wpmdcSelects();
-	wpmdcCheckboxes();
-	wpmdcRadios();
-	wpmdcRipples();
-	wpmdcTabBarScrollers();
-	wpmdcTabBars();
-	wpmdcTabs();
-	wpmdcChipSets();
-	wpmdcChips();
-	wpmdcSliders();
-	wpmdcIconToggles();
-	wpmdcDialogs();
-	wpmdcMenus();
-	// wpmdcIconButtons();
-});
+
+	document.addEventListener('DOMContentLoaded', () => {
+		wpmdcLinearProgresses();
+		wpmdcTopAppBars();
+		wpmdcTemporaryDrawers();
+		wpmdcTextFields();
+		wpmdcSelects();
+		wpmdcCheckboxes();
+		wpmdcRadios();
+		wpmdcRipples();
+		wpmdcTabBarScrollers();
+		wpmdcTabBars();
+		wpmdcTabs();
+		wpmdcChipSets();
+		wpmdcChips();
+		wpmdcSliders();
+		wpmdcDialogs();
+		wpmdcMenus();
+		wpmdcIconToggles();
+		// wpmdcIconButtons();
+	});
+
+})();
+
+
