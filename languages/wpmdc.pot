@@ -297,6 +297,14 @@ msgstr ""
 msgid "Icon Toggle"
 msgstr ""
 
+#: includes/components/examples/image-list.php:24
+msgid "Image List"
+msgstr ""
+
+#: includes/components/examples/linear-progress.php:24
+msgid "Linear Progress"
+msgstr ""
+
 #: includes/components/examples/list.php:24
 msgid "List"
 msgstr ""
